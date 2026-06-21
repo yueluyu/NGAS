@@ -1,0 +1,322 @@
+ideas = {
+	country =  {
+		san_ge_daibiao = {
+			picture = PRC_three_represents_theory
+            allowed = {
+                always = no
+            }
+            removal_cost = -1
+            modifier = {
+                political_power_factor = 0.02
+				stability_factor = 0.02
+            }
+        }
+		san_ge_daibiao_1 = {
+			picture = PRC_three_represents_theory
+            allowed = {
+                always = no
+            }
+            removal_cost = -1
+            modifier = {
+                political_power_factor = 0.03
+				stability_factor = 0.03
+            }
+        }
+		san_ge_daibiao_2 = {
+			picture = PRC_three_represents_theory
+            allowed = {
+                always = no
+            }
+            removal_cost = -1
+            modifier = {
+                political_power_factor = 0.04
+				stability_factor = 0.04
+            }
+        }
+		san_ge_daibiao_3 = {
+			picture = PRC_three_represents_theory
+            allowed = {
+                always = no
+            }
+            removal_cost = -1
+            modifier = {
+                political_power_factor = 0.05
+				stability_factor = 0.05
+            }
+        }
+		hei_e_shili = {
+			picture = PRC_Complex_social_security_situation
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+                political_power_factor = -0.3
+				stability_factor = -0.35
+            }
+		}
+		hei_e_shili_2 = {
+			picture = PRC_Complex_social_security_situation
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+                political_power_factor = -0.2
+				stability_factor = -0.20
+            }
+		}
+        xia_gang_chao = {
+            picture = PRC_Wave_of_layoffs
+            allowed = {
+				always = no
+			}
+            removal_cost = -1
+            modifier = {
+				stability_factor = -0.3
+                consumer_goods_factor = 0.5
+                production_speed_buildings_factor = -0.4
+				custom_modifier_tooltip = xia_gang_chao_tt
+            }
+        }
+		xia_gang_chao_2 = {
+            picture = PRC_Wave_of_layoffs
+            allowed = {
+				always = no
+			}
+            removal_cost = -1
+            modifier = {
+				stability_factor = -0.15
+                consumer_goods_factor = 0.25
+                production_speed_buildings_factor = -0.2
+				custom_modifier_tooltip = xia_gang_chao_2_tt
+            }
+        }
+		nineth_five_years_plan = {
+			picture = PRC_ninth_five_year_Plan
+            allowed = {
+				always = no
+			}
+            removal_cost = -1
+            modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = 0.12
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+            }
+		}
+		Development_of_western_regions = {
+			picture = PRC_Development_of_western_regions
+			modifier = {
+				consumer_goods_factor = 0.1
+				political_power_factor = -0.05
+				custom_modifier_tooltip = Development_of_western_regions_tt
+			}
+		}
+		tenth_five_years_plan = {
+			picture = PRC_tenth_five_year_Plan
+            allowed = {
+				always = no
+			}
+            removal_cost = -1
+            modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = 0.05
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+            }
+		}
+		army_jing_shang = {
+			picture = PRC_Military_involvement_in_business
+            allowed = {
+				always = no
+			}
+            removal_cost = -1
+            modifier = {
+				consumer_goods_factor = -0.15
+				army_morale_factor = -0.1
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+				experience_gain_army_factor = -0.2
+            }
+		}
+		PRC_SRAS_1 = {
+			picture = PRC_sars
+			modifier = {
+				stability_weekly = -0.001
+				stability_factor = -0.03
+			}
+		}
+        PRC_SRAS_2 = {
+			picture = PRC_sars
+			modifier = {
+				stability_weekly = -0.003
+				stability_factor = -0.05
+			}
+		}
+		PRC_SRAS_3 = {
+			picture = PRC_sars
+			modifier = {
+			    monthly_population = -0.0005
+				stability_weekly = -0.006
+				stability_factor = -0.08
+			}
+		}
+		PRC_SRAS_4 = {
+			picture = PRC_sars
+			modifier = {
+			    monthly_population = -0.001
+				stability_weekly = -0.08
+				stability_factor = -0.08
+			}
+		}
+		PRC_SRAS_5 = {
+			picture = PRC_sars
+			modifier = {
+			    monthly_population = -0.005
+				stability_weekly = -0.01
+				stability_factor = -0.10
+			}
+		}
+		Modernization_of_the_military = {
+			removal_cost = -1
+			picture = PRC_Modernization_of_the_military_1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				army_org_factor = -0.35
+				army_defence_factor = -0.3
+				army_attack_factor = -0.3
+				max_planning_factor = -0.2
+				planning_speed = -0.15
+				training_time_army_factor = -0.15
+				experience_gain_army_factor = -0.15
+				experience_gain_army_unit_factor = -0.15
+				army_morale_factor = -0.25
+				army_core_defence_factor = 0.1
+				army_artillery_attack_factor = -0.1
+				initiative_factor = 0.05
+				supply_consumption_factor = -0.05
+			}
+		}
+		Chinese_path = {
+			picture = PRC_Chinese_path
+			modifier = {
+				stability_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.1
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = 0.15
+				political_power_factor = -0.1
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_infrastructure_factor = 0.2
+			}
+		}
+        PRC_public_panic_1 = {
+			picture = 1
+			modifier = {
+				stability_weekly = -0.004
+				stability_factor = -0.1
+				political_power_factor = -0.1
+			}
+		}
+		PRC_public_panic_2 = {
+			picture = 1
+			modifier = {
+				stability_weekly = -0.002
+				stability_factor = -0.05
+				political_power_factor = -0.1
+			}
+		}
+		PRC_public_panic_3 = {
+			picture = 1
+			modifier = {
+				stability_weekly = 0.001
+				stability_factor = 0.1
+				political_power_factor = 0.05
+			}
+		}
+		
+		Capitalists_Joining_the_Party = {
+			picture = PRC_Capitalists_Joining_the_Party
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.1
+				political_power_factor = -0.05
+			}
+		}
+	    State_owned_enterprise_reform = {
+			picture = PRC_State_owned_enterprise_reform
+			modifier = {
+                consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		State_owned_enterprise_reform_2 = {
+			picture = PRC_State_owned_enterprise_reform
+			modifier = {
+                consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+				stability_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		internal_circulation = {
+			picture = PRC_internal_circulation
+			modifier = {
+				consumer_goods_factor = -0.15
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				min_export = -0.2
+			}
+		}
+		Rural_reform_1 = {
+			picture = PRC_internal_circulation
+			modifier = {
+				consumer_goods_factor = 0.2
+				stability_factor = -0.15
+				political_power_factor = -0.05
+			}
+		}
+		Rural_reform_2 = {
+			picture = PRC_internal_circulation
+			modifier = {
+				consumer_goods_factor = 0.15
+				stability_factor = -0.1
+				political_power_factor = -0.08
+			}
+		}
+		Rural_reform_3 = {
+			picture = PRC_internal_circulation
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = -0.05
+				production_speed_buildings_factor = 0.05
+				political_power_factor = -0.1
+			}
+		}
+		Introduce_advanced_technology = {
+           picture = PRC_Introduce_advanced_technology
+			modifier = {
+				consumer_goods_factor = 0.05
+				research_speed_factor = 0.025
+			}
+        }
+		Revitalize_the_country_through_science_education = {
+           picture = PRC_Revitalize_the_country_through_science_education
+			modifier = {
+				political_power_factor = 0.05
+				research_speed_factor = 0.04
+				consumer_goods_factor = 0.05
+			}
+        }
+	}
+}

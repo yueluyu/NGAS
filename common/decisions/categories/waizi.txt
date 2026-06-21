@@ -1,0 +1,11 @@
+PRC_wai_zi = {
+	icon = 1
+         allowed = {
+			original_tag = PRC
+		 }
+		 priority = 99
+		 visible = {
+			has_country_flag = wai_zi_1
+		 }
+		 visible_when_empty = yes
+}

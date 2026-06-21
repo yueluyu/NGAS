@@ -1,0 +1,61 @@
+on_actions = {
+    on_startup = {
+        effect = {
+       PRC = {
+		activate_mission = PRC_16_th_will_come_cin
+		activate_mission = PRC_tenth_rendaw
+		activate_mission = nfp_end
+	    }
+	   PRC = {
+		country_event = {
+		 id = prc_zz.6
+		 days = 55
+		}
+		country_event = {
+		 id = prc_zz.7
+		 days = 66
+		}
+		country_event = {
+		 id = prc_zz.8
+		 days = 553
+		}
+		country_event = {
+		 id = prc_hk.1
+		 days = 752
+		}
+		country_event = {
+		 id = prc_sars.1
+		 days = 1051
+		}
+	   }
+	   PRC = {
+		CPC_zhengquan_effect = yes
+	   }
+	   PRC = {
+		set_variable = {
+			var = jzm_paixi
+			value = 90
+		}
+		set_variable = {
+			var = hjt_paixi
+			value = 10
+		}
+	   }
+	   
+    }
+  }
+  on_monthly_PRC = {
+		effect = {
+			CPC_zhengquan_clamper = yes
+			if = {
+				limit = {PRC = {has_country_flag = hjt_come}}
+					PRC = {	
+					    CPC_zhengquan_clamper = yes
+					    CPC_zhengquan_effect = yes			
+						add_to_variable = {jzm_paixi = jzm_paixi_increase}
+						add_to_variable = {hjt_paixi = hjt_paixi_increase}
+				}
+			}
+		}
+	}
+}

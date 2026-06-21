@@ -1,0 +1,508 @@
+characters = {
+
+	## Country Leaders ##
+
+	PRC_jiang_zemin = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/Jiang_Zemin_1.png"
+			}
+		}
+		country_leader = {
+			ideology = chinese_socialism
+			traits = {}
+			desc = JIANG_1_desc
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}
+	PRC_zhu_longji = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/Zhu_longji.png"
+				small = "gfx/leaders/PRC/zhu_longji.png"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = political_advisor
+			idea_token = PRC_zhu_longji
+			can_be_fired = no
+			allowed = {
+				original_tag = PRC
+				NOT = {has_country_flag = prc_10th_end}
+			}
+			traits = {
+				guowuyuan_zongli
+			}
+			visible = {
+			    NOT = {has_country_flag = prc_10th_end}
+			   }
+			}
+		}
+		
+		PRC_wang_huning = {
+		portraits = {
+			civilian = {
+				small = "gfx/leaders/PRC/PRC_wang_huning.png"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = political_advisor
+			idea_token = PRC_wang_huning
+			can_be_fired = no
+			allowed = {
+				original_tag = PRC
+			}
+			traits = {
+				caopanshou
+				
+			}
+			visible = {
+			   always = yes
+			   }
+			}
+		}
+	
+	
+
+	PRC_Wu_Bangguo = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/Wu_Bangguo.png"
+			}
+		}
+		country_leader = {
+			ideology = chinese_socialism
+			desc = WU_1_desc
+			traits = {}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}
+
+	PRC_Chen_Liangyu = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/Chen_Liangyu.png"
+			}
+		}
+		country_leader = {
+			ideology = chinese_socialism
+			traits = {}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}
+	
+	PRC_hu_jintao = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/Hu_Jintao_2.png"
+			}
+		}
+		country_leader = {
+			ideology = chinese_socialism
+			desc = HU_1_desc
+			traits = {}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}
+
+	PRC_wen_jiabao = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/wen_jiabao.png"
+				small = "gfx/leaders/PRC/PRC_wen_jiabao.png"
+			}
+		}
+		country_leader = {
+			ideology = chinese_socialism
+			traits = {populist}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+		advisor={
+			cost = 100
+			slot = political_advisor
+			idea_token = PRC_wen_jiabao
+			can_be_fired = no
+			allowed = {
+				original_tag = PRC
+				has_country_flag = prc_10th_end
+				NOT = {
+			      has_country_flag = jiang_pai_temporary_victory
+			   }
+			}
+			traits = {
+				guowuyuan_zongli
+			}
+			visible = {
+			   has_country_flag = prc_10th_end
+			   NOT = {
+			      has_country_flag = jiang_pai_temporary_victory
+			   }
+			}
+		}
+	}	
+
+	PRC_zeng_qinghong = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/Zeng_Qinghong.png"
+				small = "gfx/leaders/PRC/small/Zeng_Qinghong.png"
+			}
+		}
+		country_leader = {
+			ideology = chinese_socialism
+			traits = {}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+		advisor={
+			cost = 100
+			slot = political_advisor
+			idea_token = PRC_Zeng_Qinghong
+			can_be_fired = no
+			allowed = {
+				original_tag = PRC
+				has_country_flag = jiang_pai_temporary_victory
+			}
+			traits = {
+				guowuyuan_zongli
+			}
+			visible = {
+			   has_country_flag = jiang_pai_temporary_victory
+			   }
+		}
+	}		
+	
+	PRC_bo_xilao = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/bo_xilao.png"
+			}
+		}
+		country_leader = {
+			ideology = anti_revisionism
+			traits = {}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}	
+	
+	PRC_li_lanqing = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/li_lanqing.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism_leninism
+			traits = {}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}		
+
+	PRC_zhou_yongkang = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/zhou_yongkang.png"
+			}
+		}
+	}	
+	
+	PRC_liu_xiaobo = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/liu_xiaobo.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism_sub
+			traits = {}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}	
+	
+	## Generals ##
+
+	PRC_Zhang_Wannian = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Zhang_Wannian.png"
+			}
+		}
+		field_marshal={
+			traits={ }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	PRC_Chi_Hao_Tian = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Chi_Hao_Tian_general.png"
+			}
+			civilian = {
+				large = "gfx/leaders/PRC/Chi_Hao_Tian.png"
+			}
+		}
+		field_marshal={
+			traits={ }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	PRC_liang_guanglie = {
+		portraits = {
+			army = {
+			    small = "gfx/leaders/PRC/small/Liang_Guanglie.png"
+				large = "gfx/leaders/PRC/Liang_Guanglie.png"
+			}
+		}
+		field_marshal = {
+			traits = { war_hero thorough_planner }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = Liang_guanglie
+			allowed = {
+				original_tag = PRC
+			}
+			traits = {
+				army_chief_planning_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	PRC_qian_shugen = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Qian_Shugen.dds"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	PRC_Guo_Boxiong = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Guo_Boxiong.png"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	PRC_Cao_Gangchuan = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Cao_Gangchuan.png"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	PRC_jing_zhiyuan = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/jing_zhiyuan.png"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	PRC_chen_xitao = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/chen_xitao.png"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+
+	PRC_xiong_guangkai = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Xiong_Guangkai.dds"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=3
+			attack_skill=3
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	PRC_tang_tianbiao = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Tang_Tianbiao.dds"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	PRC_xu_caihou = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Xu_Caihou.dds"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	PRC_Fan_Changlong = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Fan_Changlong.png"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	#army 
+	PRC_fu_quanyou = {
+		portraits = {
+			army = {
+			    small = "gfx/leaders/PRC/small/Fu_Quanyou.png"
+				large = "gfx/leaders/PRC/Fu_Quanyou.png"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = fu_quanyou
+			allowed = {
+				original_tag = PRC
+			}
+			traits = {
+				army_logistics_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	## Admirals ##
+
+	PRC_shi_yunsheng = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRC/Shi_Yunsheng.dds"
+			}
+		}
+		navy_leader={
+			traits={ }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=-1
+		}
+	}
+
+	##Special
+	PRC_chaos = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PRC/PRC_anarchy.png"
+			}
+		}
+		country_leader = {
+			ideology = collapsed_state
+			traits = {}
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}
+
+}

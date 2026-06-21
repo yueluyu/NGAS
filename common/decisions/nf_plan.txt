@@ -1,0 +1,281 @@
+five_years_plan = {
+	nfp_end = {
+		priority = 100
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+			NOT = {
+				has_idea = nineth_five_years_plan
+			}
+		}
+		visible = { NOT = { has_idea = nineth_five_years_plan } }
+		activation = {                          
+			always = no
+			has_idea = nineth_five_years_plan
+		}
+		cancel_trigger = {
+			NOT = {
+				has_idea = nineth_five_years_plan
+			}
+		}
+		is_good = yes
+		selectable_mission = no
+		days_mission_timeout = 364
+		timeout_effect = {
+			country_event = prc_zz.9
+		}
+	}
+	da_xia_gang_influce = {
+		priority = 100
+		activation = {
+		    OR = {
+				has_idea = xia_gang_chao
+				has_idea = xia_gang_chao_2
+		    }
+		}
+		visible = { 
+		    OR = {
+				has_idea = xia_gang_chao
+				has_idea = xia_gang_chao_2
+		    }
+		}
+		allowed = {
+			OR = {
+				has_idea = xia_gang_chao
+				has_idea = xia_gang_chao_2
+		    }
+		}
+		
+		available = {
+           custom_trigger_tooltip = {
+			tooltip = not_has_dxg
+			   NOT = {
+					has_idea = xia_gang_chao
+			   }
+                NOT = {
+					has_idea = xia_gang_chao_2
+				}
+			}
+		}
+		days_mission_timeout = 120
+			timeout_effect = {
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = industrial_complex
+						level = -1
+					}
+				}
+				hidden_effect = {
+					activate_mission = da_xia_gang_influce
+				}
+			}
+	    }
+	remove_xia_gang = {
+		available = {                          
+			has_idea = xia_gang_chao
+		}
+		allowed = {
+			has_idea = xia_gang_chao
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 130
+		cost = 50
+		modifier = {
+			consumer_goods_factor = 0.15
+			political_power_cost = 0.3
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = xia_gang_chao
+				add_idea = xia_gang_chao_2
+			}
+			add_days_mission_timeout = {
+				mission = da_xia_gang_influce
+				days = 60
+			}
+			hidden_effect = {
+				remove_ideas = xia_gang_chao_2
+				add_timed_idea = {
+					idea = xia_gang_chao_2
+					days = 1200
+				}
+			}
+		}
+	}
+}
+PRC_FMP_1 = {
+	PRC_SWTP_middle = {
+        available = {
+			has_country_flag = PRC_SWTP
+			NOT = {
+				OR = {
+					has_country_flag = Doing_SWTP_east
+					has_country_flag = Doing_SWTP_west
+				}
+			}
+		}
+		visible = {
+			has_country_flag = PRC_SWTP
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 70
+		days_remove = 65
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = Doing_SWTP_middle
+		}
+		remove_effect = {
+			clr_country_flag = Doing_SWTP_middle
+		}
+	}
+	PRC_SWTP_east = {
+        available = {
+			has_country_flag = PRC_SWTP
+			NOT = {
+				OR = {
+					has_country_flag = Doing_SWTP_middle
+					has_country_flag = Doing_SWTP_west
+				}
+			}
+		}
+		visible = {
+			has_country_flag = PRC_SWTP
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 70
+		days_remove = 65
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = Doing_SWTP_east
+		}
+		remove_effect = {
+			clr_country_flag = Doing_SWTP_east
+		}
+	}
+	PRC_SWTP_west = {
+        available = {
+			has_country_flag = PRC_SWTP
+			NOT = {
+				OR = {
+					has_country_flag = Doing_SWTP_middle
+					has_country_flag = Doing_SWTP_east
+				}
+			}
+		}
+		visible = {
+			has_country_flag = PRC_SWTP
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 70
+		days_remove = 65
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = Doing_SWTP_west
+		}
+		remove_effect = {
+			clr_country_flag = Doing_SWTP_west
+		}
+	}
+}
+PRC_WDR = {
+	PRC_WTET_middle = {
+        available = {
+			has_country_flag = PRC_WTET
+			NOT = {
+				OR = {
+					has_country_flag = Doing_WTET_north
+					has_country_flag = Doing_WTET_south
+				}
+			}
+		}
+		visible = {
+			has_country_flag = PRC_WTET
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 70
+		days_remove = 65
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = Doing_WTET_middle
+		}
+		remove_effect = {
+			clr_country_flag = Doing_WTET_middle
+		}
+	}
+	PRC_WTET_north = {
+        available = {
+			has_country_flag = PRC_WTET
+			NOT = {
+				OR = {
+					has_country_flag = Doing_WTET_middle
+					has_country_flag = Doing_WTET_south
+				}
+			}
+		}
+		visible = {
+			has_country_flag = PRC_WTET
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 70
+		days_remove = 65
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = Doing_WTET_north
+		}
+		remove_effect = {
+			clr_country_flag = Doing_WTET_north
+		}
+	}
+	PRC_WTET_south = {
+        available = {
+			has_country_flag = PRC_WTET
+			NOT = {
+				OR = {
+					has_country_flag = Doing_WTET_middle
+					has_country_flag = Doing_WTET_south
+				}
+			}
+		}
+		visible = {
+			has_country_flag = PRC_WTET
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 70
+		days_remove = 65
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = Doing_WTET_south
+		}
+		remove_effect = {
+			clr_country_flag = Doing_WTET_south
+		}
+	}
+}

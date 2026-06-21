@@ -1,0 +1,42 @@
+spriteTypes = {	
+        SpriteType = {
+		name = "GFX_focus_PRC_westren_development"
+		texturefile = "gfx/interface/goals/PRC_western_development.png"
+	    }
+	   SpriteType = {
+		name = "GFX_focus_PRC_preparing_to_join_wto"
+		texturefile = "gfx/interface/goals/PRC_preparing_to_join_wto.png"
+	    }
+	    SpriteType = {
+		name = "GFX_focus_PRC_Development_is_the_hard_truth"
+		texturefile = "gfx/interface/goals/PRC_Development_is_the_hard_truth.png"
+	    }
+	    SpriteType = {
+		name = "GFX_focus_PRC_the_ninth_five_year_Plan"
+		texturefile = "gfx/interface/goals/PRC_the_ninth_five_year_Plan.png"
+	    }
+	    SpriteType = {
+		name = "GFX_focus_PRC_prepare_the_tenth_five_year_Plan"
+		texturefile = "gfx/interface/goals/PRC_prepare_the_tenth_five_year_Plan.png"
+	    }
+	    SpriteType = {
+		name = "GFX_focus_PRC_the_policy_of_three_Fs"
+		texturefile = "gfx/interface/goals/PRC_the_policy_of_three_Fs.png"
+	    }
+	    SpriteType = {
+		name = "GFX_focus_PRC_West_to_East_Power_Transmission_Project"
+		texturefile = "gfx/interface/goals/PRC_West_to_East_Power_Transmission_Project.png"
+	    }
+	    SpriteType = {
+		name = "GFX_focus_PRC_Accelerate_the_process_of_liberalization"
+		texturefile = "gfx/interface/goals/PRC_Accelerate_the_process_of_liberalization.png"
+	    }
+	    SpriteType = {
+		name = "GFX_focus_PRC_turn_of_the_century"
+		texturefile = "gfx/interface/goals/PRC_turn_of_the_century.png"
+	    }
+	    SpriteType = {
+		name = "GFX_focus_PRC_three_represents_theory"
+		texturefile = "gfx/interface/goals/three_represents_theory.png"
+	    }
+}

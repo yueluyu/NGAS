@@ -1,0 +1,154 @@
+bookmarks = {
+	bookmark = {
+		name = "The Red Dusk"
+		desc = "NEW_DAWN_BOOKMARK_LOC"
+		date = 2000.1.1.12
+		picture = "GFX_new_dawn_bookmark"
+		default_country = "PRC"
+		default = yes
+
+	    "SOV"={
+			history = "SOV_NDB_DESC_LOC"
+			ideology = communism
+			ideas = {
+				SOV_memories_of_august_coup
+				SOV_party_infighting
+				SOV_memories_of_perestroika
+			}
+			focuses = {
+				
+				SOV_spectre_of_militarism
+				SOV_morning_in_moscow
+				SOV_address_the_party
+			}	
+		}
+
+	    "USA"={
+			history = "USA_NDB_DESC_LOC"
+			ideology = democratic
+			ideas = {
+				USA_second_amendment
+				USA_three_party_primacy
+				USA_the_constitution
+			}
+			focuses = {
+				USA_aftermath_of_the_uneasy_90s
+				USA_quayles_america
+				USA_the_winner_is
+			}	
+		}
+		
+		"ENG"={
+			history = "ENG_NDB_DESC_LOC"
+			ideology = democratic
+			ideas = {
+				GER_eu
+				ENG_commonwelth
+				IRA_good_friday
+			}
+			focuses = {
+				ENG_blair_first_term
+				ENG_united_against_communism
+				ENG_new_defence_review
+			}	
+		}
+		
+		"YUG"={
+			history = "YUG_NDB_DESC_LOC"
+			ideology = communism
+			ideas = {
+				YUG_broken_brotherhood
+				YUG_demoralized_army
+				YUG_what_are_we
+			}
+			focuses = {
+				YUG_stambolic_communism_for_the_next_generation
+				YUG_a_broken_nation
+				YUG_milosevic_renewed_mandate
+			}	
+		}
+		
+		"PRC"={
+			history = "PRC_NDB_DESC_LOC"
+			ideology = communism
+			new_content = yes
+			ideas = {
+			    Modernization_of_the_military 
+				PRC_three_bodies_of_the_party
+				PRC_theory_1
+			}
+			focuses = {
+			 PRC_sange_daibiao
+			 PRC_made_in_china
+			 PRC_prepare_the_tenth_five_year_Plan
+			}	
+		}
+		
+		"VIN"={
+			history = "VIT_NDB_DESC_LOC"
+			ideology = communism
+			ideas = {
+				VIN_patriotic_tradition
+				VIN_fifty_years_resistance
+				VIN_doi_moi
+			}
+			focuses = {
+				VIN_newmillenniumnewvietnam
+				VIN_the_greatest_generation
+				VIN_healing_scars_of_war
+				
+			}	
+		}
+		
+		"IRQ"={
+			history = "IRQ_NDB_DESC_LOC"
+			ideology = fascism
+			ideas = {
+				IRQ_western_embargo_1
+				IRQ_kurdish_rebels
+				IRQ_broken_army_1
+			}
+			focuses = {
+				IRQ_dreams_of_a_united_arab_nation
+				IRQ_saddam_rule
+				IRQ_atom
+			}	
+		}
+		
+		"SAF"={
+			history = "SAF_NDB_DESC_LOC"
+			ideology = fascism
+			minor = yes
+			ideas = {
+				SAF_apartheid_idea
+				SAF_military_state_idea
+				SAF_anc_insurgency_idea
+			}
+			focuses = {
+				SAF_sun
+				SAF_parliament
+				SAF_end_segregation_for_good
+			}	
+		}
+        "CZE"={
+			history = "CZE_NDB_DESC_LOC"
+			ideology = communism
+			minor = yes
+			ideas = {
+				CZE_Asphyxiated_Union
+				CZE_stagnating_economy
+				CZE_military				
+			}
+			focuses = {
+				CZE_new_economic_plan
+				CZE_new_millennium
+				CZE_new_regime_old_clothes				
+			}
+		}
+		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

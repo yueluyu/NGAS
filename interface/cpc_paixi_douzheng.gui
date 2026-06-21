@@ -1,0 +1,114 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "cpc_paixi_douzheng"
+		position = { x = -2 y = 0 }
+		size = { width = 1000 height= 785 }
+    iconType = {
+		name = "cpc"
+		spriteType = "GFX_CPC"
+		position = {
+			x = -5 y = -2
+		}
+		frame = left
+		pdx_tooltip = CPC_PRC
+	}
+
+	iconType = {
+		name = "shanghai_bang_jiang"
+		spriteType = "GFX_Jiang_Zemin"
+		position = {
+			x = 270 y = 200
+		}
+		pdx_tooltip = jiang_pai
+	}
+	iconType = {
+		name = "shanghai"
+		spriteType = "GFX_shb"
+		position = {
+			x = 322 y = 455
+		}
+		pdx_tooltip = PRC_shb
+		pdx_tooltip_delayed = shb_loc
+	}
+	instantTextBoxType = {
+			name ="shb_text_2"
+			position = { x = 327 y = 425 }
+			font = "hoi_24header"
+			text = "Jiang_Zemin"
+			format = left
+			maxHeight = 24
+			maxWidth = 60
+		}
+	
+	instantTextBoxType = {
+			name ="shb_text"
+			position = { x = 275 y = 545 }
+			font = "hoi_20bs"
+			text = "jiang_pai_text_var"
+			format = left
+			maxHeight = 24
+		}
+	instantTextBoxType = {
+			name ="shb_text_3"
+			position = { x = 345 y = 525 }
+			font = "hoi_18mbs"
+			text = "shang_hai_bang"
+			format = left
+			maxHeight = 24
+			maxWidth = 50
+		}
+
+	iconType = {
+		name = "tuan_pai"
+		spriteType = "GFX_Hu_jintao"
+		position = {
+			x = 45 y = 200
+		}
+		pdx_tooltip = tuan_pai
+	}
+	iconType = {
+		name = "tuan_pai_2"
+		spriteType = "GFX_tuan_pai"
+		position = {
+			x = 100 y = 455
+		}
+		pdx_tooltip = PRC_gqtp
+		pdx_tooltip_delayed = gong_qing_tuan_loc
+	}
+	instantTextBoxType = {
+			name ="tuan_text"
+			position = { x = 50 y = 545 }
+			font = "hoi_20bs"
+			text = "tuan_pai_text_var"
+			format = left
+			maxHeight = 24
+		}
+	instantTextBoxType = {
+			name ="tuan_text_3"
+			position = { x = 120 y = 525 }
+			font = "hoi_18mbs"
+			text = "gong_qing_tuan"
+			format = left
+			maxHeight = 24
+			maxWidth = 40
+		}
+    instantTextBoxType = {
+			name ="tuan_text_2"
+			position = { x = 105 y = 425 }
+			font = "hoi_24header"
+			text = "Hu_Jintao"
+			format = left
+			maxHeight = 24
+			maxWidth = 60
+		}
+		instantTextBoxType = {
+			name ="cpc_dangpai_text"
+			position = { x = 5 y = 590 }
+			font = "hoi_16mbs"
+			text = "cpc_dangpai_text"
+			format = left
+			maxWidth = 500
+		}
+	}
+}

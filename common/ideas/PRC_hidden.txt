@@ -1,0 +1,35 @@
+ideas = {
+	hidden_ideas = {
+		# PRC
+		Zhu_is_zongli = {
+			name = "Zhu_Rongji"
+			on_add = { set_country_flag = COUNTRY_HAS_SECONDARY_LEADER }
+			on_remove = { clr_country_flag = COUNTRY_HAS_SECONDARY_LEADER }
+		
+			removal_cost = -1
+			cancel = { is_subject = yes }
+			allowed = { always = yes }
+			modifier = {}
+		}
+        Wen_is_zongli = {
+			name = "Wen_Jiabao"
+			on_add = { set_country_flag = COUNTRY_HAS_SECONDARY_LEADER }
+			on_remove = { clr_country_flag = COUNTRY_HAS_SECONDARY_LEADER }
+		
+			removal_cost = -1
+			cancel = { is_subject = yes }
+			allowed = { always = yes }
+			modifier = {}
+		}
+        Zeng_is_zongli = {
+			name = "Zeng_Qinghong"
+			on_add = { set_country_flag = COUNTRY_HAS_SECONDARY_LEADER }
+			on_remove = { clr_country_flag = COUNTRY_HAS_SECONDARY_LEADER }
+		
+			removal_cost = -1
+			cancel = { is_subject = yes }
+			allowed = { always = yes }
+			modifier = {}
+		}
+	}
+}

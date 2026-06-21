@@ -1,0 +1,6 @@
+scripted_gui = {
+	cpc_paixi_douzheng = {
+	context_type = decision_category
+	window_name = cpc_paixi_douzheng
+	}
+}

@@ -1,0 +1,51 @@
+spriteTypes = {	
+        SpriteType = {
+		name = "GFX_Jiang_Zemin"
+		texturefile = "gfx/interface/gui/CPC_zheng_quan/jiang_1.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_Hu_jintao"
+		texturefile = "gfx/interface/gui/CPC_zheng_quan/hu_2.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_CPC"
+		texturefile = "gfx/interface/gui/CPC_zheng_quan/CPC.png"
+	       
+	}
+	spriteType = {
+		name = "GFX_tuan_pai"
+		textureFile = "gfx/interface/gui/CPC_zheng_quan/gongqing_tuan.png"
+	}
+	spriteType = {
+		name = "GFX_shb"
+		textureFile = "gfx/interface/gui/CPC_zheng_quan/shang_hai_bang.png"
+	}
+	spriteType = {
+		name = "GFX_ninth_five_year_plan"
+		textureFile = "gfx/interface/gui/five_year_plan/nf_plan.png"
+	}
+	spriteType = {
+		name = "GFX_tenth_five_year_plan"
+		textureFile = "gfx/interface/gui/five_year_plan/tf_plan.png"
+	}
+	spriteType = {
+		name = "GFX_jjlt_click"
+		textureFile = "gfx/interface/gui/jjlt_click.png"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_ke_jiao_xingguo"
+		textureFile = "gfx/interface/gui/five_year_plan/ke_jiao_xingguo.png"
+	}
+	spriteType = {
+		name = "GFX_nongcun_wenti"
+		textureFile = "gfx/interface/gui/five_year_plan/nongcun_wenti.png"
+	}
+	spriteType = {
+		name = "GFX_qu_yu_fazhan"
+		textureFile = "gfx/interface/gui/five_year_plan/qu_yu_fazhan.png"
+	}
+	
+}

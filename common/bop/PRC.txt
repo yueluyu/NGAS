@@ -1,0 +1,197 @@
+PRC_power_balance = {
+	initial_value = 0.15
+	left_side = PRC_tuan_clique_side
+	right_side = PRC_Shanghai_clique_side
+	decision_category = PRC_power_balance_d
+	
+	range = {
+		id = PRC_mid_range
+		min = -0.1
+		max = 0.1
+		modifier = {
+			stability_factor = 0.05
+		}
+	}
+
+	side = {
+		id = PRC_tuan_clique_side
+		icon = GFX_tuan_pai
+
+		range = {
+			id = PRC_tuan_clique_side_a
+			min = -0.3
+			max = -0.1
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = -0.05
+				}
+				set_variable = {
+					hjt_paixi_increase = 0.05
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = tuan_pai_increase_1
+			}
+		}
+		range = {
+			id = PRC_tuan_clique_side_b
+			min = -0.5
+			max = -0.3
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = -0.1
+				}
+				set_variable = {
+					hjt_paixi_increase = 0.1
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = tuan_pai_increase_2
+			}
+		}
+		range = {
+			id = PRC_tuan_clique_side_c
+			min = -0.7
+			max = -0.5
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = -0.15
+				}
+				set_variable = {
+					hjt_paixi_increase = 0.15
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = tuan_pai_increase_3
+			}
+		}
+		range = {
+			id = PRC_tuan_clique_side_d
+			min = -0.9
+			max = -0.7
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = -0.20
+				}
+				set_variable = {
+					hjt_paixi_increase = 0.20
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = tuan_pai_increase_4
+			}
+		}
+		range = {
+			id = PRC_tuan_clique_side_e
+			min = -1.0
+			max = -0.9
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = -0.25
+				}
+				set_variable = {
+					hjt_paixi_increase = 0.25
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = tuan_pai_increase_5
+			}
+		}
+	}
+
+	side = {
+		id = PRC_Shanghai_clique_side
+		icon = GFX_shb
+
+		range = {
+			id = PRC_Shanghai_clique_side_a
+			min = 0.1
+			max = 0.3
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = 0.05
+				}
+				set_variable = {
+					hjt_paixi_increase = -0.05
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = jiang_pai_increase_1
+			}
+		}
+		range = {
+			id = PRC_Shanghai_clique_side_b
+			min = 0.3
+			max = 0.5
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = 0.1
+				}
+				set_variable = {
+					hjt_paixi_increase = -0.1
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = jiang_pai_increase_2
+			}
+		}
+		range = {
+			id = PRC_Shanghai_clique_side_c
+			min = 0.5
+			max = 0.7
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = 0.15
+				}
+				set_variable = {
+					hjt_paixi_increase = -0.15
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = jiang_pai_increase_3
+			}
+		}
+		range = {
+			id = PRC_Shanghai_clique_side_d
+			min = 0.7
+			max = 0.9
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = 0.20
+				}
+				set_variable = {
+					hjt_paixi_increase = -0.20
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = jiang_pai_increase_4
+			}
+		}
+		range = {
+			id = PRC_Shanghai_clique_side_e
+			min = 0.9
+			max = 1.0
+			on_activate = {
+				set_variable = {
+					jzm_paixi_increase = 0.25
+				}
+				set_variable = {
+					hjt_paixi_increase = -0.25
+				}
+			}
+			modifier = {
+				
+				custom_modifier_tooltip = jiang_pai_increase_5
+			}
+		}
+	}
+}

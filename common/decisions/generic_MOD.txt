@@ -1,0 +1,6255 @@
+occupation_decisions = {
+
+	OCC_SOV_fate_of_eastern_europe = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {    
+			NOT = {has_government = fascism}
+			OR = { #poland
+				AND = {
+					CZE = {owns_state = 10}
+					CZE = {is_in_faction_with = SOV}
+				}
+				owns_state = 10
+			}				
+			OR = { #hungary
+				AND = {
+					CZE = {owns_state = 43}
+					CZE = {is_in_faction_with = SOV}
+				}
+				owns_state = 43
+			}			
+			OR = { #romania
+				AND = {
+					CZE = {owns_state = 46}
+					CZE = {is_in_faction_with = SOV}
+				}
+				OR = {
+					owns_state = 46
+					ROM = {has_government = socialism}
+				}
+			}			
+			OR = { #bulgaria
+				SOV = {owns_state = 48}
+				YUG = {owns_state = 48}
+				ROM = {owns_state = 48}
+				AND = {
+					CZE = {owns_state = 48}
+					CZE = {is_in_faction_with = SOV}
+				}
+				BUL = {has_government = socialism}
+			}
+			OR = { #Slovakia
+				SOV = {owns_state = 70}
+				AND = {
+					CZE = {owns_state = 70}
+					OR = {
+						CZE = {is_in_faction_with = SOV}
+						CZE = {
+							OR = {
+								has_government = socialism
+								has_government = communism
+								has_government = reformed_communism
+							}
+						}
+					}
+				}
+			}			
+
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+			hidden_effect = {
+				GER = {
+					country_event = { id = germany_mod.2 days = 30 }
+				}
+			}
+			SOV_release_eastern_europe = yes
+			#puppet effects handled in scripted effect
+			SOV = {country_event = {id = ussr_cold_war.4}}
+		}	
+	}
+	
+	OCC_SOV_fate_of_nato_europe = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {    
+			has_global_flag = usa_agreed_to_sign_peace_in_europe
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		fire_only_once = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+			if = {
+				limit = {
+					ENG = {has_idea = usa_aligned_nation}
+				}
+				ENG = {
+					leave_faction = yes
+					remove_alignments = yes
+					clr_country_flag = ENG_war_with_soviet
+					set_country_flag = {
+						flag = ENG_war_with_soviet_complete
+						value = 1
+					}
+				}
+			}
+			else = {
+			
+			}
+			if = {
+				limit = {country_exists = SCO}
+				SCO = {
+				leave_faction = yes
+				remove_alignments = yes
+				}
+			}
+			generic_nato_lose_europe = yes		
+		}	
+	}
+
+	OCC_SOV_fate_of_nato = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {    
+			owns_state = 361		
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		fire_only_once = yes
+		selectable_mission = no
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+			every_country = {
+				remove_ideas = usa_aligned_nation
+			}
+			every_possible_country = {
+			limit = {is_in_faction_with = SOV}
+			release = USA
+			release = GRN
+			release = FAR
+			release = CAN
+			release = ICE
+			release = NIR
+			release = ENG
+			if = {
+				limit = {
+					CYP = { is_in_faction_with = USA }
+				}
+				release = CYP	
+			}
+
+			}
+			SOV = {
+			puppet = USA	
+			USA = {
+				set_cosmetic_tag = USA_com_puppet
+				remove_ideas = nation_status_superpower
+				retire_ideology_leader = communism
+				promote_character = USA_gloria_la_riva
+			
+				set_popularities = {
+					communism = 27
+					socialism = 15
+					social_democracy = 10
+					liberalism = 13
+					democratic = 35
+				}
+			}
+
+			puppet = FAR
+			FAR = {
+				set_cosmetic_tag = FAR_com_puppet
+					set_politics = {
+						ruling_party = socialism
+					}
+				set_popularities = {
+					communism = 5
+					socialism = 39
+					social_democracy = 29
+					liberalism = 17
+					democratic = 10
+				}											
+			}			
+			
+			puppet = GRN
+			GRN = {
+				set_cosmetic_tag = GRN_com_puppet
+					set_politics = {
+						ruling_party = socialism
+					}
+				set_popularities = {
+					communism = 5
+					socialism = 39
+					social_democracy = 29
+					liberalism = 17
+					democratic = 10
+				}											
+			}		
+			
+			puppet = CAN
+			CAN = {
+				set_cosmetic_tag = CAN_com_puppet
+					set_politics = {
+						ruling_party = communism
+					}
+				set_popularities = {
+					communism = 37
+					social_democracy = 30
+					liberalism = 29
+					democratic = 4
+				}
+			}	
+			
+			puppet = ICE
+			ICE = {
+				set_cosmetic_tag = ICE_com_puppet
+					set_politics = {
+						ruling_party = socialism
+					}
+				set_popularities = {
+					socialism = 40
+					social_democracy = 30
+					liberalism = 20
+					democratic = 10
+				}
+			}
+			
+			puppet = NIR
+			NIR = {
+				set_cosmetic_tag = NIR_com_puppet
+				transfer_state = 119
+				add_state_claim = 113
+				add_state_claim = 134
+				add_state_claim = 135
+				set_popularities = {
+					fascism = 25
+					social_democracy = 5
+					socialism = 35
+					communism = 35
+				}
+			}	
+			
+			puppet = ENG
+			ENG = {
+				set_cosmetic_tag = ENG_com_puppet
+					set_politics = {
+						ruling_party = communism
+					}
+				set_popularities = {
+					socialism = 20
+					liberalism = 30
+					communism = 40
+					democratic = 10
+				}
+
+			}
+			if = {
+				limit = {
+					CYP = { is_in_faction_with = USA }
+				}
+			puppet = CYP
+			CYP = {
+				set_cosmetic_tag = CYP_com_puppet
+					set_politics = {
+						ruling_party = reformed_communism
+					}
+				set_popularities = {
+					communism = 5
+					socialism = 39
+					social_democracy = 29
+					liberalism = 17
+					democratic = 10
+				}											
+			}
+			
+			}
+									
+			generic_nato_lose_europe = yes	
+			}
+		}	
+	}
+
+	OCC_SOV_fate_of_china = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = SOV	
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {    
+			owns_state = 608
+			NOT = {has_government = fascism}
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		fire_only_once = yes
+		fire_only_once = yes
+		selectable_mission = no
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+			every_country = {
+				remove_ideas = china_aligned_nation
+			}
+			
+			MON = {
+				remove_ideas = MON_split
+			}
+			every_possible_country = {
+			limit = {is_in_faction_with = SOV}
+				release = PRC
+				release = ETR
+				release = TIB
+				if = {
+					limit = {
+						NOT = {
+							CPS = {owns_state = 524}
+							CHI = {owns_state = 524}
+						}
+					}
+					release = CHI
+				}
+			}
+
+			SOV = {
+				puppet = PRC
+			}
+			
+			PRC = {
+			set_cosmetic_tag = PRC_com_puppet
+			release = TIB
+			}
+			
+			MAN = {
+			transfer_state = 761
+			transfer_state = 714
+			transfer_state = 715
+			transfer_state = 717
+			transfer_state = 328
+			transfer_state = 716
+			transfer_state = 610
+			transfer_state = 609	
+			transfer_state = 745	
+					
+			}
+			
+			SOV = {
+				puppet = MAN
+			}
+			
+			MAN = {
+				set_popularities = {
+					reformed_communism = 45
+					paternal_autocracy = 5
+					communism = 50
+				}
+			}
+			
+			ETR = {
+			transfer_state = 618
+			transfer_state = 617
+			transfer_state = 760
+			transfer_state = 287
+			transfer_state = 619
+			transfer_state = 759
+			transfer_state = 1000
+			transfer_state = 928	
+			set_cosmetic_tag = ETR_sov_puppet
+			}
+			
+			SOV = {
+				puppet = ETR
+			}
+			
+			ETR = {
+				set_popularities = {
+					communism = 45
+					socialism = 20
+					paternal_autocracy = 15
+					fascism = 20
+				}
+			}						
+			
+			SOV = {
+				puppet = TIB
+			}
+			
+			TIB = {
+				set_popularities = {
+					communism = 40
+					reformed_communism = 5
+					socialism = 5
+					paternal_autocracy = 50
+				}
+				set_cosmetic_tag = TIB_sov_puppet
+			}
+			
+			PRC = {
+				promote_character = PRC_li_lanqing
+				remove_ideas = nation_status_superpower
+				add_ideas = PRC_unpopular_administration
+				set_popularities = {
+					reformed_communism = 25
+					paternal_autocracy = 25
+					communism = 50
+				}
+				annex_country = {
+				target = MCU
+				transfer_troops = no
+				}
+				annex_country = {
+				target = HKG
+				transfer_troops = no
+				}								
+			}				
+						
+		}	
+	}
+	
+	OCC_SOV_ask_for_peace_with_nato = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			GER = {has_capitulated = yes}
+			LUX = {has_capitulated = yes}
+			HOL = {has_capitulated = yes}
+			BEL = {has_capitulated = yes}
+			ITA = {has_capitulated = yes}
+			SPR = {has_capitulated = yes}	
+			POR = {has_capitulated = yes}			
+			DEN = {has_capitulated = yes}			
+			NOR = {has_capitulated = yes}			
+			GRE = {has_capitulated = yes}		
+			if = {
+				limit = {
+					TUR = {is_in_faction_with = USA}
+				}
+				TUR = {has_capitulated = yes}				
+			}
+		}
+		
+		visible = {
+			has_war_with = USA
+			NOT = {has_government = fascism}
+		}
+		priority = 9999
+		
+		cost = 0
+		days_remove = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = { 
+			USA = {country_event = {id = peacetalks.1}}
+					
+		}	
+	}
+
+	OCC_USA_ask_for_peace_with_soviet = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			POL = {has_capitulated = yes}
+			SLO = {has_capitulated = yes}
+			HUN = {has_capitulated = yes}
+			ROM = {has_capitulated = yes}
+			if = {
+				limit = { #BUL has to be in faction with SOV and YUG must NOT own Sofia (48)
+					BUL = {is_in_faction_with = SOV}
+					NOT = {YUG = {owns_state = 48}}
+				}
+				BUL = {has_capitulated = yes}			
+			}	
+			if = {
+				limit = {YUG = {is_in_faction_with = SOV}}
+				YUG = {has_capitulated = yes}				
+			}	
+			if = {
+				limit = {ALB = {is_in_faction_with = SOV}}
+				ALB = {has_capitulated = yes}					
+			}			
+		}
+		
+		visible = {
+			has_war_with = SOV
+		}
+		priority = 9999
+		
+		cost = 0
+		days_remove = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = { 
+			SOV = {country_event = {id = peacetalks.4}}
+			SOV = { set_country_flag = SOV_achivement_lost }
+			USA = { set_country_flag = SOV_achivement_lost_win }
+		}	
+	}
+	
+	OCC_USA_fate_of_soviet_europe = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {    
+			has_global_flag = sov_agreed_to_sign_peace_in_europe
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		fire_only_once = yes
+		selectable_mission = no
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+			SOV = { set_country_flag = SOV_achivement_lost }
+			USA = { set_country_flag = SOV_achivement_lost_win }
+
+			end_puppet = POL
+			POL = {
+				set_politics = {
+					ruling_party = social_democracy
+					last_election = "1998.9.8"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 25
+					social_democracy = 47
+					fascism = 13
+					communism = 5
+					neutrality = 10
+				}
+				drop_cosmetic_tag = yes
+			}
+			end_puppet = SLO
+			SLO = {
+				set_politics = {
+					ruling_party = social_democracy
+					last_election = "1930.11.9"
+					election_frequency = 48
+					elections_allowed = no
+				}
+
+				set_popularities = {
+					communism = 3
+					reformed_communism = 0
+					social_democracy = 32
+					liberalism = 0
+					democratic = 20
+					neutrality = 32
+					paternal_autocracy = 10 #hungarian minority 
+					fascism = 3 #SLOTA HOLY SHIT SLOTA PARTY
+				}
+				drop_cosmetic_tag = yes
+			}
+			end_puppet = HUN
+			HUN = {
+				set_politics = {
+					ruling_party = democratic
+					last_election = "2000.3.31"
+					election_frequency = 48
+					elections_allowed = no #elections by events
+				}
+				set_popularities = {
+					democratic = 30
+					socialism = 10
+					social_democracy = 30
+					liberalism = 10
+					fascism = 7
+					paternal_autocracy = 3
+					communism = 4
+					neutrality = 6
+				}
+				drop_cosmetic_tag = yes
+			}
+			end_puppet = ROM
+			ROM = {
+				set_politics = {
+					ruling_party = social_democracy
+					last_election = "1930.11.9"
+					election_frequency = 48
+					elections_allowed = no
+				}
+
+				set_popularities = {
+					communism = 0
+					reformed_communism = 0
+					neutrality = 7 #hungarians
+					social_democracy = 35
+					liberalism = 15
+					democratic = 10
+					neutrality = 6
+					paternal_autocracy = 0
+					fascism = 27
+				}
+				drop_cosmetic_tag = yes
+			}
+			end_puppet = BUL
+			BUL = {
+				set_politics = {
+					ruling_party = democratic
+					last_election = "1930.11.9"
+					election_frequency = 48
+					elections_allowed = no
+				}
+
+				set_popularities = {
+					communism = 0
+					liberalism = 20
+					social_democracy = 36
+					paternal_autocracy = 5
+					democratic = 35
+					neutrality = 4
+					fascism = 0
+				}
+				drop_cosmetic_tag = yes
+			}
+			end_puppet = FIN
+			FIN = {
+				set_politics = {
+					ruling_party = social_democracy
+					last_election = "1930.11.9"
+					election_frequency = 48
+					elections_allowed = no
+				}
+
+				set_popularities = {
+					communism = 0
+					liberalism = 30
+					social_democracy = 29
+					paternal_autocracy = 0
+					democratic = 31
+					neutrality = 0
+					fascism = 10
+				}
+				drop_cosmetic_tag = yes
+			}			
+			USA = { add_to_faction = POL }
+			USA = { add_to_faction = SLO }
+			USA = { add_to_faction = HUN }
+			USA = { add_to_faction = ROM }
+			USA = { add_to_faction = BUL }
+			USA = { add_to_faction = FIN }
+			
+			if = {
+				limit = {YUG = {is_in_faction_with = SOV}}
+				end_puppet = YUG
+				YUG = {
+					set_politics = {
+						ruling_party = liberalism
+						last_election = "1991.5.3"
+						election_frequency = 36
+						elections_allowed = no
+					}
+					
+					set_popularities = {
+						liberalism = 34
+						social_democracy = 15 
+						democratic = 15
+						fascism = 16
+						paternal_autocracy = 5
+						reformed_communism = 15
+						communism = 0
+					}
+					drop_cosmetic_tag = yes
+					set_cosmetic_tag = YUG
+				}
+				end_puppet = ALB
+				ALB = {
+					set_politics = {
+						ruling_party = socialism
+					}
+					set_popularities = {
+						communism = 0
+						reformed_communism = 5
+						socialism = 40
+						liberalism = 15
+						democratic = 25
+						neutrality = 0
+						fascism = 15
+					}
+					drop_cosmetic_tag = yes
+				}
+				USA = { add_to_faction = YUG }
+				USA = { add_to_faction = ALB }
+			}				
+
+			if = {
+				limit = { 
+					CZE = {
+						AND = {
+							is_in_faction_with = SOV 
+							has_country_flag = CZE_havel_live 
+						}
+					}
+				}
+				end_puppet = CZE
+				CZE = {
+					set_politics = {
+						ruling_party = liberalism
+						last_election = "1930.11.9"
+						election_frequency = 48
+						elections_allowed = no
+					}
+
+					set_popularities = {
+						reformed_communism = 0
+						communism = 0
+						socialism = 10
+						social_democracy = 21
+						liberalism = 34
+						democratic = 20
+						neutrality = 0
+						paternal_autocracy = 0
+						fascism = 15
+					}
+					outlaw_liberalism = yes
+					outlaw_social_democracy = yes
+					outlaw_conservatism = yes
+					outlaw_nationalism = yes
+					outlaw_paternal_autocracy = yes
+					outlaw_authdem = yes
+					outlaw_socialism = yes
+					outlaw_reformed_communism = yes
+					outlaw_communism = yes
+					drop_cosmetic_tag = yes
+					set_cosmetic_tag = CZE_democratic_federation
+					create_country_leader = {
+						name = CZE_vaclav_havel
+						desc = ""
+						picture = "gfx/leaders/CZE/Vaclav_Havel_2.png"
+						ideology = social_liberalism
+						traits = { president_liberator }
+					}
+					set_capital = { state = 9 }
+					load_focus_tree = generic_focus
+
+					annex_country = {
+						target = YUN
+						transfer_troops = no
+					}
+					annex_country = {
+						target = SLO
+						transfer_troops = no
+					}
+
+				}
+				USA = { add_to_faction = CZE }
+
+			}
+			
+			if = {
+				limit = { 
+					CZE = {
+						AND = {
+							is_in_faction_with = SOV 
+							NOT = { has_country_flag = CZE_havel_live }
+						}
+					}
+				}
+				end_puppet = CZE
+				CZE = {
+					set_politics = {
+						ruling_party = democratic
+						last_election = "1930.11.9"
+						election_frequency = 48
+						elections_allowed = no
+					}
+
+					set_popularities = {
+						reformed_communism = 0
+						communism = 0
+						socialism = 10
+						social_democracy = 21
+						liberalism = 20
+						democratic = 34
+						neutrality = 0
+						paternal_autocracy = 0
+						fascism = 15
+					}
+					set_party_name = { ideology = liberalism long_name = CZE_liberalism_party_after name = CZE_liberalism_party_after }
+					set_party_name = { ideology = democratic long_name = CZE_democratic_party_r name = CZE_democratic_party_r }
+					set_party_name = { ideology = fascism long_name = CZE_fascism_party_long_r name = CZE_fascism_party_r }
+					set_party_name = { ideology = neutrality long_name = "Anocracy" name = "Anocracy" }
+					set_party_name = { ideology = socialism long_name = CZE_czechia_socialism_party name = CZE_czechia_socialism_party }
+					outlaw_reformed_communism = yes
+					outlaw_communism = yes
+					set_party_name = { ideology = social_democracy long_name = CZE_czechia_social_democracy_party name = CZE_czechia_social_democracy_party }	
+					set_party_name = { ideology = paternal_autocracy long_name = CZE_czechia_paternal_autocracy_party name = CZE_czechia_paternal_autocracy_party }					
+					drop_cosmetic_tag = yes
+					set_cosmetic_tag = CZE_democratic
+					create_country_leader = {
+						name = CZE_vaclav_klaus
+						desc = ""
+						picture = "gfx/leaders/CZE/Vaclav_Klaus.png"
+						ideology = liberal_conservatism
+						traits = { economic_reformist }
+					}
+					set_capital = { state = 9 }
+					load_focus_tree = generic_focus
+					annex_country = {
+						target = YUN
+						transfer_troops = no
+					}
+				}
+				USA = { add_to_faction = CZE }
+
+				SLO = {
+					70 = {add_core_of = SLO}
+					71 = {add_core_of = SLO}
+					664 = {add_core_of = SLO}
+					transfer_state = 71
+					transfer_state = 70
+					transfer_state = 664
+					load_focus_tree = generic_focus
+					set_cosmetic_tag = SLO_democratic
+				}
+				USA = { add_to_faction = SLO }
+			}
+
+			if = {
+				limit = { CYP = {is_in_faction_with = SOV }}
+				puppet = CYP
+				CYP = {
+				set_politics = {
+					ruling_party = democratic
+				}
+				set_popularities = {
+					communism = 15
+					reformed_communism = 0
+					social_democracy = 37
+					liberalism = 13
+					democratic = 25
+					neutrality = 0
+					paternal_autocracy = 0
+					fascism = 10
+				}
+				USA = { add_to_faction = CYP }											
+			}
+			}
+			
+		}	
+	}
+	
+	OCC_SAU_fate_of_northern_arabia = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = SAU
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {   #both baghdad and damascus must be owned by Saudi Arabia or one of their Allies 
+			has_war = no
+			291 = {
+				OR = {
+					is_owned_by = SAU
+					is_owned_by = YEM
+					is_owned_by = UAE
+					is_owned_by = OMA
+					AND = {
+						is_owned_by = PER
+						PER = { has_cosmetic_tag = PER_kingdom }
+					}
+				}
+			}
+			554 = {
+				OR = {
+					is_owned_by = SAU
+					is_owned_by = YEM
+					is_owned_by = UAE
+					is_owned_by = OMA
+					AND = {
+						is_owned_by = PER
+						PER = { has_cosmetic_tag = PER_kingdom }
+					}
+				}
+			}
+			TUR = {
+				is_faction_leader = no
+			}
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = {
+			SAU = {
+				dismantle_faction = yes
+			}
+			news_event = {id = old_times_news.132}	
+			every_state = {
+				limit = { OR = { is_core_of = IRQ is_core_of = SYR is_core_of = KUW } }
+				owner = {
+					release = IRQ
+					release = SYR
+					release = KUW
+				}
+			}
+			USA = {
+				USA_clear_ws_middle_east = yes
+				USA_ws_middle_east_win = yes
+				USA_ADCON_TO_2 = yes
+			}
+			if = {
+				limit = { PER = { is_subject = yes } }
+				end_puppet = PER
+			}
+			end_puppet = KUR
+			end_puppet = SYR
+			end_puppet = IRQ
+
+			SAU = {
+				puppet = IRQ
+				puppet = SYR
+			}
+			
+			SYR = {
+				set_politics = {
+					ruling_party = liberalism
+				}							
+				set_popularities = {
+					liberalism = 35
+					democratic = 20
+					fascism = 10
+					social_democracy = 35
+				}
+				
+				transfer_state = 908
+				transfer_state = 680
+				transfer_state = 677
+				transfer_state = 554
+				transfer_state = 1038
+				transfer_state = 1052
+				transfer_state = 1039
+				transfer_state = 1054
+				transfer_state = 1037
+				
+				transfer_state = 908
+				
+				release = IRQ
+				set_cosmetic_tag = SYR
+				
+				replace_alignment_to_USA = yes
+				
+				release = KUW
+			}
+
+			IRQ = {
+				set_cosmetic_tag = IRQ_kingdom
+				load_focus_tree = generic_focus
+				
+				promote_character = IRQ_sharif_hussein
+				replace_alignment_to_USA = yes
+				
+				set_popularities = {
+					paternal_autocracy = 35
+					fascism = 5
+					communism = 15
+					democratic = 20
+					socialism = 25
+				}
+				
+				set_party_name = {
+					ideology = paternal_autocracy
+					name = IRQ_unbanned_paternal_autocracy_alt_party
+					long_name = IRQ_unbanned_paternal_autocracy_alt_party_long
+				}
+				transfer_state = 925
+				transfer_state = 676
+				transfer_state = 291
+				transfer_state = 675
+				transfer_state = 924
+				
+				908 = {
+					if = {
+						limit = { is_core_of = IRQ }
+						remove_core_of = IRQ
+						add_core_of = SYR
+						transfer_state_to = SYR
+					}
+					else = {
+						transfer_state_to = SYR
+					}
+				}
+				
+				413 = {
+					if = {
+						limit = { is_owned_by = IRQ }
+						transfer_state_to = PER
+						add_core_of = PER
+						remove_core_of = IRQ
+						remove_claim_by = IRQ
+						set_state_name = STATE_413
+						PER = { add_ideas = PER_oil_producers }
+					}
+				}
+				1022 = {
+					if = {
+						limit = { is_owned_by = IRQ }
+						transfer_state_to = PER
+						add_core_of = PER
+						remove_core_of = IRQ
+						remove_claim_by = IRQ
+						set_state_name = STATE_1022
+					}
+				}
+				1034 = {
+					if = {
+						limit = { is_owned_by = IRQ }
+						transfer_state_to = PER
+						add_core_of = PER
+						remove_claim_by = IRQ
+					}
+				}
+				925 = {
+					if = {
+						limit = { is_owned_by = IRQ }
+						transfer_state_to = PER
+						add_core_of = PER
+						remove_core_of = IRQ
+					}
+				}
+				
+				release = KUW
+			}
+			
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = yes
+					PER = { has_cosmetic_tag = PER_kingdom }
+				}
+				news_event = { id = old_times_news.431 days = 32 random_days = 8 }
+			}
+			else = {
+				every_neighbor_country = {
+					limit = { is_faction_leader = yes }
+					dismantle_faction = yes
+				}
+			}
+		}	
+	}
+	
+	OCC_SAU_fate_of_ato = {
+		name = "Fate of ATO"
+		
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = SAU
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {   #beirut OR HZB EXISTS, baghdad and damascus must be owned by Saudi Arabia or one of their Allies. Turkey must be faction leader
+			has_war = no
+			291 = {
+				OR = {
+					is_owned_by = SAU
+					is_owned_by = YEM
+					is_owned_by = UAE
+					is_owned_by = OMA
+					is_owned_by = IRQ
+				}
+			}
+			554 = {
+				OR = {
+					is_owned_by = SAU
+					is_owned_by = YEM
+					is_owned_by = UAE
+					is_owned_by = OMA
+					is_owned_by = IRQ
+				}
+			}
+			OR = {
+				553 = {
+					OR = {
+						is_owned_by = SAU
+						is_owned_by = YEM
+						is_owned_by = UAE
+						is_owned_by = OMA
+						is_owned_by = IRQ
+					}
+				}	
+				HZB = {country_exists = yes}
+			}
+			TUR = {
+				is_faction_leader = yes
+			}
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = {
+			release = SYR
+			release = KUR
+			release = LEB
+			news_event = {id = old_times_news.132}	
+			every_possible_country = {
+				limit = {is_ally_with = SAU}
+					release = SYR
+					release = KUR
+					release = LEB
+			}
+
+
+			SAU = {
+				dismantle_faction = yes
+			}
+			TUR = {
+				dismantle_faction = yes
+			}
+			
+			USA = {
+				USA_clear_ws_middle_east = yes
+				USA_ws_middle_east_win = yes
+				USA_ADCON_TO_2 = yes
+			}
+
+			SAU = {
+				puppet = SYR
+			}
+			
+			SYR = {
+				set_politics = {
+					ruling_party = liberalism
+				}							
+				set_popularities = {
+					liberalism = 35
+					democratic = 20
+					fascism = 10
+					social_democracy = 35
+				}
+				
+				transfer_state = 908
+				transfer_state = 680
+				transfer_state = 677
+				transfer_state = 554
+				transfer_state = 1038
+				transfer_state = 1052
+				transfer_state = 1039
+				transfer_state = 1054
+				transfer_state = 1037
+				
+				transfer_state = 908
+				transfer_state = 799
+				
+				set_cosmetic_tag = SYR
+				
+				replace_alignment_to_USA = yes
+				
+			}
+			
+			if = {
+				limit = {
+					LEB = {
+						has_government = neutrality
+					}
+				}
+				release = LEB
+				SAU = {puppet = LEB}
+				LEB = {
+					set_politics = {
+						ruling_party = democratic
+					}
+					set_popularities = {
+						paternal_autocracy = 25
+						neutrality = 25
+						democratic = 35
+						liberalism = 10
+						fascism = 5
+					}					
+				}
+			}
+			
+			KUR = {
+				transfer_state = 350
+				transfer_state = 352
+			}
+			
+			if = {
+				limit = {
+					KUR = {
+						has_government = democratic
+					}
+				}
+				KUR = {
+					transfer_state = 908
+					transfer_state = 1053
+					transfer_state = 1040
+				}
+			}
+			else = {
+				IRQ = {
+					transfer_state = 676
+					transfer_state = 1041
+				}
+			}
+			
+			TUR = {
+				TUR_modify_cohesion_negatively = yes
+				TUR_modify_cohesion_negatively = yes
+				TUR_modify_cohesion_negatively = yes
+				TUR_modify_cohesion_negatively = yes
+			}
+			
+			every_neighbor_country = {
+				limit = { is_faction_leader = yes }
+				dismantle_faction = yes
+			}
+		}	
+	}
+	
+	OCC_SAU_fate_of_persia = {
+		
+		icon = generic_prepare_civil_war
+		
+		allowed = { original_tag = SAU }
+		available = { always = no }
+		
+		activation = {
+			has_war = no
+			266 = {
+				OR = {
+					is_owned_by = SAU
+					is_owned_by = OMA
+					is_owned_by = UAE
+					is_owned_by = YEM
+				}
+			}
+			NOT = {
+				has_country_flag = SAU_fate_of_persia_negative
+			}
+		}
+		
+		visible = {		has_war = no		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 3
+		ai_will_do = {		factor = 0		}
+		
+		timeout_effect = {
+			hidden_effect = { SAU = { release_puppet_on_controlled = PER } }
+			PER = {
+				hidden_effect = {
+					transfer_state = 413
+					transfer_state = 421
+					transfer_state = 1021
+					transfer_state = 1022
+					set_popularities = {
+						liberalism = 25
+						democratic = 30
+						neutrality = 10
+						paternal_autocracy = 30
+						social_democracy = 5
+					}
+				}
+				
+				if = {
+					limit = { is_in_faction = yes }
+					dismantle_faction = yes
+				} custom_effect_tooltip = generic_skip_one_line_tt
+				
+				retire_ideology_leader = paternal_autocracy
+				promote_character = PER_reza_pahlavi
+				custom_effect_tooltip = generic_skip_one_line_tt
+				set_politics = {
+					ruling_party = paternal_autocracy
+					name = PER_monarchic_party
+					long_name = PER_monarchic_party_n_long
+				} custom_effect_tooltip = generic_skip_one_line_tt
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = PER_kingdom
+				remove_ideas = PER_home_of_islam_rev
+				replace_alignment_to_USA = yes
+			}
+		}
+	}
+
+	OCC_IRQ_fate_of_arabia = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = IRQ
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {
+			has_war = no
+			292 = {
+				OR = {
+					is_owned_by = IRQ
+					AND = {
+						is_owned_by = SYR
+						SYR = {is_subject_of = IRQ}
+					}			
+				}
+			}
+			294 = {
+				OR = {
+					is_owned_by = IRQ
+					AND = {
+						is_owned_by = SYR
+						SYR = {is_subject_of = IRQ}
+					}
+				}
+			}
+			658 = {
+				OR = {
+					is_owned_by = IRQ
+					AND = {
+						is_owned_by = SYR
+						SYR = {is_subject_of = IRQ}
+					}	
+				}
+			}
+			293 = {
+				OR = {
+					is_owned_by = IRQ
+					AND = {
+						is_owned_by = SYR
+						SYR = {is_subject_of = IRQ}
+					}
+				}
+			}					
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+			release = SAU
+			release = YEM
+			release = OMA
+			release = UAE
+			every_possible_country = {
+				limit = {is_subject_of = IRQ}
+				release = SAU
+				release = YEM
+				release = OMA
+				release = UAE
+			}
+			if = {
+				limit = {BGD = {has_completed_focus = IRQ_greater_iraq}}
+				news_event = {id = old_times_news.131}	
+				BGD = {
+					puppet = SAU
+				}
+				SAU = {
+					remove_alignments = yes
+					set_cosmetic_tag = SAU_iraq_puppet
+
+					set_popularities = {
+						socialism = 25
+						paternal_autocracy = 50
+						fascism = 25
+					}
+					
+					set_party_name = {
+						ideology = fascism
+						name = baath_party
+						long_name = baath_party_long
+					}
+					
+					set_party_name = {
+						ideology = socialism
+						name = baath_party
+						long_name = baath_party_long
+					}								
+					
+				}
+				BGD = {
+					puppet = OMA
+				}
+
+				OMA = {
+					remove_alignments = yes
+					set_cosmetic_tag = OMA_iraq_puppet
+
+					set_popularities = {
+						socialism = 15
+						fascism = 15
+						paternal_autocracy = 35
+						neutrality = 25
+					}
+					
+					set_party_name = {
+						ideology = fascism
+						name = baath_party
+						long_name = baath_party_long
+					}
+					
+					set_party_name = {
+						ideology = socialism
+						name = baath_party
+						long_name = baath_party_long
+					}
+					
+				}	
+				SAU = {
+					annex_country = {
+					target = UAE
+					transfer_troops = no
+					}
+				}			
+					
+					BGD = {
+						puppet = YEM
+					}
+
+					YEM = {
+						set_cosmetic_tag = YEM_iraq_puppet
+						retire_ideology_leader = fascism
+						set_popularities = {
+							socialism = 20
+							democratic = 5
+							neutrality = 15
+							liberalism = 15
+							paternal_autocracy = 20
+							fascism = 25
+						}
+						transfer_state = 293
+						transfer_state = 659
+						transfer_state = 1050
+						add_state_core = 1050
+						
+						set_party_name = {
+							ideology = fascism
+							name = baath_party
+							long_name = baath_party_long
+						}
+						
+						set_party_name = {
+							ideology = socialism
+							name = baath_party
+							long_name = baath_party_long
+						}
+						
+					}				
+			}
+			
+			else_if = {
+				news_event = {id = old_times_news.130}	
+				BGD = {
+					annex_country = {
+					target = SAU
+					transfer_troops = no
+					}
+				}
+				annex_country = {
+					target = YEM
+					transfer_troops = no
+				}
+				annex_country = {
+					target = UAE
+					transfer_troops = no
+				}
+				annex_country = {
+					target = OMA
+					transfer_troops = no
+				}				
+			}
+			
+			USA = {
+				USA_clear_ws_middle_east = yes
+				USA_ws_middle_east_lose = yes
+				USA_ADCON_TO_2 = yes
+			}
+			
+			TUR = {
+				TUR_modify_cohesion_negatively = yes
+				TUR_modify_cohesion_negatively = yes
+			}	
+			
+		}	
+	}
+
+	OCC_DYR_fate_of_arabia = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = DYR
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {    
+			has_war = no
+			292 = {
+				is_owned_by = DYR		
+			}
+			294 = {
+				is_owned_by = DYR	
+			}
+			658 = {
+				is_owned_by = DYR	
+			}
+			293 = {
+				is_owned_by = DYR	
+			}	
+			291 = {
+				is_owned_by = DYR	
+			}					
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					owns_state = 266
+				}
+			}
+			every_owned_state = {
+				add_core_of = DYR
+			}
+			news_event = {id = old_times_news.129}		
+			USA = {
+				USA_clear_ws_middle_east = yes
+				USA_ws_middle_east_lose = yes
+				USA_ADCON_TO_2 = yes
+			}
+			TUR = {
+				TUR_modify_cohesion_negatively = yes
+				TUR_modify_cohesion_negatively = yes
+			}	
+		}	
+	}
+
+	OCC_SYR_fate_of_arabia = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = SYR
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {    
+			has_war = no
+			292 = {
+				is_owned_by = SYR		
+			}
+			294 = {
+				is_owned_by = SYR	
+			}
+			658 = {
+				is_owned_by = SYR	
+			}
+			293 = {
+				is_owned_by = SYR	
+			}	
+			291 = {
+				is_owned_by = SYR	
+			}					
+		
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+			every_owned_state = {
+				add_core_of = SYR
+			}
+			
+			USA = {
+				USA_clear_ws_middle_east = yes
+				USA_ws_middle_east_lose = yes
+				USA_ADCON_TO_2 = yes
+			}
+			TUR = {
+				TUR_modify_cohesion_negatively = yes
+				TUR_modify_cohesion_negatively = yes
+			}				
+			country_event = {id = baath_cw.13 days = 30}
+			annex_country = {
+				target = JOR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = LEB
+				transfer_troops = no
+			}				
+		}	
+	}
+
+	OCC_PER_fate_of_arabia = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = PER
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {
+			has_war = no
+			NOT = { PER = { has_cosmetic_tag = PER_SHIA_CALIPHATE } }
+			292 = {
+				OR = {
+					is_owned_by = PER
+					AND = {
+						is_owned_by = SYR
+						SYR = {is_subject_of = PER}
+					}
+					AND = {
+						is_owned_by = IRQ
+						IRQ = {is_subject_of = PER}
+					}	
+					AND = {
+						is_owned_by = KUR
+						KUR = {is_subject_of = PER}
+					}						
+				}
+			}
+			294 = {
+				OR = {
+					is_owned_by = PER
+					AND = {
+						is_owned_by = SYR
+						SYR = {is_subject_of = PER}
+					}
+					AND = {
+						is_owned_by = IRQ
+						IRQ = {is_subject_of = PER}
+					}	
+					AND = {
+						is_owned_by = KUR
+						KUR = {is_subject_of = PER}
+					}						
+				}
+			}
+			658 = {
+				OR = {
+					is_owned_by = PER
+					AND = {
+						is_owned_by = SYR
+						SYR = {is_subject_of = PER}
+					}
+					AND = {
+						is_owned_by = IRQ
+						IRQ = {is_subject_of = PER}
+					}	
+					AND = {
+						is_owned_by = KUR
+						KUR = {is_subject_of = PER}
+					}						
+				}
+			}
+			293 = {
+				OR = {
+					is_owned_by = PER
+					AND = {
+						is_owned_by = SYR
+						SYR = {is_subject_of = PER}
+					}
+					AND = {
+						is_owned_by = IRQ
+						IRQ = {is_subject_of = PER}
+					}	
+					AND = {
+						is_owned_by = KUR
+						KUR = {is_subject_of = PER}
+					}						
+				}
+			}					
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = { factor = 12 }
+		timeout_effect = {
+			hidden_effect = {
+				SAU = { remove_alignments = yes }
+				random_list = {
+					97 = {
+						add_to_variable = { IRI_Dubs_Counter = 1 }
+						release = SAU
+						release = YEM
+						release = OMA
+						release = UAE
+						every_possible_country = {
+							limit = {is_subject_of = PER}
+							release = SAU
+							release = YEM
+							release = OMA
+							release = UAE
+						}
+						puppet = SAU			
+						SAU = {
+							retire_ideology_leader = paternal_autocracy
+							promote_character = SAU_al_nasser
+							set_cosmetic_tag = SAU_iran_puppet
+							transfer_state = 293
+							transfer_state = 976
+							transfer_state = 659
+							transfer_state = 975
+							transfer_state = 294
+							transfer_state = 658
+							transfer_state = 957
+							transfer_state = 1050
+							set_party_name = {
+								ideology = paternal_autocracy
+								name = SAU_paternal_autocracy_alt_party
+								long_name = SAU_paternal_autocracy_alt_party
+							}
+							set_politics = {
+								ruling_party = paternal_autocracy
+								last_election = "1936.1.1"
+								election_frequency = 48
+								elections_allowed = no
+							}
+							set_popularities = {
+								paternal_autocracy = 65
+								neutrality = 25
+								fascism = 10
+							}
+							annex_country = {
+								target = YEM
+								transfer_troops = yes
+							}
+							annex_country = {
+								target = UAE
+								transfer_troops = yes
+							}
+							annex_country = {
+								target = OMA
+								transfer_troops = yes
+							}
+							add_ideas = PER_Islamic_Revolutionary_Stronghold
+						}
+						PER = {
+							replace_alignment_to_IRI = yes
+							transfer_state = 934
+							transfer_state = 957
+							SE_core_every_state = yes
+							set_portraits = { civilian = { large = "gfx/leaders/IRN/Ali_Khamenei_delighted.jpg" } }
+						}
+						every_possible_country = {
+							limit = { is_subject_of = PER }
+							replace_alignment_to_IRI = yes
+						}
+						
+						if = {			# Islamic Radical Left
+							limit = { has_country_flag = IRI_RADICAL_LEFT_FLAG }
+							news_event = per_axis_news.1
+						}
+						else_if = {	# Islamic Radical Right
+							limit = { has_country_flag = IRI_RADICAL_RIGHT_FLAG }
+							news_event = per_axis_news.2
+						}
+						else_if = {	# Moderate Right
+							limit = { has_country_flag = IRI_NON_RADICAL_FLAG	has_idea = rafsanjani_is_president }
+							news_event = per_axis_news.3
+						}
+						else = {		# Moderate Left
+							news_event = per_axis_news.4
+						}
+					}
+					3 = {
+						every_other_country = {
+							limit = { is_subject_of = PER }
+							PER = {
+								dismantle_faction = yes
+								annex_country = { target = PREV transfer_troops = yes }
+								set_cosmetic_tag = PER_SHIA_CALIPHATE
+							}
+						}
+						set_cosmetic_tag = PER_SHIA_CALIPHATE
+						PER_ali_khamenei = {
+							set_character_name = PER_ali_khamenei_caliph
+							set_portraits = { civilian = { large = "gfx/leaders/IRN/khamenei_butholyshitheisacaliph.png" } }
+						}
+						every_owned_state = { add_core_of = PER }
+						add_ideas = PER_hazrat_ali_gaming
+						set_capital = {
+							state = 675
+							remember_old_capital = yes
+						}
+						
+						set_global_flag = Super_Event_Visible
+						set_global_flag = Halal_State_Unification
+						play_song = "super_halal_state_unification"
+					}
+				}
+			}
+			PER = {
+				set_country_flag = PER_gamer_win
+				swap_ideas = { add_idea = PER_halal_shia_gaming		remove_idea = PER_home_of_islam_rev }
+				swap_ideas = { add_idea = PER_oil_producers_op		remove_idea = PER_oil_producers }
+			}
+			
+			USA = {
+				USA_clear_ws_middle_east = yes
+				USA_ws_middle_east_lose = yes
+				USA_ADCON_TO_2 = yes
+			}
+			
+			TUR = {
+				TUR_modify_cohesion_negatively = yes
+				TUR_modify_cohesion_negatively = yes
+				TUR_modify_cohesion_negatively = yes
+			}	
+		}	
+	}
+
+	OCC_TUR_fate_of_arabia = {
+		icon = generic_prepare_civil_war
+	
+		allowed = { original_tag = TUR }
+		available = { hidden_trigger = { always = no } }
+		
+		activation = {
+			has_war = no
+			OR = {
+				AND = {
+					TUR = { is_faction_leader = yes }
+					291 = {
+						OR = {
+							is_owned_by = TUR
+							is_owned_by = SYR
+							AND = {
+								is_owned_by = LEB
+								LEB = {is_in_faction_with = TUR}
+							}
+						}
+					}
+					292 = {
+						OR = {
+							is_owned_by = TUR
+							is_owned_by = SYR
+							AND = {
+								is_owned_by = LEB
+								LEB = {is_in_faction_with = TUR}
+							}
+						}
+					}
+					294 = {
+						OR = {
+							is_owned_by = TUR
+							is_owned_by = SYR
+							AND = {
+								is_owned_by = LEB
+								LEB = {is_in_faction_with = TUR}
+							}
+						}
+					}
+					658 = {
+						OR = {
+							is_owned_by = TUR
+							is_owned_by = SYR
+							AND = {
+								is_owned_by = LEB
+								LEB = {is_in_faction_with = TUR}
+							}
+						}
+					}
+					293 = {
+						OR = {
+							is_owned_by = TUR
+							is_owned_by = SYR
+							AND = {
+								is_owned_by = LEB
+								LEB = {is_in_faction_with = TUR}
+							}
+						}
+					}
+				}
+				AND = {
+					has_country_flag = TUR_endgame_war_with_IRQ_special_case
+					IRQ = {
+						OR = {
+							exists = no
+							has_capitulated = yes
+						}
+					}
+				}
+			}
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+
+		timeout_effect = {
+			hidden_effect = {
+				TUR = { country_event = {id = turkey_mod.24} }
+				release = SAU
+				release = YEM
+				release = OMA
+				release = UAE
+				release = KUW
+				release = IRQ
+				every_possible_country = {
+					limit = { is_ally_with = TUR }
+					release = SAU
+					release = YEM
+					release = OMA
+					release = UAE
+					release = KUW
+					release = IRQ
+				}
+				TUR = {
+					puppet = SAU
+				}
+				SAU = {
+					promote_character = SAU_yahya_assiri 
+					#the original idea was to have khoshiggi installed to serve as a moderate face
+					#and there would be a small internal conflict inside of ATO between the two
+					#however that is too out of scope currently so we'll just have assiri
+					set_cosmetic_tag = SAU_republic
+					remove_alignments = yes								
+					set_politics = {
+						ruling_party = neutrality
+					}
+					set_popularities = {
+						paternal_autocracy = 40
+						neutrality = 20
+						liberalism = 10
+						democratic = 30
+					}					
+				}
+				TUR = {
+					puppet = OMA
+				}
+
+				OMA = {
+					remove_alignments = yes
+					set_politics = {
+						ruling_party = neutrality
+					}
+					set_popularities = {
+						paternal_autocracy = 40
+						neutrality = 40
+						democratic = 20
+					}		
+					set_party_name = {
+						ideology = neutrality
+						name = TUR_republican_association_party
+						long_name = TUR_republican_association_party
+					}
+				}
+				TUR = {
+					puppet = YEM
+				}
+
+				YEM = {
+					remove_alignments = yes
+					set_politics = {
+						ruling_party = neutrality
+					}
+					set_popularities = {
+						fascism = 35
+						neutrality = 65
+					}
+				}
+				
+				TUR = {
+					puppet = IRQ
+					IF = {
+						LIMIT = { has_country_flag = TUR_endgame_war_with_IRQ_special_case }
+						clr_country_flag = TUR_endgame_war_with_IRQ_special_case
+					}
+				}
+
+				IRQ = {
+					remove_alignments = yes
+					transfer_state = 925
+					set_politics = {
+						ruling_party = fascism
+					}
+					set_popularities = {
+						fascism = 35
+						democratic = 15
+						neutrality = 20
+						liberalism = 10
+						paternal_autocracy = 20
+					}
+					promote_character = IRQ_saleh_al_mutlaq
+				}
+				
+				TUR = {
+					puppet = UAE
+				}
+
+				UAE = {
+					remove_alignments = yes
+					set_politics = {
+						ruling_party = neutrality
+					}
+					set_popularities = {
+						paternal_autocracy = 40
+						neutrality = 40
+						democratic = 20
+					}	
+					set_party_name = {
+						ideology = neutrality
+						name = TUR_republican_association_party
+						long_name = TUR_republican_association_party
+					}				
+				}	
+				
+				TUR = {
+					puppet = KUW
+					news_event = {id = old_times_news.445}
+				}
+				
+				KUW = {
+					remove_alignments = yes
+					set_politics = {
+						ruling_party = neutrality
+					}
+					set_popularities = {
+						paternal_autocracy = 40
+						neutrality = 40
+						democratic = 20
+					}					
+					retire_ideology_leader = neutrality 
+					promote_character = KUW_republican_association
+					set_party_name = {
+						ideology = neutrality
+						name = TUR_republican_association_party
+						long_name = TUR_republican_association_party
+					}				
+				}		
+				
+				every_country = {
+					limit = {
+						is_subject_of = TUR
+					}
+					add_ideas = religion__irreligion
+				}
+				
+				USA = {
+					USA_clear_ws_middle_east = yes
+					USA_ws_middle_east_lose = yes
+					USA_ADCON_TO_2 = yes
+				}
+				
+				IF = { # Failsafe in-case SYR got chuckled off
+					LIMIT = {
+						SYR = {
+							OR = {
+								exists = no
+								is_subject_of = IRQ
+								has_capitulated = yes
+							}
+							NOT = { is_subject_of = TUR }
+						}
+					}
+					TUR = {
+						release_puppet_on_controlled = SYR
+						SYR = {
+							IF = {
+								LIMIT = { NOT = { has_country_leader = { character = SYR_rifaat_al_assad ruling_only = yes } } }
+								retire_country_leader = yes
+								remove_ideas = SYR_fine_line
+								promote_character = SYR_rifaat_al_assad
+								remove_alignments = yes
+								set_politics = { ruling_party = paternal_autocracy }
+								set_popularities = {
+									democratic = 15
+									paternal_autocracy = 55
+									socialism = 30
+								}
+								set_cosmetic_tag = SYR
+							}
+						}
+					}
+				}
+				if = { #For the UAR-Tur war scenario. So the IRQ player can see the peace deal for a split second before quiting
+					limit = {
+						LEB = {exists = no}
+						JOR = {exists = no}
+						PAL = {exists = no}
+					}
+					release_on_controlled = LEB
+					release_on_controlled = JOR
+					release_on_controlled = PAL
+				}
+			}
+		}
+	}
+	
+	PER_consoom_baluchistan = {
+		name = "Man fuck Baluchistan all me and my homies hate Baluchistan"
+		icon = GFX_decision_eng_trade_unions_demand
+		
+		allowed = { original_tag = PER }
+		available = { has_war = no }
+		visible = { tag = PER BAL = { exists = yes owns_state = 410 } }
+		
+		fire_only_once = no
+		days_re_enable = 240
+		days_remove = 21
+		
+		ai_will_do = { base = 8 }
+		
+		custom_cost_trigger = {
+			command_power > 9
+		}
+		custom_cost_text = decision_cost_CP_10
+		
+		war_with_on_remove = BAL
+		complete_effect = { hidden_effect = { add_command_power = -10 } }
+		
+		remove_effect = {
+			declare_war_on = {
+				target = BAL
+				type = annex_everything
+			}
+		}
+	}
+	
+	PER_demand_return_states = {
+		name = "Iraq Finna Return our States, those mfs!"
+		icon = GFX_decision_eng_trade_unions_demand
+		
+		allowed = { original_tag = PER }
+		available = {
+			has_war = no
+			owns_state = 410
+			has_civil_war = no
+			
+		}
+		visible = {
+			is_subject = no
+			original_tag = PER
+			NOT = {
+				owns_state = 413 owns_state = 1022
+				has_global_flag = GC__2ICW
+				has_government = anarchism
+			}
+		}
+
+		ai_will_do = { base = 8 }
+		
+		fire_only_once = no
+		days_re_enable = 360
+		days_remove = 7
+		
+		custom_cost_trigger = {
+			command_power > 9
+		}
+		custom_cost_text = decision_cost_CP_10
+		
+		complete_effect = {
+			hidden_effect = { add_command_power = -10 }
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = IRQ
+				value = 999
+			}
+		}
+		
+		remove_effect = {
+			IRQ = { country_event = irq.40 }
+		}
+	}
+	
+	ISR_consoom_palestine = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			original_tag = ISR
+		}
+		available = {
+			has_war = yes
+		}
+		visible = {
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 99
+		}
+		complete_effect = { 
+			annex_country = {
+				target = PAL
+				transfer_troops = yes
+			}
+			PAL = {
+				set_cosmetic_tag = PAL
+			}
+		}
+	}
+	
+	ISR_sign_peace = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			original_tag = ISR
+		}
+		available = {
+			has_war = yes		
+			controls_state = 554
+			controls_state = 553
+			controls_state = 953
+			if = {
+				limit = {has_war_with = PER}
+			}
+			else = {
+				controls_state = 455
+			}			
+		}
+		visible = {
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 99
+		}
+		complete_effect = { 
+			white_peace = IRQ
+			white_peace = SYR
+			white_peace = DYR
+			if = {
+				limit = {has_war_with = PER}
+			}
+			else = {
+				transfer_state = 455
+			}
+			transfer_state = 553
+			transfer_state = 953		
+			white_peace = PER
+		}
+	}	
+}
+
+foreign_policy = {
+
+
+	foreign_policy_back_a_side_in_eth = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+			original_tag = ETH
+			original_tag = ERI
+			original_tag = ETV
+			}		
+		}
+		available = {
+		}
+		visible = {
+			ETH = {
+			has_war_with = ERI
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.1}
+		}
+	}
+
+	foreign_policy_back_a_side_in_cog = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+			original_tag = COG
+			original_tag = RCK
+			original_tag = RGO
+			}		
+		}
+		available = {
+		}
+		visible = {
+			OR = {
+				COG = {
+				has_war_with = RCK
+				}
+				COG = {
+				has_war_with = RGO
+				}		
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.2}
+		}
+	}
+
+	foreign_policy_back_a_side_in_sud = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = SUD
+				original_tag = SPL
+			}		
+		}
+		available = {
+		}
+		visible = {
+			SUD = {
+			has_war_with = SPL
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.3}
+		}
+	}
+
+	foreign_policy_back_a_side_in_yem = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = YEM
+				original_tag = SAU
+				original_tag = DYR
+				original_tag = EGY				
+			}		
+		}
+		available = {
+		}
+		visible = {
+			OR = {
+				YEM = {
+				has_war_with = DYR
+				}
+				SAU = {
+				has_war_with = DYR
+				}
+			}	
+			DYR = {
+				NOT = {owns_state = 901}		
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.4}
+		}
+	}
+	
+	foreign_policy_back_a_side_in_yug = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = YUG
+				original_tag = BOS
+				original_tag = KOS
+				original_tag = MAC
+				original_tag = HRZ
+				original_tag = CRO
+			}		
+		}
+		available = {
+		}
+		visible = {
+			OR = {
+				YUG = {
+				has_war_with = BOS
+				}
+				YUG = {
+				has_war_with = KOS
+				}			
+			}	
+
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.5}
+		}
+	}
+
+	foreign_policy_back_a_side_in_saf = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = SAF
+				original_tag = ANC
+			}		
+		}
+		available = {
+		}
+		visible = {
+			SAF = {
+				has_war_with = ANC
+			}
+
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.6}
+		}
+	}
+
+	foreign_policy_back_a_side_in_great_middle_east_war = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = SAU
+				original_tag = OMA
+				original_tag = UAE				
+				original_tag = DYR
+				original_tag = IRQ
+				original_tag = SYR
+				original_tag = PER
+				
+			}
+		}
+		available = {
+		}
+		visible = {
+			has_global_flag = GC__GMEW_HAPPENED
+			OR = {
+			DYR = {owns_state = 901} #scenario 1
+			country_exists = EGY #scenario 2
+			}
+			OR = {
+				SAU = {
+					has_war_with = DYR
+				}
+				BGD = {
+					has_war_with = SAU
+				}
+				BGD = {
+					has_war_with = DYR
+				}		
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.7}
+		}
+	}	
+
+	foreign_policy_back_a_side_in_syr = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = SYR
+				original_tag = IRQ
+			}
+		}
+
+		visible = {
+			IRQ = {
+				has_war_with = SYR
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				tag = SOV
+				add = 10
+			}
+		}
+		complete_effect = {
+			country_event = foreign_policy.8
+		}
+	}
+
+	foreign_policy_back_a_side_in_lib = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = LUR
+				original_tag = LIB
+			}		
+		}
+		available = {
+		}
+		visible = {
+			LIB = {
+				has_war_with = LUR
+			}
+
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.9}
+		}
+	}	
+	
+	foreign_policy_back_a_side_in_sie = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = RUF
+				original_tag = SIE
+			}		
+		}
+		available = {
+		}
+		visible = {
+			RUF = {
+				has_war_with = SIE
+			}
+
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.10}
+		}
+	}	
+	
+	foreign_policy_back_a_side_in_indochina = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = VIN
+				original_tag = CAM
+				original_tag = LAO
+				original_tag = SIA
+				original_tag = CMK
+				original_tag = MAL
+			}		
+		}
+		available = {
+		}
+		visible = {
+			SIA = {
+				OR = {
+					has_war_with = CAM
+					has_war_with = LAO
+					has_war_with = VIN
+				}
+			}
+
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.11}
+		}
+	}		
+	
+	foreign_policy_back_a_side_in_angola = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = ANG
+				original_tag = UNI
+			}		
+		}
+		available = {
+		}
+		visible = {
+			ANG = {
+				has_war_with = UNI
+			}
+
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.12}
+		}
+	}	
+	
+	foreign_policy_back_a_side_in_india = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = PAK
+				original_tag = RAJ
+				original_tag = PRI
+			}		
+		}
+		available = {
+		}
+		visible = {	
+			OR = {
+				RAJ = {
+					has_war_with = PAK
+				}
+				RAJ = {
+					has_war_with = PRI
+				}
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.13}
+		}
+	}	
+
+	foreign_policy_back_a_side_in_great_asian_war = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = PRC
+				original_tag = KOR
+				original_tag = SKR
+				original_tag = JAP
+				original_tag = CHI
+			}		
+		}
+		available = {
+		}
+		visible = {	
+			KOR = {
+				has_war_with = SKR
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.14}
+		}
+	}	
+
+	foreign_policy_back_a_side_in_thai_civil_war = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = TNS
+				original_tag = SIA
+			}		
+		}
+		available = {
+		}
+		visible = {	
+			TNS = {
+				has_war_with = SIA
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.15}
+		}
+	}
+
+	foreign_policy_back_a_side_in_czech_civil_war = {
+		icon = GFX_decision_eng_trade_unions_demand
+		
+		allowed = {
+			NOT = {
+				original_tag = CZE
+				original_tag = SLO
+			}
+		}
+		visible = { has_global_flag = GC__CZECW_ONGOING }
+		
+		cost = 20
+		fire_only_once = yes
+		complete_effect = { country_event = foreign_policy.16 }
+	}	
+
+	foreign_policy_back_a_side_in_cyp = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = CYP
+				original_tag = CYN
+			}		
+		}
+		visible = {
+			CYP = { has_war_with = CYN }
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		complete_effect = {
+			country_event = foreign_policy.17
+		}
+	}			
+	
+	foreign_policy_back_a_side_in_algerian_civil_war = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = ALG
+				original_tag = AIS
+				original_tag = PER
+			}
+		}
+		visible = {	
+			ALG = {
+				has_war_with = AIS
+			}
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		complete_effect = { 
+			country_event = {id=foreign_policy.18}
+		}
+	}
+
+	foreign_policy_back_a_side_in_srl = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			NOT = {
+				original_tag = SRL
+				original_tag = TAM
+			}		
+		}
+		available = {
+		}
+		visible = {
+			SRL = { has_war_with = TAM }
+		}
+		
+		cost = 20
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = { 
+			country_event = {id=foreign_policy.19}
+		}
+	}
+}
+
+generic = {
+
+	eth_kill_somalia_timer = {                          
+		allowed = {
+			original_tag = ETH
+		}                
+        available = {   
+			NOT = {country_exists = SOM}
+        }
+		
+		activation = {
+			has_country_flag = eth_kill_som
+		}
+		visible = {
+
+		}
+		  
+		  
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 150           
+		timeout_effect = {
+			clr_country_flag = eth_kill_som
+			white_peace = {
+				tag = SOM
+			}
+		
+		}
+		
+        complete_effect = {
+			clr_country_flag = eth_kill_som
+
+        }
+	}
+
+	hun_rom_war_timer = {                          
+		allowed = {
+			original_tag = HUN
+		}                
+        available = {   
+			controls_province = 3696
+			controls_province = 713
+			controls_province = 6711
+			controls_province = 9672
+			controls_province = 711
+			controls_province = 9668
+        }
+		
+		activation = {
+			has_country_flag = war_with_rom_rn
+			has_government = fascism
+		}
+		visible = {
+
+		}
+		 
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				has_war_with = SOV
+			}
+		}
+		  
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 300           
+		timeout_effect = {
+			clr_country_flag = war_with_rom_rn
+			ROM = {
+				white_peace = {
+					tag = HUN
+				}
+			}
+			country_event = {id = hungary_mod.2 days = 14}	
+			news_event = {id = old_times_news.239}			
+		}
+		
+		cancel_effect = {
+			clr_country_flag = war_with_rom_rn
+			ROM = {
+				white_peace = {
+					tag = HUN
+				}
+			}
+			POL = {add_to_faction = ROM}
+			POL = {add_to_faction = HUN}
+		}	
+		
+        complete_effect = {
+			clr_country_flag = war_with_rom_rn
+			swap_ideas = {
+				remove_idea = HUN_the_century_of_humiliation
+				add_idea = HUN_humiliation_revenged
+			}
+			white_peace = {
+				tag = ROM
+			}
+			transfer_state = 76
+			country_event = {id = hungary_mod.3 days = 30}
+			news_event = {id = old_times_news.238}
+        }
+	}		
+
+	DYR_death_me_war = {
+		name = "Holy Fuck Lois We're losing the Middle Eastern War"
+		icon = GFX_decision_dev_tomfuckery
+
+		allowed = { tag = DYR }
+		available = { hidden_trigger = { always = no } }
+		activation = {
+		    NOT = { country_exists = YEM }
+			OR = {
+				has_war_with = BGD
+				has_war_with = SAU
+				has_war_with = TUR
+			}
+			OR = {
+				NOT = { # Either don't control Yemen
+					DYR = {
+						controls_state = 293
+						controls_state = 659
+						controls_state = 976
+					}
+				}
+				AND = {
+					DYR = {
+						NOT = { # Or Not Control Sinai and one of these states below
+							controls_state = 453
+							OR = {
+								controls_state = 446
+								controls_state = 447
+								controls_state = 456
+								controls_state = 457
+								controls_state = 901
+								controls_state = 977
+								controls_state = 978
+							}
+						}
+					}
+				}
+			}
+			DYR = {has_country_flag = DYR_won_civil_war} 
+			NOT = {DYR = {has_country_flag = DYR_knocked_out}}
+		}
+		cancel_trigger = {
+			OR = {
+				controls_state = 293
+				controls_state = 659
+				controls_state = 976
+				#AND = { #commented out due to this aborting the mission when UAR loses South Yemen but still has Sinai. If the intended losing condition actually does require that as well, you can reinstate this -durangoose 
+				#	controls_state = 453
+				#	OR = {
+				#		controls_state = 446
+				#		controls_state = 447
+				#		controls_state = 456
+				#		controls_state = 457
+				#		controls_state = 901
+				#		controls_state = 977
+				#		controls_state = 978
+				#	}
+				#}
+			}
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 659 state = 976 state = 293 state = 453 state = 446 state = 457 state = 901 state = 978 state = 979 }
+			highlight_color_before_active = 1
+			highlight_color_while_active = 0
+		}
+		
+		days_mission_timeout = 7
+		fire_only_once = no #If this was yes, it wouldnt be able to get triggered again if DYR was losing once again
+		
+		timeout_effect = {
+			country_event = baath_cw.3
+		}
+	}	
+	
+	CPS_CHI_death = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {	
+			OR = {
+				original_tag = CPS
+				original_tag = CHI
+			}
+		}
+		available = {
+			NOT = {
+				controls_state = 524
+				controls_state = 972
+				controls_state = 970
+				controls_state = 971
+			}	
+		}
+		visible = {
+			CPS = {has_war_with = CHI}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 999
+		}
+		complete_effect = { 
+			if = {
+				limit = {
+					original_tag = CPS
+				}
+				CHI = {
+					white_peace = CPS
+					annex_country = {
+						target = CPS
+						transfer_troops = no
+					}
+					remove_ideas = CHI_conflict_nationalism
+				}	
+				CPS = {
+					every_core_state = {
+						remove_core_of = CPS
+					}
+				}				
+			}
+			if = {
+				limit = {
+					original_tag = CHI
+				}
+				CPS = {
+					white_peace = CHI
+					annex_country = {
+						target = CHI
+						transfer_troops = no
+					}
+					remove_ideas = CHI_conflict_nationalism
+					news_event = {id = old_times_news.229}
+					country_event = {
+						id = taw.6 days = 14
+					}
+				}	
+				CHI = {
+					every_core_state = {
+						add_core_of = CPS
+						remove_core_of = CHI
+					}
+				}
+				PRC = {
+					every_core_state = {
+						add_claim_by = CPS
+					}
+				}						
+			}			
+		}
+	}		
+
+	PRC_victory_against_soviets = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {			
+			original_tag = PRC
+				
+		}
+		available = {
+			has_war_with = SOV
+			controls_state = 408
+			controls_state = 564
+			controls_state = 563
+			controls_state = 657
+			controls_state = 561
+			controls_state = 330
+		}
+		visible = {
+			has_war_with = SOV
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 999
+		}
+		complete_effect = { 
+			white_peace = SOV
+			white_peace = MON
+			puppet = FEG
+			FEG = {
+				set_cosmetic_tag = FEG_prc_puppet
+				remove_ideas = FEG_avrora
+				remove_ideas = FEG_pla
+				
+				transfer_state = 408
+				transfer_state = 409
+				transfer_state = 564
+				transfer_state = 563
+				transfer_state = 565
+				transfer_state = 561
+				transfer_state = 574
+				transfer_state = 562
+				transfer_state = 560
+				transfer_state = 657
+				transfer_state = 874
+				transfer_state = 637
+				transfer_state = 555
+				transfer_state = 655
+				transfer_state = 537
+				transfer_state = 555
+				
+				set_popularities = {
+					reformed_communism = 54
+					communism = 16
+					paternal_autocracy = 20
+					socialism = 10
+				}
+				set_politics = {
+					ruling_party = socialism
+				}
+			}
+			puppet = MON 
+						MON = {
+							set_cosmetic_tag = MON_prc_puppet
+							set_politics = {
+								ruling_party = reformed_communism
+							}
+							set_popularities = {
+								communism = 25
+								reformed_communism = 75
+							}
+							remove_ideas = MON_split
+							replace_alignment_to_PRC = yes
+						}			
+			#TODO: news event
+		}
+	}
+	
+	SOV_kill_china_timer = {                          
+		allowed = {
+			original_tag = SOV
+		}                
+        available = {   
+			OR = {
+				NOT = {country_exists = PRC}
+				PRC = {is_subject_of = SOV}
+			}
+        }
+		
+		activation = {
+			has_offensive_war_with = PRC
+		}
+		cancel_trigger = {
+			NOT = {PRC = {has_war_with = SOV}}
+		}
+		  
+		  
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 730
+		timeout_effect = {
+			add_war_support = -0.30
+			add_stability = -0.30
+			add_popularity = {
+				popularity = -0.20
+				ideology = communism
+			}
+			white_peace = {
+				tag = PRC
+			}
+		
+		}
+		
+        complete_effect = {
+
+        }
+	}
+
+	PRC_kill_uyghur_timer = {                          
+		allowed = {
+			original_tag = PRC
+		}                
+        available = {   
+			NOT = {country_exists = ETR}
+        }
+		
+		activation = {
+			has_war_with = ETR
+			NOT = {has_country_flag = prc_failed_operation}
+		}
+		  
+		  
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 60
+		timeout_effect = {
+			add_political_power = -150
+			country_event = {id = prc.8}
+			set_country_flag = prc_failed_operation
+		}
+		
+        complete_effect = {
+			country_event = {id = prc.10 days = 30}
+			news_event = {id = old_times_news.253}	
+        }
+	}
+
+	PRC_kill_north_korea_timer = {                          
+		allowed = {
+			original_tag = PRC
+		}                
+        available = {   
+			KOR = { has_capitulated = yes }
+        }
+		
+		activation = {
+			has_war_with = KOR
+		}
+		  
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 100
+		timeout_effect = {
+			add_war_support = -0.30
+			add_stability = -0.30
+			add_popularity = {
+				popularity = -0.20
+				ideology = communism
+			}
+			every_other_country = {
+				limit = { is_in_faction_with = KOR }
+				white_peace = PRC
+			}	
+		}
+		
+        complete_effect = {
+			hidden_effect = {
+				every_other_country = {
+					limit = { is_in_faction_with = KOR }
+					white_peace = PRC
+				}
+				SKR = {
+					end_puppet = KOR
+				}
+			}
+			
+			PRC = {
+				puppet = KOR
+			}
+			KOR = {
+				set_cosmetic_tag = KOR_communism
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+					}
+					set_popularities = {
+						communism = 55
+						reformed_communism = 20
+						paternal_autocracy = 20
+						socialism = 5
+					}
+					
+					add_country_leader_role = {
+						character = KOR_ri_ul-sol
+						promote_leader = yes
+						country_leader = {
+							ideology = marxism_leninism
+							traits = {}
+							expire = "2050.3.1.1"
+							id = -1
+						}
+					}
+					set_party_name = {
+						ideology = communism
+						name = KOR_communism_party
+						long_name = KOR_communism_party_long
+					}
+					set_party_name = {
+						ideology = paternal_autocracy
+						name = PLA_reformed_communism_party
+						long_name = PLA_reformed_communism_party_long
+					}	
+				}	
+				replace_alignment_to_PRC = yes
+			}	
+        }
+	}
+	
+	PRI_failsafe_victory = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {			
+			original_tag = PRI
+				
+		}
+		available = {
+			NOT = {country_exists = RAJ}
+			has_war = no	
+		}
+		visible = {
+			NOT = {has_cosmetic_tag = PRI_win}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 999
+		}
+		complete_effect = { 
+			
+			if = { #pakistan already lost
+				limit = {PAK = {is_subject_of = RAJ}}
+				PRI = {
+					annex_country = {
+						target = PAK
+						transfer_troops = yes
+					}				
+				}
+			}
+			else = { #pakistan won too
+				PAK = {
+					transfer_state = 1001
+					transfer_state = 1002
+					transfer_state = 441
+				}		
+				1004 = {
+					set_demilitarized_zone = yes
+				}
+
+				1005 = {
+					set_demilitarized_zone = yes
+				}
+								
+			}
+			
+			PRI = {
+				set_cosmetic_tag = PRI_win
+				news_event = {id = old_times_news.246}
+				annex_country = {
+					target = RAJ
+					transfer_troops = yes
+				}
+				country_event = {id = india_communist.1 days = 30}
+			}
+			RAJ = {
+				every_core_state = {
+					remove_core_of = RAJ
+				}
+			}		
+		}
+	}
+	OCC_VIN_defeat_sea = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = VIN
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {
+			has_war = no
+			NOT = { country_exists = INS }
+			NOT = { country_exists = BRM }
+			NOT = { country_exists = MAL }
+			NOT = { country_exists = SIN }
+			NOT = { country_exists = PHI }
+			NOT = { country_exists = BRU }
+			NOT = { country_exists = TIM }
+			NOT = { country_exists = PNG }
+			NOT = { country_exists = RTA }
+			NOT = { country_exists = INS }								
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+			every_owned_state = {
+				add_resistance = 40
+				add_compliance = 5
+			}
+             news_event = old_times_news.914
+		}	
+	}
+
+	OCC_VIN_defeat_indo = {
+	
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			original_tag = VIN
+		}
+		available = {
+			always = no
+		}
+		
+		activation = {
+			has_war = no
+			NOT = { country_exists = PRI }
+			NOT = { country_exists = PAK }
+			NOT = { country_exists = RAJ }
+			NOT = { country_exists = LAO }
+			NOT = { country_exists = CMK }
+			NOT = { country_exists = BAN }
+			NOT = { country_exists = NEP }
+			NOT = { country_exists = BHU }
+			NOT = { country_exists = MAL }
+			NOT = { country_exists = BRM }
+			NOT = { country_exists = SIN }
+		}
+		visible = {
+			has_war = no
+
+		}
+		priority = 9999
+		
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
+		days_mission_timeout = 1
+		ai_will_do = {
+			factor = 0
+		}
+		timeout_effect = { 
+		  VIN = {
+			country_event = {
+				id = vin.269
+			}
+		  }
+		}	
+	}
+	
+	TUR_death_gmew = {
+		name = "Holy Fuck Lois We're losing the Middle Eastern War"
+		icon = GFX_decision_dev_tomfuckery
+
+		allowed = { tag = TUR }
+		available = { hidden_trigger = { always = no } }
+		activation = {
+			OR = {
+				has_war_with = DYR
+				has_war_with = SAU
+			}
+			SYR = {has_capitulated = yes}
+			if = {
+				limit = {
+					LEB = {country_exists = yes}
+				}
+				LEB = {has_capitulated = yes}
+			}
+			
+			NOT = {
+				352 = {
+					is_fully_controlled_by = TUR
+				}
+				350 = {
+					is_fully_controlled_by = TUR
+				}
+				799 = {
+					is_fully_controlled_by = TUR
+				}	
+				344 = {
+					is_fully_controlled_by = TUR
+				}						
+			}
+			
+			NOT = {TUR = {has_country_flag = TUR_knocked_out}}
+		}
+		cancel_trigger = {
+
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 352 state = 350 state = 799 state = 344 }
+			highlight_color_before_active = 1
+			highlight_color_while_active = 0
+		}
+		
+		days_mission_timeout = 7
+		fire_only_once = no 
+		
+		timeout_effect = {
+			set_country_flag = TUR_knocked_out
+			TUR_modify_cohesion_negatively = yes
+			TUR_modify_cohesion_negatively = yes
+			TUR_modify_cohesion_negatively = yes
+			if = {
+				limit = {
+					has_war_with = SAU
+				}
+				SAU = {white_peace = TUR}
+				SYR = {
+					every_owned_state = {
+						transfer_state_to = SAU
+					}
+				}
+				LEB = {
+					every_owned_state = {
+						transfer_state_to = SAU
+					}
+				}	
+				799 = {
+					transfer_state_to = SAU
+				}
+				352 = {
+					transfer_state_to = SAU
+				}
+				350 = {
+					transfer_state_to = SAU
+				}				
+			}
+			else = {
+				DYR = {white_peace = TUR}
+				SYR = {
+					every_owned_state = {
+						transfer_state_to = DYR
+					}
+				}
+				LEB = {
+					every_owned_state = {
+						transfer_state_to = DYR
+					}
+				}	
+				799 = {
+					transfer_state_to = DYR
+				}
+			}
+			
+		}
+	}	
+}
+
+nuclear_warfare_cat = {
+
+	US_Nuking_Decision_Moscow = {
+		fire_only_once = no
+		visible = { original_tag = USA		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:nuking_pp_cost
+		days_re_enable = 30
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = SOV
+			}
+		}
+		
+		ai_will_do = { base = 1 }
+		
+		complete_effect = {
+			add_to_variable = { nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			
+			launch_nuke = {
+				state = 219
+				controller = FROM
+				province = 6380
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				219 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+				}
+				goto_state = 219
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 219 = { set_demilitarized_zone = no } }
+		}
+	}
+	US_Nuking_Decision_Leningrad = {
+		fire_only_once = no
+		visible = { original_tag = USA		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:nuking_pp_cost
+		days_re_enable = 30
+		
+		ai_will_do = { base = 1 }
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = SOV
+			}
+		}
+		
+		complete_effect = {
+			add_to_variable = { nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			
+			launch_nuke = {
+				state = 195
+				controller = FROM
+				province = 3151
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				195 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+				}
+				goto_state = 195
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 195 = { set_demilitarized_zone = no } }
+		}
+	}
+	US_Nuking_Decision_Volgograd = {
+		fire_only_once = no
+		visible = { original_tag = USA		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:nuking_pp_cost
+		days_re_enable = 30
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = SOV
+			}
+		}
+		
+		ai_will_do = { base = 1 }
+		
+		complete_effect = {
+			add_to_variable = { nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			
+			launch_nuke = {
+				state = 217
+				controller = FROM
+				province = 3529
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				217 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+				}
+				goto_state = 217
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 217 = { set_demilitarized_zone = no } }
+		}
+	}
+	US_Nuking_Decision_Kiev = {
+		fire_only_once = no
+		visible = { original_tag = USA		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:nuking_pp_cost
+		days_re_enable = 30
+		
+		ai_will_do = { base = 1 }
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = SOV
+			}
+		}
+		
+		complete_effect = {
+			add_to_variable = { nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			
+			launch_nuke = {
+				state = 202
+				controller = FROM
+				province = 525
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				202 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+				}
+				goto_state = 202
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 202 = { set_demilitarized_zone = no } }
+		}
+	}
+	US_Nuking_Decision_Novosibirsk = {
+		fire_only_once = no
+		visible = { original_tag = USA		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:nuking_pp_cost
+		days_re_enable = 30
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = SOV
+			}
+		}
+		
+		ai_will_do = { base = 1 }
+		
+		complete_effect = {
+			add_to_variable = { nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			
+			launch_nuke = {
+				state = 570
+				controller = FROM
+				province = 7274
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				570 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					set_demilitarized_zone = yes
+				}
+				goto_state = 570
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 570 = { set_demilitarized_zone = no } }
+		}
+	}
+	
+	SOV_Nuking_Decision_NewYork = {
+		fire_only_once = no
+		visible = { original_tag = SOV		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:SOV_nuking_pp_cost
+		days_re_enable = 30
+		
+		ai_will_do = { base = 1 }
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = USA
+			}
+		}
+		
+		complete_effect = {
+			add_to_variable = { SOV_nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			
+			launch_nuke = {
+				state = 358
+				controller = FROM
+				province = 3878
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				358 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					set_demilitarized_zone = yes
+				}
+				goto_state = 358
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 358 = { set_demilitarized_zone = no } }
+		}
+	}
+	
+	SOV_Nuking_Decision_WashingtonDC = {
+		fire_only_once = no
+		visible = { original_tag = SOV		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:SOV_nuking_pp_cost
+		days_re_enable = 30
+		
+		ai_will_do = { base = 1 }
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = USA
+			}
+		}
+		
+		complete_effect = {
+			add_to_variable = { SOV_nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			launch_nuke = {
+				state = 361
+				controller = FROM
+				province = 3957
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				361 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					set_demilitarized_zone = yes
+				}
+				goto_state = 361
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 361 = { set_demilitarized_zone = no } }
+		}
+	}
+	
+	SOV_Nuking_Decision_LosAngeles = {
+		fire_only_once = no
+		visible = { original_tag = SOV		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:SOV_nuking_pp_cost
+		days_re_enable = 30
+		
+		ai_will_do = { base = 1 }
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = USA
+			}
+		}
+		
+		complete_effect = {
+			add_to_variable = { SOV_nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			launch_nuke = {
+				state = 368
+				controller = FROM
+				province = 9814
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				368 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					set_demilitarized_zone = yes
+				}
+				goto_state = 368
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 368 = { set_demilitarized_zone = no } }
+		}
+	}
+	
+	SOV_Nuking_Decision_Chicago = {
+		fire_only_once = no
+		visible = { original_tag = SOV		has_war = yes }
+		available = { has_war = yes }
+		days_remove = 5
+		cost = var:SOV_nuking_pp_cost
+		days_re_enable = 30
+		
+		ai_will_do = { base = 1 }
+	
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				has_capitulated = no
+				original_tag = USA
+			}
+		}
+		
+		complete_effect = {
+			add_to_variable = { SOV_nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			
+			launch_nuke = {
+				state = 395
+				controller = FROM
+				province = 9450
+				use_nuke = no
+				nuke_type = nuclear_bomb 
+			}
+			hidden_effect = {
+				395 = {
+					add_manpower = -2000000
+					damage_building = {
+					   type = industrial_complex
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					damage_building = {
+					   type = infrastructure
+					   damage = 100
+					   repair_speed_modifier = 0.5
+					}
+					set_demilitarized_zone = yes
+				}
+				goto_state = 395
+			}
+		}
+		
+		remove_effect = {
+			hidden_effect = { 395 = { set_demilitarized_zone = no } }
+		}
+	}
+	
+	GENERIC_nuking_toggle_town = {
+		visible = {
+			always = no
+		}
+		available = {
+			has_war = yes
+		}
+		
+		cost = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = {
+				limit = {has_country_flag = town_states_visible}
+				clr_country_flag = town_states_visible
+			}
+			else = {
+				set_country_flag = town_states_visible
+			}
+		}
+	}
+	GENERIC_nuking_town = {
+		fire_only_once = no
+		visible = { is_debug = yes always = no }
+		visible = { has_country_flag = town_states_visible}
+		available = { is_debug = yes has_war = yes }
+		days_remove = 5
+		cost = var:nuking_pp_cost
+		days_re_enable = 30
+		
+		target_trigger = {
+			FROM = {
+				owner = {has_war_with = ROOT}
+				has_state_category = town
+			}
+		}
+		state_target = yes	
+		
+		complete_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						nuking_pp_cost < 200
+					}
+				}
+				add_to_variable = { nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			}
+			launch_nuke = {
+				state = FROM
+				use_nuke = yes
+				nuke_type = nuclear_bomb 
+			}
+			custom_effect_tooltip = nuke_launching_in_FROM
+		}
+		remove_effect = {
+			hidden_effect = { FROM = { set_demilitarized_zone = no } }
+		}
+	}
+	
+	GENERIC_nuking_toggle_large_town = {
+		visible = {
+			always = no
+		}
+		available = {
+			has_war = yes
+		}
+		
+		cost = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = {
+				limit = {has_country_flag = large_town_states_visible}
+				clr_country_flag = large_town_states_visible
+			}
+			else = {
+				set_country_flag = large_town_states_visible
+			}
+		}
+	}
+	GENERIC_nuking_large_town = {
+		fire_only_once = no
+		visible = { is_debug = yes always = no}
+		visible = { has_country_flag = large_town_states_visible}
+		available = { is_debug = yes has_war = yes }
+		days_remove = 5
+		cost = var:nuking_pp_cost
+		days_re_enable = 30
+		
+		target_trigger = {
+			FROM = {
+				owner = {has_war_with = ROOT}
+				has_state_category = large_town
+			}
+		}
+		state_target = yes	
+		
+		complete_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						nuking_pp_cost < 200
+					}
+				}
+				add_to_variable = { nuking_pp_cost = 5 tooltip = "Cost of nuking increases" }
+			}
+			launch_nuke = {
+				state = FROM
+				use_nuke = yes
+				nuke_type = nuclear_bomb 
+			}
+		}
+		remove_effect = {
+			hidden_effect = { FROM = { set_demilitarized_zone = no } }
+		}
+	}	
+}
+
+soviet_collapse = {
+
+	SC_victory_in_ukraine = {
+		allowed = {
+			OR = {
+				original_tag = UKR
+				original_tag = UCR
+				original_tag = OUN
+				original_tag = DPR
+			}	
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			202 = {
+				is_owned_by = FROM
+			}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			set_capital = {
+				state = 202
+				remember_old_capital = no
+			}
+			every_owned_state = {
+				add_core_of = FROM
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						original_tag = UKR
+						original_tag = DPR
+					}
+				}
+				set_cosmetic_tag = ukraine_cw_won
+			}
+			if = {
+				limit = {
+					original_tag = DPR
+				}
+				UKR = {
+				remove_state_core = 221
+				remove_state_core = 227
+				remove_state_core = 228			
+				transfer_state = 766
+				}
+				release = UKR
+			}
+			if = {
+				limit = {
+					original_tag = UKR
+				}
+				transfer_state = 766
+			}
+			if = {
+				limit = {
+					original_tag = OUN
+				}
+				declare_war_on = {
+					target = MOL
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = TFK
+					type = annex_everything
+				}				
+			}
+        }		
+		
+	}
+	
+	SC_BLR_invade_moscow = {
+		allowed = {
+			original_tag = BLR
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			SOV = {has_war = no}
+			TFM = {has_war = no}
+			808 = {
+				is_owned_by = BLR
+			}
+			has_country_flag = {
+				flag = BLR_annexed_BSO
+				days > 30
+			}
+			
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			declare_war_on = {
+				target = SOV
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = TFM
+				type = annex_everything
+			}			
+        }		
+		
+	}	
+
+	SC_SOV_invade_murmansk = {
+		allowed = {
+			NOT = {original_tag = FIN}
+			NOT = {original_tag = NOR}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			is_neighbor_of = MNO
+			owns_state = 195
+			has_country_flag = {
+				flag = BLR_annexed_BSO
+				days > 30
+			}			
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = {
+				limit = {has_government = fascism}
+				declare_war_on = {
+					target = MNO
+					type = annex_everything
+				}				
+			}
+			else = {
+				annex_country = { 
+					target = MNO
+					transfer_troops = yes
+				}				
+			}
+        }		
+		
+	}	
+
+	SC_MOSCOW_CAUCASIA_invade_crimea = {
+		allowed = {
+			OR = {
+			original_tag = SOV
+			original_tag = TFM
+			original_tag = BLR
+			original_tag = SMC
+			original_tag = RSF
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			is_neighbor_of = TFK
+			owns_state = 219
+			owns_state = 206				
+			owns_state = 217
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			annex_country = { 
+				target = TFK
+				transfer_troops = yes
+			}			
+        }		
+		
+	}
+	
+	SC_RPR_SOE_invade_soviet = {
+		allowed = {
+			OR = {
+				original_tag = RPR
+				original_tag = SOE
+			}	
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			OR = {
+				SOV = {owns_state = 217}
+				BLR = {owns_state = 217}
+				TFM = {owns_state = 217}
+				SMC = {owns_state = 219}
+				RSF = {owns_state = 219}
+			}
+		}
+		
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			if = {
+				limit = {country_exists = SOV}
+				declare_war_on = {
+					target = SOV
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = BLR}
+				declare_war_on = {
+					target = BLR
+					type = annex_everything
+				}				
+			}			
+			declare_war_on = {
+				target = BLR
+				type = annex_everything
+			}
+			if = {
+				limit = {country_exists = TFM}
+				declare_war_on = {
+					target = TFM
+					type = annex_everything
+				}				
+			}			
+			declare_war_on = {
+				target = TFM
+				type = annex_everything
+			}	
+			if = {
+				limit = {country_exists = SMC}
+				declare_war_on = {
+					target = SMC
+					type = annex_everything
+				}				
+			}			
+			declare_war_on = {
+				target = SMC
+				type = annex_everything
+			}	
+			if = {
+				limit = {country_exists = RSF}
+				declare_war_on = {
+					target = RSF
+					type = annex_everything
+				}				
+			}			
+			declare_war_on = {
+				target = RSF
+				type = annex_everything
+			}				
+        }		
+		
+	}	
+
+	SC_MOSCOW_invade_caucasia = {
+		allowed = {
+			OR = {
+				original_tag = SOV
+				original_tag = TFM
+				original_tag = BLR
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			OR = {
+			is_neighbor_of = RSF
+			is_neighbor_of = SMC
+			}
+			owns_state = 219
+			owns_state = 206
+			RSF = {has_war = no}
+			SMC = {has_war = no}
+		}
+		
+		days_remove = 3
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			if = {
+				limit = {country_exists = RSF}
+				declare_war_on = {
+					target = RSF
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {country_exists = SMC}
+				declare_war_on = {
+					target = SMC
+					type = annex_everything
+				}					
+			}			
+        }		
+		
+	}
+
+	SC_CAUCASIA_invade_moscow = {
+		allowed = {
+			OR = {
+				original_tag = RSF
+				original_tag = SMC
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			OR = {
+			is_neighbor_of = SOV
+			is_neighbor_of = TFM
+			is_neighbor_of = BLR
+			}
+			SOV = {has_war = no}
+			TFM = {has_war = no}
+			BLR = {has_war = no}
+		}
+		
+		days_remove = 3
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			if = {
+				limit = {country_exists = SOV}
+				declare_war_on = {
+					target = SOV
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {country_exists = TFM}
+				declare_war_on = {
+					target = TFM
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {country_exists = BLR}
+				declare_war_on = {
+					target = BLR
+					type = annex_everything
+				}					
+			}				
+        }		
+		
+	}
+
+	#attacks region 2 which is either navalny RPR or dugin SOE
+	SC_MOSCOW_CAUCASIA_invade_region_2 = {
+		allowed = {
+			OR = {
+				original_tag = RSF
+				original_tag = SMC
+				original_tag = SOV
+				original_tag = TFM
+				original_tag = BLR				
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			owns_state = 219
+			owns_state = 206				
+			owns_state = 217
+		}
+		available = {
+			has_war = no
+			OR = {
+			is_neighbor_of = RPR
+			is_neighbor_of = SOE
+			}
+			RPR = {has_war = no}
+			SOE = {has_war = no}
+			owns_state = 219
+			owns_state = 206				
+			owns_state = 217				
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		days_remove = 7
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			if = {
+				limit = {country_exists = RPR}
+				declare_war_on = {
+					target = RPR
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {country_exists = SOE}
+				declare_war_on = {
+					target = SOE
+					type = annex_everything
+				}					
+			}				
+        }		
+		
+	}
+
+	SC_WEST_SIBERIA_invade_central_asia = {
+		allowed = {
+			OR = {
+				original_tag = RNF
+				original_tag = FAO		
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			owns_state = 653
+			owns_state = 571
+		}
+		available = {
+			has_war = no
+			OR = {
+			is_neighbor_of = KAZ
+			is_neighbor_of = RKA
+			is_neighbor_of = UZB
+			}
+			KAZ = {
+				has_war = no
+			}	
+			RKA = {
+				has_war = no
+			}	
+			UZB = {
+				has_war = no
+			}				
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = {
+				limit = {country_exists = KAZ}
+				declare_war_on = {
+					target = KAZ
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {
+					country_exists = RKA
+					original_tag = RNF
+				}
+				if = {
+					limit = {original_tag = RNF}
+					create_faction = russo_kazakh_pact
+					RNF = { add_to_faction = RKA }
+					RNF = {
+						transfer_state = 401
+						transfer_state = 829
+					}
+				}
+				else = {
+					declare_war_on = {
+						target = RKA
+						type = annex_everything
+					}						
+				}	
+			}	
+			
+			if = {
+				limit = {
+				country_exists = UZB
+				UZB = {has_government = paternal_autocracy}
+				}
+				declare_war_on = {
+					target = UZB
+					type = annex_everything
+				}					
+			}	
+			if = {
+				limit = {
+				country_exists = RKA
+				NOT = {original_tag = RNF}
+				}
+				declare_war_on = {
+					target = RKA
+					type = annex_everything
+				}					
+			}			
+			if = {
+				limit = {
+				country_exists = UZB
+				NOT = {original_tag = RNF}
+				UZB = {has_government = paternal_autocracy}
+				}
+				declare_war_on = {
+					target = UZB
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {
+				country_exists = TMS
+				NOT = {original_tag = RNF}
+				}
+				declare_war_on = {
+					target = TMS
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {
+				country_exists = KYR
+				NOT = {original_tag = RNF}
+				}
+				declare_war_on = {
+					target = KYR
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {
+				country_exists = TAJ
+				NOT = {original_tag = RNF}
+				}
+				declare_war_on = {
+					target = TAJ
+					type = annex_everything
+				}					
+			}					
+        }		
+		
+	}
+
+	SC_KAZ_invade_west_siberia = {
+		allowed = {
+			original_tag = KAZ
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			OR = {
+			is_neighbor_of = FAO
+			is_neighbor_of = RNF
+			}
+			FAO = {
+				has_war = no 
+			}
+			RNF = {
+				has_war = no 
+			}			
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = {
+				limit = {country_exists = FAO}
+				declare_war_on = {
+					target = FAO
+					type = annex_everything
+				}					
+			}
+			if = {
+				limit = {country_exists = RNF}
+				declare_war_on = {
+					target = RNF
+					type = annex_everything
+				}					
+			}		
+        }		
+		
+	}
+	
+	SC_FEG_invade_siberia = {
+		allowed = {
+			original_tag = FEG
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			SSR = {has_war = no}
+			RHR = {has_war = no}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = {
+				limit = {country_exists = RHR}
+				declare_war_on = {
+					target = RHR
+					type = annex_everything
+				}				
+			}
+			else = {
+				annex_country = { 
+					target = SSR
+					transfer_troops = yes
+				}				
+			}
+        }		
+		
+	}	
+
+	SC_FEG_invade_west_siberia = {
+		allowed = {
+			original_tag = FEG
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			RNF = {has_war = no}
+			FAO = {has_war = no}
+			KAZ = {has_war = no}
+			RKA = {has_war = no}			
+			UZB = {has_war = no}
+			OR = {
+			is_neighbor_of = RNF
+			is_neighbor_of = FAO
+			is_neighbor_of = KAZ
+			is_neighbor_of = RKA
+			is_neighbor_of = UZB
+			}
+		}
+		
+		cost = 0
+		days_remove 30
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			if = {
+				limit = {country_exists = RNF}
+				declare_war_on = {
+					target = RNF
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = FAO}
+				declare_war_on = {
+					target = FAO
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = KAZ}
+				declare_war_on = {
+					target = KAZ
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = RKA}
+				declare_war_on = {
+					target = RKA
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = UZB}
+				declare_war_on = {
+					target = UZB
+					type = annex_everything
+				}				
+			}			
+        }		
+		
+	}
+
+	SC_WEST_SIBERIA_CENTRAL_ASIA_invade_fareast = {
+		allowed = {
+			OR = {
+			original_tag = RNF
+			original_tag = FAO
+			original_tag = KAZ
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			FEG = {has_war = no}
+			is_neighbor_of = FEG
+			OR = {
+			owns_state = 586
+				AND = {
+				is_ally_with = RKA
+				RKA = {owns_state = 586}
+				}
+			}
+			owns_state = 653
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = {
+				limit = {country_exists = FEG}
+				declare_war_on = {
+					target = FEG
+					type = annex_everything
+				}				
+			}
+        }		
+		
+	}	
+
+	SC_WEST_UNIFIER_invade_east_unifier = {
+		allowed = {
+			OR = {
+			original_tag = SOV
+			original_tag = BLR
+			original_tag = TFM
+			original_tag = SMC
+			original_tag = RSF
+			original_tag = RPR
+			original_tag = SOE
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			FEG = {has_war = no}
+			RNF = {has_war = no}
+			FAO = {has_war = no}
+			KAZ = {has_war = no}
+			RKA = {has_war = no}
+			UZB = {has_war = no}	
+			219 = {
+				owner = {owns_state = 206 owns_state = 217}
+			}						
+		}
+		available = {
+			has_war = no
+			FEG = {has_war = no}
+			RNF = {has_war = no}
+			FAO = {has_war = no}
+			KAZ = {has_war = no}
+			RKA = {has_war = no}
+			UZB = {has_war = no}
+			OR = {
+			is_neighbor_of = FEG			
+			is_neighbor_of = RNF
+			is_neighbor_of = FAO
+			is_neighbor_of = KAZ
+			is_neighbor_of = RKA
+			is_neighbor_of = UZB
+			}
+			219 = {
+				owner = {owns_state = 206 owns_state = 217}
+			}				
+		}
+		
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			if = {
+				limit = {country_exists = FEG}
+				declare_war_on = {
+					target = FEG
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = RNF}
+				declare_war_on = {
+					target = RNF
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = FAO}
+				declare_war_on = {
+					target = FAO
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = KAZ}
+				declare_war_on = {
+					target = KAZ
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = RKA}
+				declare_war_on = {
+					target = RKA
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = UZB}
+				declare_war_on = {
+					target = UZB
+					type = annex_everything
+				}				
+			}			
+        }		
+		
+	}
+
+	SC_EAST_UNIFIER_invade_west_unifier = {
+		allowed = {
+			OR = {
+			original_tag = FEG
+			original_tag = RNF
+			original_tag = FAO
+			original_tag = KAZ
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			SOV = {has_war = no}
+			BLR = {has_war = no}
+			TFM = {has_war = no}
+			SMC = {has_war = no}
+			RSF = {has_war = no}
+			RPR = {has_war = no}
+			SOE = {has_war = no}	
+			586 = {
+				owner = {owns_state = 408 owns_state = 653}
+			}
+	
+		}
+		available = {
+			has_war = no
+			SOV = {has_war = no}
+			BLR = {has_war = no}
+			TFM = {has_war = no}
+			SMC = {has_war = no}
+			RSF = {has_war = no}			
+			RPR = {has_war = no}			
+			SOE = {has_war = no}			
+			OR = {
+			is_neighbor_of = SOV
+			is_neighbor_of = BLR
+			is_neighbor_of = TFM
+			is_neighbor_of = SMC
+			is_neighbor_of = RSF
+			is_neighbor_of = RPR
+			is_neighbor_of = SOE
+			}
+			586 = {
+				owner = {owns_state = 408 owns_state = 653}
+			}				
+		}
+		
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			if = {
+				limit = {country_exists = SOV}
+				declare_war_on = {
+					target = SOV
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = BLR}
+				declare_war_on = {
+					target = BLR
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = TFM}
+				declare_war_on = {
+					target = TFM
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = SMC}
+				declare_war_on = {
+					target = SMC
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = RSF}
+				declare_war_on = {
+					target = RSF
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = RPR}
+				declare_war_on = {
+					target = RPR
+					type = annex_everything
+				}				
+			}
+			if = {
+				limit = {country_exists = SOE}
+				declare_war_on = {
+					target = SOE
+					type = annex_everything
+				}				
+			}					
+        }		
+		
+	}
+	
+	SC_victory_in_russia = {
+		allowed = {
+			OR = {
+				original_tag = SOV
+				original_tag = BLR
+				original_tag = TFM
+				original_tag = SMC
+				original_tag = RSF
+				original_tag = RPR
+				original_tag = SOE
+				original_tag = FEG
+				original_tag = RNF
+				original_tag = FAO
+				original_tag = KAZ			
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+		}
+		available = {
+			has_war = no
+			219 = {
+				is_owned_by = FROM
+			}
+			408 = {
+				is_owned_by = FROM
+			}			
+		}
+		
+		priority = 50
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			set_country_flag = unified_russia
+			set_capital = {
+				state = 219
+				remember_old_capital = no
+			}
+			every_owned_state = {
+				add_core_of = FROM
+			}
+			every_possible_country = {
+				limit = {has_idea = SOV_darkets_night}
+				remove_ideas = SOV_darkets_night
+			}
+			if = { #Moscow - coup win
+				limit = {
+					original_tag = SOV
+					has_country_flag = sov_party_victorious
+				}
+				news_event = {id = old_times_news.400}
+				set_cosmetic_tag = SOV
+			}
+			if = { #Moscow - zhirnosky lpdr win
+				limit = {
+					original_tag = SOV
+					has_country_leader = {
+						character = SOV_vladimir_based
+						ruling_only = yes
+					}	
+				}
+				news_event = {id = old_times_news.410}
+			}			
+			if = { #Moscow - nazbol win
+				limit = {
+					original_tag = SOV
+					has_country_leader = {
+						character = SOV_limnov
+						ruling_only = yes
+					}	
+				}
+				news_event = {id = old_times_news.411}
+			}	
+			if = { #Moscow - putin win
+				limit = {
+					OR = {
+						AND = {
+						original_tag = SOV
+						has_country_flag = SOV_putin_survives
+						}
+						AND = {
+						original_tag = TFM
+							has_country_leader = {
+								character = TFM_putin
+								ruling_only = yes
+							}
+						}
+					}
+				}
+				news_event = {id = old_times_news.415}
+				set_cosmetic_tag = SOV_putin_scw_win
+			}			
+			if = { #Far East Navy okrug
+				limit = {
+					original_tag = FEG
+				}
+				news_event = {id = old_times_news.401}
+				navy_experience = 500
+				set_cosmetic_tag = SOV
+				
+			}
+			if = { #VDV win
+				limit = {
+					original_tag = FAO
+				}
+				news_event = {id = old_times_news.402}
+				air_experience = 500
+				set_cosmetic_tag = SOV
+			}
+			if = { #Eurasia win
+				limit = {
+					original_tag = SOE
+				}
+				news_event = {id = old_times_news.403}
+			}
+			if = { #Medvedev win
+				limit = {
+					original_tag = RNF
+				}
+				set_cosmetic_tag = RNF_win
+				news_event = {id = old_times_news.404}
+			}
+			if = { #Kazakhstan - Yazov win
+				limit = {
+					original_tag = KAZ
+					has_country_leader = {
+						character = KAZ_dmitry_yazov
+						ruling_only = yes
+					}					
+				}
+				news_event = {id = old_times_news.405}
+				set_cosmetic_tag = SOV_com_reunif
+				add_ideas = ussr_aligned_nation
+				add_ideas = nation_status_superpower
+			}	
+			if = { #Kazakhstan - Pugo win
+				limit = {
+					original_tag = KAZ
+					has_country_leader = {
+						character = KAZ_boris_pugo
+						ruling_only = yes
+					}					
+				}
+				news_event = {id = old_times_news.409}
+				set_cosmetic_tag = SOV_com_reunif
+				add_ideas = ussr_aligned_nation
+				add_ideas = nation_status_superpower
+			}			
+			if = { #Luka win
+				limit = {
+					original_tag = BLR				
+				}
+				news_event = {id = old_times_news.406}
+				set_cosmetic_tag = SOV_com_reunif
+				add_ideas = ussr_aligned_nation
+				add_ideas = nation_status_superpower
+			}
+			if = { #KGB win
+				limit = {
+					original_tag = TFM				
+				}
+				news_event = {id = old_times_news.407}
+				set_cosmetic_tag = SOV_com_reunif
+				add_ideas = ussr_aligned_nation
+				add_ideas = nation_status_superpower
+			}
+			if = { #Causcasia - Udaltsov win
+				limit = {
+					original_tag = RSF	
+					has_country_leader = {
+						character = RSF_sergei_udaltsov
+						ruling_only = yes
+					}							
+				}
+				set_cosmetic_tag = RSF_udaltsov_unification
+				news_event = {id = old_times_news.408}
+				add_ideas = ussr_aligned_nation
+				add_ideas = nation_status_superpower
+			}
+			if = { #Causcasia - Rutskoy win
+				limit = {
+					original_tag = RSF	
+					has_country_leader = {
+						character = RSF_alexander_rutskoy
+						ruling_only = yes
+					}							
+				}
+				set_cosmetic_tag = SOV_com_reunif
+				news_event = {id = old_times_news.413}
+				add_ideas = ussr_aligned_nation
+				add_ideas = nation_status_superpower
+			}			
+			if = { #Navalnvy win
+				limit = {
+					original_tag = RPR				
+				}
+				news_event = {id = old_times_news.412}
+			}	
+			if = { #Monarchists win
+				limit = {
+					original_tag = SMC				
+				}
+				news_event = {id = old_times_news.414}
+				set_cosmetic_tag = SMC_unification
+				country_event = {id = ussr_cw.13}
+			}				
+        }		
+		
+	}
+	
+	SC_UNIFIER_deal_with_ukraine = {
+		allowed = {
+			OR = {
+				original_tag = SOV
+				original_tag = BLR
+				original_tag = TFM
+				original_tag = SMC
+				original_tag = RSF
+				original_tag = RPR
+				original_tag = SOE
+				original_tag = FEG
+				original_tag = RNF
+				original_tag = FAO
+				original_tag = KAZ			
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			has_country_flag = unified_russia			
+		}
+		available = {
+			has_war = no		
+			OR = {
+				is_neighbor_of = UKR
+				is_neighbor_of = DPR
+				is_neighbor_of = UCR
+				is_neighbor_of = OUN
+			}
+		}
+		
+		cost = 0
+		days_remove = 30
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			if = { #dem unifiers
+				limit = {
+					OR = {
+						has_government = liberalism
+						has_government = democratic
+					}
+				}
+				if = {
+					limit = {country_exists = UCR}
+					give_guarantee = UCR
+					diplomatic_relation = {
+						country = UCR
+						relation = non_aggression_pact
+						active = yes
+					}
+					UCR = {
+						diplomatic_relation = {
+							country = FROM
+							relation = non_aggression_pact
+							active = yes
+						}	
+						transfer_state = 137
+					}
+				}
+				if = {
+					limit = {country_exists = OUN}
+						declare_war_on = {
+							target = OUN
+							type = annex_everything
+						}					
+					}
+					if = {
+					limit = {country_exists = UKR}
+						declare_war_on = {
+							target = UKR
+							type = annex_everything
+						}					
+					}		
+					if = {
+					limit = {country_exists = DPR}
+						declare_war_on = {
+							target = DPR
+							type = annex_everything
+						}					
+					}
+				}
+			
+			else_if = { #nationalists/patout unifiers
+				limit = {
+					OR = {
+						has_government = fascism
+						has_government = paternal_autocracy
+						NOT = {
+							OR = {
+							original_tag = BLR
+							original_tag = TFM
+							original_tag = KAZ
+							has_country_flag = SOV_putin_survives
+							}
+						}
+					}
+				}
+				if = {
+					limit = {country_exists = DPR}
+					annex_country = { 
+						target = DPR
+						transfer_troops = yes
+					}	
+					if = {
+					limit = {country_exists = OUN}
+						declare_war_on = {
+							target = OUN
+							type = annex_everything
+						}				
+					}
+					if = {
+					limit = {country_exists = UKR}
+						declare_war_on = {
+							target = UKR
+							type = annex_everything
+						}					
+					}		
+					if = {
+					limit = {country_exists = UCR}
+						declare_war_on = {
+							target = UCR
+							type = annex_everything
+						}					
+					}
+					if = {
+					limit = {country_exists = MOL}
+						declare_war_on = {
+							target = MOL
+							type = annex_everything
+						}					
+					}						
+				}			
+			}	
+			else = { #soviet unifiers
+					if = {
+					limit = {country_exists = DPR}
+					annex_country = { 
+						target = DPR
+						transfer_troops = yes
+					}	
+					if = {
+					limit = {country_exists = UKR}
+					annex_country = { 
+						target = UKR
+						transfer_troops = yes
+					}	
+					}
+					if = {
+					limit = {country_exists = OUN}
+						declare_war_on = {
+							target = OUN
+							type = annex_everything
+						}				
+					}
+					if = {
+					limit = {country_exists = UCR}
+						declare_war_on = {
+							target = UCR
+							type = annex_everything
+						}					
+					}
+					if = {
+					limit = {country_exists = MOL}
+						declare_war_on = {
+							target = MOL
+							type = annex_everything
+						}					
+					}					
+				}				
+			}
+		}	
+	}	
+
+	SC_UNIFIER_deal_with_central_asia = {
+		allowed = {
+			OR = {
+				original_tag = SOV
+				original_tag = BLR
+				original_tag = TFM
+				original_tag = SMC
+				original_tag = RSF
+				original_tag = RPR
+				original_tag = SOE
+				original_tag = FEG
+				original_tag = RNF
+				original_tag = FAO
+				original_tag = KAZ			
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			has_country_flag = unified_russia		
+			NOT = {has_government = liberalism}
+			NOT = {has_government = democratic}
+		}
+		available = {
+			has_war = no		
+			OR = {
+				AND = {
+				is_neighbor_of = UZB
+				UZB = {has_government = democratic}
+				}
+				is_neighbor_of = TAJ
+				is_neighbor_of = TMS
+				is_neighbor_of = KYR
+			}
+		}
+		
+		cost = 0
+		days_remove = 3
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        remove_effect = {
+			declare_war_on = {
+				target = UZB
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = TAJ
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = TMS
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KYR
+				type = annex_everything
+			}
+		}
+	}
+
+	SC_UNIFIER_reorganize_ukraine = {
+		allowed = {
+			OR = {
+				original_tag = SOV
+				original_tag = BLR
+				original_tag = TFM
+				original_tag = SMC
+				original_tag = RSF
+				original_tag = RPR
+				original_tag = SOE
+				original_tag = FEG
+				original_tag = RNF
+				original_tag = FAO
+				original_tag = KAZ			
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			has_country_flag = unified_russia			
+		}
+		available = {
+			has_war = no		
+			owns_state = 202
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = { #dem unifiers
+				limit = {
+					OR = {
+						has_government = liberalism
+						has_government = democratic
+					}
+				}
+					UKR = {
+						every_core_state = {
+							remove_core_of = UKR
+							add_core_of = UCR
+						}
+					}
+					OUN = {
+						every_core_state = {
+							remove_core_of = OUN
+							add_core_of = UCR
+						}
+					}						
+					release = UCR
+					give_guarantee = UCR
+					diplomatic_relation = {
+						country = UCR
+						relation = non_aggression_pact
+						active = yes
+					}
+					UCR = {
+						diplomatic_relation = {
+							country = FROM
+							relation = non_aggression_pact
+							active = yes
+						}	
+						transfer_state = 137
+					}
+					if = {
+						limit = {has_government = democratic}
+						transfer_state = 137
+						transfer_state = 228
+						transfer_state = 221
+						transfer_state = 227
+					}
+					else = {
+						DPR = {
+							every_core_state = {
+								remove_core_of = DPR
+								add_core_of = UCR
+							}
+						}					
+					}
+				if = {
+					limit = {country_exists = OUN}
+						declare_war_on = {
+							target = OUN
+							type = annex_everything
+						}					
+					}
+					if = {
+					limit = {country_exists = UKR}
+						declare_war_on = {
+							target = UKR
+							type = annex_everything
+						}					
+					}		
+					if = {
+					limit = {country_exists = DPR}
+						declare_war_on = {
+							target = DPR
+							type = annex_everything
+						}					
+					}
+			}
+			
+			else_if = { #nationalists/patout unifiers
+				limit = {
+					OR = {
+						has_government = fascism
+						has_government = paternal_autocracy
+						NOT = {
+							OR = {
+							original_tag = BLR
+							original_tag = TFM
+							original_tag = KAZ
+							has_country_flag = SOV_putin_survives
+							}
+						}
+					}
+				}
+					UKR = {
+						every_core_state = {
+							remove_core_of = UKR
+							add_claim_by = ROOT
+						}
+					}
+					OUN = {
+						every_core_state = {
+							remove_core_of = OUN
+							add_claim_by = ROOT
+						}
+					}
+					UCR = {
+						every_core_state = {
+							remove_core_of = UCR
+							add_claim_by = ROOT
+						}
+					}
+					DPR = {
+						every_core_state = {
+							remove_core_of = DPR
+							add_claim_by = ROOT
+						}
+					}		
+					add_state_core = 137
+					add_state_core = 228
+					add_state_core = 221
+					add_state_core = 227
+					add_state_core = 196
+					add_state_core = 200
+			}	
+			else = { #soviet unifiers
+					UKR = {
+						every_core_state = {
+							remove_core_of = UKR
+							add_core_of = ROOT
+						}
+					}
+					OUN = {
+						every_core_state = {
+							remove_core_of = OUN
+							add_core_of = ROOT
+						}
+					}
+					UCR = {
+						every_core_state = {
+							remove_core_of = UCR
+							add_core_of = ROOT
+						}
+					}
+					DPR = {
+						every_core_state = {
+							remove_core_of = DPR
+							add_core_of = ROOT
+						}
+					}						
+			}
+		}	
+	}
+
+	SC_UNIFIER_reorganize_baltics = {
+		allowed = {
+			OR = {
+				original_tag = RPR
+				original_tag = RNF		
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			has_country_flag = unified_russia			
+		}
+		available = {
+			has_war = no		
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			release = EST
+			EST= {
+				set_politics = {
+					ruling_party = liberalism
+					long_name = EST_liberalism_1_party_long
+					name = EST_liberalism_1_party
+				}
+				set_popularities = {
+					social_democracy = 25
+					liberalism = 40
+					democratic = 25
+					fascism = 10
+				}
+			}
+			release = LIT
+			release = LAT
+		}	
+	}	
+	
+	SC_UNIFIER_reorganize_central_asia = {
+		allowed = {
+			OR = {
+				original_tag = RPR
+				original_tag = RNF		
+			}
+		}		
+		visible = {
+			has_global_flag = ussr_putin_collapse
+			has_country_flag = unified_russia			
+		}
+		available = {
+			has_war = no		
+			owns_state = 586
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			release = RKA
+			puppet = RKA
+			RKA = {
+				set_politics = {
+					ruling_party = liberalism
+				}			
+				set_popularities = {
+					democratic = 30
+					paternal_autocracy = 13
+					neutrality = 10
+					fascism = 15
+					liberalism = 32
+				}
+			}
+			release = UZB
+			puppet = UZB
+			UZB = {
+				set_politics = {
+					ruling_party = democratic
+				}
+				set_popularities = {
+					democratic = 30
+					paternal_autocracy = 23
+					neutrality = 0
+					fascism = 15
+					liberalism = 22
+					social_democracy = 10
+				}
+			}
+			release = TAJ
+			puppet = TAJ
+			TAJ = {
+				set_politics = {
+					ruling_party = democratic
+				}
+				set_popularities = {
+					democratic = 40
+					paternal_autocracy = 23
+					neutrality = 12
+					liberalism = 25
+					liberalism = 0
+					social_democracy = 0
+				}
+			}
+			release = KYR
+			puppet = KYR
+			KYR = {
+				set_politics = {
+					ruling_party = democratic
+				}
+				set_popularities = {
+					democratic = 30
+					paternal_autocracy = 10
+					neutrality = 25
+					liberalism = 15
+					social_democracy = 25
+				}
+			}
+			TMS = {
+				set_politics = { ruling_party = liberalism }
+				set_popularities = {
+					liberalism = 35
+					paternal_autocracy = 15
+					neutrality = 10
+					democratic = 25
+					social_democracy = 15
+				}
+				transfer_state = 584
+				transfer_state = 832
+				transfer_state = 1047
+				transfer_state = 1046
+				if = {
+					limit = { ROOT = { owns_state = 1045 } }
+					transfer_state = 1045
+				}
+			}
+			puppet = TMS
+		}
+	}		
+}	
+
+
+turkish_civil_war = {
+
+	TCW_declare_victory = {
+		name = "Declare Victory"
+		allowed = {
+			OR = {
+				original_tag = TUR
+				original_tag = TUU
+				original_tag = TUS
+				original_tag = TUC
+			}	
+		}		
+		visible = {
+			has_global_flag = turkish_cw_ongoing
+		}
+		available = {
+			has_war = no
+			FROM = {
+				all_core_state = {
+					is_owned_by = FROM
+				}
+			}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			if = {
+				limit = { NOT = { original_tag = TUS }}
+				set_capital = {
+					state = 49
+					remember_old_capital = no
+				}
+				else = {
+					set_capital = {
+						state = 797
+						remember_old_capital = no
+					}
+				}
+			}
+
+			remove_ideas = TUR_cw_idea
+			clr_global_flag = turkish_cw_ongoing
+			
+			if = {
+				limit = {
+					original_tag = TUR
+				}
+				every_core_state = {
+					remove_core_of = TUU
+					remove_core_of = TUS
+					remove_core_of = TUC
+				}
+				set_cosmetic_tag = TUR
+				country_event = {id = tur_mod.1 days = 2}
+				news_event = turkey_news.7
+			}
+			
+			if = {
+				limit = {
+					original_tag = TUS
+				}
+				every_core_state = {
+					remove_core_of = TUR
+					remove_core_of = TUU
+					remove_core_of = TUC
+				}
+				set_cosmetic_tag = TUS_win
+				country_event = {id = tus_mod.1 days = 15}
+				remove_ideas = TUS_memories_of_97
+				news_event = turkey_news.8
+			}	
+			
+			if = {
+				limit = {
+					original_tag = TUU
+				}
+				every_core_state = {
+					remove_core_of = TUR
+					remove_core_of = TUS
+					remove_core_of = TUC
+				}
+				set_cosmetic_tag = TUU_win
+				news_event = turkey_news.9
+			}	
+
+			if = {
+				limit = {
+					original_tag = TUC
+				}
+				every_core_state = {
+					remove_core_of = TUR
+					remove_core_of = TUS
+					remove_core_of = TUU
+				}
+				set_cosmetic_tag = TUC_win
+				country_event = {id = tuc_mod.1 days = 15}
+				news_event = turkey_news.10
+			}			
+        }		
+		
+	}
+	
+	TCW_recruit_militia = {
+		name = "Recruit Militia"
+		allowed = {
+			OR = {
+				original_tag = TUR
+				original_tag = TUU
+				original_tag = TUS
+				original_tag = TUC
+			}	
+		}		
+		visible = {
+			has_global_flag = turkish_cw_ongoing
+		}
+		available = {
+			has_war = yes
+		}
+		
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 15
+		ai_will_do = {
+			factor = 500
+		}
+        complete_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_template = "Emergency Militia Division"
+					}
+				}
+				division_template = {
+					name = "Emergency Militia Division"
+					division_names_group = GENERIC_INF_01
+
+					regiments = {
+						militia_unit = { x = 0 y = 0 }
+						militia_unit = { x = 0 y = 1 }
+						militia_unit = { x = 0 y = 2 }
+						militia_unit = { x = 0 y = 3 }
+						militia_unit = { x = 0 y = 4 }	
+						militia_unit = { x = 1 y = 0 }	
+						infantry_unit = { x = 1 y = 1 }	
+						infantry_unit = { x = 1 y = 2 }	
+						infantry_unit = { x = 1 y = 3 }
+					}
+				}				
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Emergency Militia\" division_template = \"Emergency Militia Division\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
+					owner = FROM
+				}	
+				create_unit = {
+					division = "name = \"Emergency Militia\" division_template = \"Emergency Militia Division\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
+					owner = FROM
+				}
+				create_unit = {
+					division = "name = \"Emergency Militia\" division_template = \"Emergency Militia Division\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
+					owner = FROM
+				}				
+			}
+        }		
+		
+	}	
+	
+	TCW_TUR_emergency_directive = {
+		name = "Emergency Directive"
+		allowed = {
+			original_tag = TUR
+		}		
+		visible = {
+			has_global_flag = turkish_cw_ongoing
+		}
+		available = {
+			has_war = yes
+			has_global_flag = {
+				flag = turkish_cw_ongoing
+				days > 90
+			}			
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+		}
+        complete_effect = {
+			remove_ideas = TUR_dead_morale
+			set_country_flag = TUR_ergenekon
+			if = {
+				limit = {
+					NOT = {
+						has_template = "Emergency Militia Division"
+					}
+				}
+				division_template = {
+					name = "Emergency Militia Division"
+					division_names_group = GENERIC_INF_01
+
+					regiments = {
+						militia_unit = { x = 0 y = 0 }
+						militia_unit = { x = 0 y = 1 }
+						militia_unit = { x = 0 y = 2 }
+						militia_unit = { x = 0 y = 3 }
+						militia_unit = { x = 0 y = 4 }	
+						militia_unit = { x = 1 y = 0 }	
+						infantry_unit = { x = 1 y = 1 }	
+						infantry_unit = { x = 1 y = 2 }	
+						infantry_unit = { x = 1 y = 3 }
+					}
+				}				
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Emergency Militia\" division_template = \"Emergency Militia Division\" start_experience_factor = 0.3 start_equipment_factor = 0.6"
+					owner = FROM
+				}	
+				create_unit = {
+					division = "name = \"Emergency Militia\" division_template = \"Emergency Militia Division\" start_experience_factor = 0.3 start_equipment_factor = 0.6"
+					owner = FROM
+				}
+				create_unit = {
+					division = "name = \"Emergency Militia\" division_template = \"Emergency Militia Division\" start_experience_factor = 0.3 start_equipment_factor = 0.6"
+					owner = FROM
+				}				
+			}			
+        }		
+		
+	}	
+}

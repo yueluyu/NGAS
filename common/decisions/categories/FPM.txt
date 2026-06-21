@@ -1,0 +1,11 @@
+PRC_FMP_1 = {
+	icon = 1
+         allowed = {
+			original_tag = PRC
+		 }
+		 priority = 99
+		 visible = {
+			has_country_flag = PRC_FMP
+		 }
+		 visible_when_empty = yes
+}

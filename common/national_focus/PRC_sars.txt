@@ -1,0 +1,284 @@
+shared_focus = {
+	id = PRC_Investigating_sars
+	icon = GFX_focus_PRC_Investigating_sars
+
+	x = 28
+	y = -1
+	allow_branch = { 
+		has_country_flag = PRC_sars_come
+	}
+    available = {
+
+	}
+	search_filters = { FOCUS_FILTER_STABILITY }
+    ai_will_do = { base = 500 }
+	cost = 2
+
+	completion_reward = {
+		  add_political_power = -50
+		  hidden_effect = {
+		  country_event = {
+				id = prc_sars.2
+				days = 7
+			}
+		  }
+	}
+}
+shared_focus = {
+	id = PRC_block_message
+	icon = GFX_focus_PRC_block_message
+
+	x = 27
+	y = 0
+	available = {
+			custom_trigger_tooltip = {
+			    tooltip =  event_unlock
+			    always = no
+			}
+		}
+	ai_will_do = { base = 500 }
+	prerequisite = { focus = PRC_Investigating_sars }
+    mutually_exclusive = { focus = PRC_public_message }
+	search_filters = { FOCUS_FILTER_STABILITY }
+
+	cost = 0
+
+	completion_reward = {
+		  add_political_power = 10
+		  add_stability = 0.03
+	}
+}
+shared_focus = {
+	id = PRC_public_message
+	icon = GFX_focus_PRC_Investigating_sars
+
+	x = 29
+	y = 0
+	available = {
+			custom_trigger_tooltip = {
+			    tooltip =  event_unlock
+			    always = no
+			}
+		}
+	ai_will_do = { base = 500 }
+	prerequisite = { focus = PRC_Investigating_sars }
+    mutually_exclusive = { focus = PRC_block_message }
+	search_filters = { FOCUS_FILTER_STABILITY }
+
+	cost = 0
+
+	completion_reward = {
+	     add_political_power = -50
+		 add_stability = -0.05
+	}
+}
+shared_focus = {
+	id = PRC_Report_to_WHO
+	icon = GFX_focus_PRC_Report_to_WHO
+
+	x = 28
+	y = 1
+	available = {
+			custom_trigger_tooltip = {
+			    tooltip =  sars_has_spared
+			    has_country_flag = sars_has_spared_widely
+			}
+		}
+	ai_will_do = { base = 500 }
+	prerequisite = { 
+	     focus = PRC_block_message 
+	     focus = PRC_public_message 
+	}
+    
+	search_filters = { FOCUS_FILTER_STABILITY }
+
+	cost = 1.43
+
+	completion_reward = {
+	     add_political_power = -25
+		 add_stability = -0.025
+		 hidden_effect = {
+		 news_event = {
+			id = prc_news.3
+			hours = 24
+		 }
+	}
+   }
+}
+shared_focus = {
+	id = PRC_Seek_solutions
+	icon = GFX_focus_PRC_Seek_solutions
+
+	x = 28
+	y = 2
+	available = {
+			custom_trigger_tooltip = {
+			    tooltip =  sars_has_spared
+			    has_country_flag = sars_has_spared_widely
+			}
+		}
+	ai_will_do = { base = 500 }
+	prerequisite = { 
+	     focus = PRC_Report_to_WHO 
+	}
+    
+	search_filters = { FOCUS_FILTER_STABILITY }
+
+	cost = 3
+
+	completion_reward = {
+	     set_country_flag = Responding_to_SARS
+	}
+}
+shared_focus = {
+	id = PRC_Crack_down_on_false_information
+	icon = GFX_focus_PRC_Crack_down_on_false_information
+
+	x = 29
+	y = 3
+	available = {
+			custom_trigger_tooltip = {
+			    tooltip =  sars_has_spared
+			    has_country_flag = sars_has_spared_widely
+			}
+		}
+	ai_will_do = { base = 500 }
+	prerequisite = { 
+	     focus = PRC_Seek_solutions 
+	}
+    
+	search_filters = { FOCUS_FILTER_STABILITY }
+
+	cost = 2
+
+	completion_reward = {
+	     if = {
+				limit = {
+					has_idea = PRC_public_panic_1
+				}
+				swap_ideas = {
+					remove_idea = PRC_public_panic_1
+					add_idea = PRC_public_panic_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = PRC_public_panic_2
+				}
+				swap_ideas = {
+					remove_idea = PRC_public_panic_2
+					add_idea = PRC_public_panic_3
+				}
+				hidden_effect = {
+				 remove_ideas = PRC_public_panic_3
+				 add_timed_idea = {
+		       	   idea = PRC_public_panic_3
+			       days = 180
+		         }
+			}
+		}
+	}
+}
+shared_focus = {
+	id = PRC_Calmp_public
+	icon = GFX_focus_PRC_Calmp_public
+
+	x = 27
+	y = 3
+	available = {
+			custom_trigger_tooltip = {
+			    tooltip =  sars_has_spared
+			    has_country_flag = sars_has_spared_widely
+			}
+		}
+	ai_will_do = { base = 500 }
+	prerequisite = { 
+	     focus = PRC_Seek_solutions 
+	}
+    
+	search_filters = { FOCUS_FILTER_STABILITY }
+
+	cost = 2
+
+	completion_reward = {
+	     if = {
+				limit = {
+					has_idea = PRC_public_panic_1
+				}
+				swap_ideas = {
+					remove_idea = PRC_public_panic_1
+					add_idea = PRC_public_panic_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = PRC_public_panic_2
+				}
+				swap_ideas = {
+					remove_idea = PRC_public_panic_2
+					add_idea = PRC_public_panic_3
+				}
+				hidden_effect = {
+				 remove_ideas = PRC_public_panic_3
+				 add_timed_idea = {
+		       	   idea = PRC_public_panic_3
+			       days = 180
+		          }
+			}
+		}
+	}
+}
+shared_focus = {
+	id = PRC_Waiting_calm_down
+	icon = GFX_focus_PRC_Waiting_calm_down
+
+	x = 28
+	y = 4
+	available = {
+			custom_trigger_tooltip = {
+			    tooltip =  sars_has_spared
+			    has_country_flag = sars_has_spared_widely
+			}
+		}
+	ai_will_do = { base = 500 }
+	prerequisite = { 
+	     focus = PRC_Calmp_public 
+	}
+	prerequisite = { 
+	     focus = PRC_Crack_down_on_false_information 
+	}
+    
+	search_filters = { FOCUS_FILTER_STABILITY }
+
+	cost = 2
+
+	completion_reward = {
+	     if = {
+				limit = {
+					has_idea = PRC_public_panic_1
+				}
+				swap_ideas = {
+					remove_idea = PRC_public_panic_1
+					add_idea = PRC_public_panic_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = PRC_public_panic_2
+				}
+				swap_ideas = {
+					remove_idea = PRC_public_panic_2
+					add_idea = PRC_public_panic_3
+				}
+				hidden_effect = {
+				 remove_ideas = PRC_public_panic_3
+				 add_timed_idea = {
+		       	   idea = PRC_public_panic_3
+			       days = 180
+		          }
+			}
+		}
+	}
+}
+
+	

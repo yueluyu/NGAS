@@ -1,0 +1,11 @@
+leader_traits = {
+          guowuyuan_zongli = {
+			political_power_gain = 0.05
+			stability_factor = 0.05
+			consumer_goods_factor = -0.1
+			production_speed_industrial_complex_factor = 0.15
+		  }
+		  caopanshou = {
+			political_power_gain = 0.05
+		  }
+}

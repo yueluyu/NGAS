@@ -1,0 +1,379 @@
+ideas = {
+
+	country = {
+	    
+		PRC_support_from_mainland = {
+			name = "Supply From Mainland"
+
+			removal_cost = -1
+
+			picture = FEG_pla_supplies_icon
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				weekly_manpower = 5000
+				war_support_factor = 0.4
+				army_org_factor = 0.1
+			}
+		}
+
+		PRC_legacy_xiaoping_reform = {
+			name = PRC_legacy_xiaoping_reform_name
+
+			removal_cost = -1
+
+			picture = PRC_legacy_xiaoping_reform_icon
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				is_subject = yes
+			}
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.08
+				production_speed_infrastructure_factor = 0.15
+				production_speed_rail_way_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+				political_power_factor = -0.1
+				stability_factor = -0.05
+			}
+		}
+
+		PRC_army_status = {
+			name = PRC_army_status_name
+
+			removal_cost = -1
+
+			picture = PRC_PLA_status
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				is_subject = yes
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.1
+				army_org_factor = -0.1
+				max_planning_factor = -0.1
+				planning_speed = -0.15
+				experience_gain_army_factor = 0.25
+				experience_gain_army_unit_factor = 0.15
+				army_morale_factor = 0.1
+				army_core_defence_factor = 0.05
+				army_speed_factor = 0.05
+				army_artillery_attack_factor = 0.05
+				initiative_factor = 0.05
+				supply_consumption_factor = 0.05
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		PRC_army_lacking = {
+			name = PRC_army_lacking_name
+
+			removal_cost = -1
+
+			picture = PRC_army_poor_capa_icon
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				is_subject = yes
+			}
+
+			available = {
+				has_war = yes
+			}
+
+			modifier = {
+				army_org_factor = -0.1
+				army_attack_factor = -0.15
+				breakthrough_factor = -0.1
+				supply_consumption_factor = 0.1
+			}
+
+			on_remove = {
+				add_timed_idea = {
+					idea = PRC_army_lacking_1 
+					days = 60
+				}	
+			}
+		}
+
+		PRC_army_lacking_1 = {
+			name = PRC_army_lacking_name
+
+			removal_cost = -1
+
+			picture = PRC_army_poor_capa_icon
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				is_subject = yes
+			}
+
+			available = {
+				has_war = yes
+			}
+
+			modifier = {
+				army_org_factor = -0.1
+				army_attack_factor = -0.2
+				breakthrough_factor = -0.2
+				supply_consumption_factor = 0.2
+				land_reinforce_rate = -0.05
+				max_dig_in_factor = 0.12
+				ai_focus_defense_factor = 0.5
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = PRC_army_lacking_2
+					days = 90
+				}	
+			}
+		}
+
+		PRC_army_lacking_2 = {
+			name = "Adaptive To The Korean Warfare"
+
+			removal_cost = -1
+
+			picture = PRC_gaw_adapt_icon
+
+			allowed = {
+				always = no
+			}
+            
+			available = {
+				has_war = yes
+			}
+
+			cancel = {
+				is_subject = yes
+			}
+
+			modifier = {
+				army_org_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				supply_consumption_factor = -0.05
+			}
+			on_remove = {
+				add_ideas = PRC_army_lacking_3
+			}
+		}
+
+		PRC_army_lacking_3 = {
+			name = "Adaptive To The Korean Warfare"
+
+			removal_cost = -1
+
+			picture = PRC_gaw_adapt_icon
+
+			allowed = {
+				always = no
+			}
+
+			
+			available = {
+				has_war = yes
+			}
+
+			cancel = {
+				is_subject = yes
+			}
+
+			modifier = {
+				army_org_factor = 0.1
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				supply_consumption_factor = -0.1
+				army_morale_factor = 0.05
+			}
+		}
+		   PRC_factory_of_the_world = {
+			name = PRC_factory_of_the_world_name
+
+			removal_cost = -1
+
+			picture = PRC_world_fac_icon
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.08
+				consumer_goods_factor = 0.3
+				production_factory_efficiency_gain_factor = 0.05
+
+			}
+		}
+
+		PRC_third_taiwan_strait_crisis = {
+			name = PRC_third_taiwan_strait_crisis_idea_name
+
+			removal_cost = -1
+
+			picture = PRC_CHI_third_taiwan_strait_icon
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				political_power_cost = 0.1
+				airforce_intel_to_others = 10.0
+				army_intel_to_others = 10.0
+				navy_intel_to_others = 10.0
+				naval_invasion_penalty = 0.15
+			}
+		}
+
+		PRC_one_child_policy = {
+			name = PRC_one_child_policy_name
+
+			removal_cost = -1
+
+			picture = PRC_one_child_icon
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				monthly_population = -0.7
+				stability_factor = -0.1
+			}
+		}
+		
+
+		PRC_theory = {
+			name = PRC_theory_name
+
+			removal_cost = -1
+
+			picture = PRC_the_theory
+
+			cancel = {
+				is_subject = yes
+			}
+
+			modifier = {
+				drift_defence_factor = 0.2
+				stability_factor = 0.1
+			}
+		}
+		
+		 PRC_theory_1 = {
+			name = PRC_theory_1_name
+
+			removal_cost = -1
+
+			picture = PRC_the_theory
+
+			cancel = {
+				is_subject = yes
+			}
+
+			modifier = {
+				drift_defence_factor = 0.2
+				stability_factor = 0.12
+			}
+		}
+		
+		PRC_three_bodies_of_the_party = {
+			name = PRC_three_bodies_of_the_party_name
+
+			removal_cost = -1
+
+			picture = PRC_three_bodies
+	
+			cancel = {
+				is_subject = yes
+			}
+	
+			modifier = {
+				political_power_factor = 0.1
+			}
+		}
+		
+		PRC_security_at_all_cost = {
+			name =  PRC_security_at_all_cost_name
+
+			removal_cost = -1
+
+			picture = PRC_security
+
+			cancel = {
+				is_subject = yes
+			}
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = -0.1
+			}
+		}
+		
+		PRC_taiwan_invasion = {
+			name =  PRC_taiwan_invasion_name
+
+			removal_cost = -1
+
+			picture = PRC_security
+			
+			modifier = {
+				send_volunteer_size = 10
+			}
+		}
+
+		PRC_navy_blockade = {
+			name =  "US Naval Supremacy"
+
+			removal_cost = -1
+
+			picture = usa_war_department
+			
+			modifier = {
+				invasion_preparation = 20
+                naval_invasion_capacity = -24
+				naval_invasion_penalty = 10
+				navy_max_range_factor = -0.35
+				convoy_escort_efficiency = -0.3
+				convoy_retreat_speed = -0.1
+				naval_retreat_chance = 0.25
+				sub_retreat_speed = 0.15
+				navy_visibility = 0.15
+				naval_retreat_chance_after_initial_combat = 0.1
+			}
+		}
+		
+		PRC_unpopular_administration = {
+			name =  "Unpopular Administration"
+
+			removal_cost = -1
+
+			picture = SWE_neither_death_nor_dishonor
+			
+			modifier = {
+				conscription_factor = -0.80
+
+			}
+		}	
+	}
+}

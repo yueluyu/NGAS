@@ -1,0 +1,70 @@
+add_namespace = prc_news
+news_event = {
+	id = prc_news.1
+	title = prc_news.1.t
+	desc = prc_news.1.d
+	picture = GFX_news_prc_teenth
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prc_news.1.a
+		trigger = {
+			NOT = {
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = prc_news.1.b
+		trigger = { TAG = PRC }
+	}
+}
+news_event = {
+	id = prc_news.2
+	title = prc_news.2.t
+	desc = prc_news.2.d
+	picture = GFX_news_prc_lijian
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prc_news.2.a
+		trigger = {
+			NOT = {
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = prc_news.2.b
+		trigger = { TAG = PRC }
+	}
+}
+news_event = {
+	id = prc_news.3
+	title = prc_news.3.t
+	desc = prc_news.3.d
+	picture = GFX_news_prc_sars
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prc_news.3.a
+		trigger = {
+			NOT = {
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = prc_news.3.b
+		trigger = { TAG = PRC }
+	}
+}

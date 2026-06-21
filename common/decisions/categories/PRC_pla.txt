@@ -1,0 +1,11 @@
+PRC_pla = {
+	     icon = 1
+         allowed = {
+			original_tag = PRC
+		 }
+		 priority = 99
+		 visible = {
+			original_tag = PRC
+		 }
+		 visible_when_empty = yes
+}

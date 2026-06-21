@@ -1,0 +1,12 @@
+five_years_plan = {
+	     scripted_gui = five_years_plan
+	     icon = generic_communism
+         allowed = {
+			original_tag = PRC
+		 }
+		 priority = 100
+		 visible = {
+			original_tag = PRC
+		 }
+		 visible_when_empty = yes
+}

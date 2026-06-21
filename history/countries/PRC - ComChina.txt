@@ -1,0 +1,1104 @@
+﻿capital = 608
+
+set_oob = "PRC_2000"
+set_air_oob = "PRC_2000_air"
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		attack_submarine_hull_1960 = 1
+		attack_submarine_hull_1980 = 1
+		attack_submarine_hull_1990 = 1
+		ballistic_submarine_hull_1960 = 1
+		ballistic_submarine_hull_1980 = 1
+		destroyer_hull_1960 = 1
+		destroyer_hull_1980 = 1
+		destroyer_hull_1990 = 1
+		naval_engine_diesel_1960 = 1
+		naval_engine_diesel_1980 = 1
+		naval_engine_nuclear_1960 = 1
+		naval_engine_nuclear_1980 = 1
+		naval_sonar_1960 = 1
+		naval_sonar_1980 = 1
+		torpedo_launcher_1960 = 1
+		torpedo_launcher_1980 = 1
+		torpedo_upgrade_1960 = 1
+		torpedo_upgrade_1980 = 1
+		aswrl_1960 = 1
+		aswrl_1980 = 1
+		naval_gun_1960 = 1
+		naval_gun_1980 = 1
+		naval_gun_ammo_1960 = 1
+		naval_transport_1960 = 1
+		naval_transport_1980 = 1
+		naval_training_1960 = 1
+	}
+	else = {
+		set_technology = {
+			attack_submarine_vanilla_1960 = 1
+			attack_submarine_vanilla_1980 = 1
+			attack_submarine_vanilla_1990 = 1
+			ballistic_submarine_vanilla_1960 = 1
+			ballistic_submarine_vanilla_1980 = 1
+			destroyer_vanilla_1960 = 1
+			destroyer_vanilla_1980 = 1
+			destroyer_vanilla_1990 = 1
+			naval_transport_vanilla_1960 = 1
+			naval_transport_vanilla_1980 = 1
+		}
+	}
+}
+set_technology = {
+        infantry_weapons_1960 = 1
+	infantry_weapons_1980 = 1
+	support_weapons_1960 = 1
+	support_weapons_1980 = 1
+	support_weapons_1990 = 1
+	support_weapons_1995 = 1
+        infantry_anti_tank_weapons_1960 = 1
+	infantry_anti_tank_weapons_1980 = 1
+	infantry_anti_air_weapons_1960 = 1
+	infantry_anti_air_weapons_1980 = 1
+	marine_tech_1960 = 1
+	tech_support = 1
+	tech_motorised_1960 = 1
+	tech_motorised_1980 = 1
+	tech_train_1960 = 1
+	towed_artillery_1960 = 1
+	towed_artillery_1980 = 1
+	motorised_artillery_1960 = 1
+	motorised_artillery_1970 = 1
+	motorised_artillery_1980 = 1
+	motorised_artillery_1990 = 1
+	rocket_artillery_1960 = 1
+	rocket_artillery_1970 = 1
+	rocket_artillery_1980 = 1
+	rocket_artillery_1990 = 1
+	tech_air_burst_shells = 1
+	tech_artillery_guidance_systems_1 = 1
+	mbt_tank_1960 = 1
+    mbt_tank_1970 = 1
+	mbt_tank_1980 = 1
+	mbt_tank_1990 = 1
+	tank_ammo_1960 = 1
+	tank_ammo_1970 = 1
+	ifv_tank_1970 = 1
+	ifv_anti_tank_missile_1 = 1
+	ifv_anti_tank_missile_2 = 1
+	ifv_anti_tank_missile_3 = 1
+	apc_tank_1960 = 1
+	apc_tank_1970 = 1
+	apc_tank_1980 = 1
+	apc_tank_1990 = 1
+	spaa_tank_1960 = 1
+	spaa_tank_1980 = 1
+	fighter_1960 = 1
+	fighter_1970 = 1
+	interceptor_1970 = 1
+	attacker_1960 = 1
+	attacker_1970 = 1
+	attacker_1980 = 1
+	attacker_1990 = 1
+	strike_bomber_1960 = 1
+	heli_transport_1960 = 1
+	heli_transport_1970 = 1
+	heli_attack_1970 = 1
+	heli_naval_1970 = 1
+	heli_naval_1990 = 1
+	drone_recon_1980 = 1
+	support_tech_engineers_1960 = 1
+	support_tech_engineers_1980 = 1
+	support_tech_militarypolice_1960 = 1
+	support_tech_militarypolice_1980 = 1
+	support_tech_hospital_1960 = 1
+	support_tech_maintenance_1960 = 1
+	support_tech_logistics_1960 = 1
+	support_tech_recon_1960 = 1
+
+	computing_tech_1960 = 1
+	computing_tech_1980 = 1
+	computing_tech_1990 = 1
+	computing_tech_2000 = 1
+	radio_tech_1960 = 1
+	naval_radar_1960 = 1
+	naval_radar_1980 = 1
+	naval_radar_1990 = 1
+
+	missile_tech_1940 = 1
+	cruise_missile_1960 = 1
+	cruise_missile_1980 = 1
+	cruise_missile_2000 = 1
+	ballistic_missile_1960 = 1
+	ballistic_missile_1980 = 1
+
+	nuclear_research_tech = 1
+	nuclear_reactor_tech_1 = 1
+	nuclear_reactor_tech_2 = 1
+	nukes = 1
+	hydrogen_bomb_tech = 1
+}
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		recon_vehicle_1960 = 1
+	}
+}
+set_research_slots = 4
+
+set_convoys = 600
+
+set_stability = 0.54
+set_war_support = 0.45
+
+if = {
+	limit = { has_dlc = "La Resistance" }
+	create_intelligence_agency = {
+		name = "Ministry of State Security"
+		icon = "GFX_intelligence_agency_logo_prc"
+	}
+}
+
+# leaders #
+recruit_character = PRC_jiang_zemin
+recruit_character = PRC_hu_jintao
+recruit_character = PRC_li_lanqing 
+recruit_character = PRC_bo_xilao
+recruit_character = PRC_Wu_Bangguo
+recruit_character = PRC_Chen_Liangyu
+recruit_character = PRC_zhou_yongkang
+recruit_character = PRC_zeng_qinghong
+recruit_character = PRC_wen_jiabao
+recruit_character = PRC_liu_xiaobo
+
+#guwen#
+recruit_character = PRC_zhu_longji
+recruit_character = PRC_wang_huning
+
+# generals #
+recruit_character = PRC_qian_shugen
+recruit_character = PRC_xiong_guangkai
+recruit_character = PRC_tang_tianbiao
+recruit_character = PRC_xu_caihou
+recruit_character = PRC_Zhang_Wannian 
+recruit_character = PRC_Guo_Boxiong
+recruit_character = PRC_Chi_Hao_Tian
+recruit_character = PRC_fu_quanyou
+recruit_character = PRC_liang_guanglie
+recruit_character = PRC_chen_xitao
+recruit_character = PRC_jing_zhiyuan
+recruit_character = PRC_Cao_Gangchuan
+
+
+
+
+
+
+
+
+# admirals #
+recruit_character = PRC_shi_yunsheng
+
+#special#
+recruit_character = PRC_chaos
+
+set_politics = {
+	ruling_party = reformed_communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	communism = 20
+    reformed_communism = 43
+    democratic = 4
+	socialism = 10
+	social_democracy = 5
+    liberalism = 8
+	neutrality = 10
+}
+add_ideas = {
+	PRC_zhu_longji
+	PRC_wang_huning
+}
+add_ideas = {
+	volunteer_only
+	accepted_minority
+}
+add_ideas = PRC_theory
+add_ideas = PRC_one_child_policy
+add_ideas = Chinese_path
+add_ideas = Revitalize_the_country_through_science_education
+add_dynamic_modifier = { modifier = PRC_Modernization_of_the_military_1 }
+add_dynamic_modifier = { modifier = PRC_factory_of_the_world }
+add_ideas = PRC_three_bodies_of_the_party
+add_ideas = nation_status_superpower
+add_ideas = hei_e_shili
+add_ideas = xia_gang_chao
+add_ideas = china_aligned_nation
+add_ideas = Zhu_is_zongli
+add_ideas = nineth_five_years_plan
+add_ideas = army_jing_shang
+
+add_dynamic_modifier = { modifier = PRC_tuan_pai}
+add_dynamic_modifier = { modifier = PRC_jiang_pai}
+set_variable = {
+			tuan_pai_pp_gain = 0
+}
+set_variable = {
+			tuan_pai_advisor_cost = 0
+}
+set_variable = {
+			jiang_pai_stability = 0
+}
+set_variable = {
+			jiang_pai_production_speed = 0
+}
+set_variable = {
+	PLA_army_speed = 0
+}
+set_variable = {
+			PLA_army_org = -0.35
+}
+set_variable = {
+			PLA_army_attack = -0.3
+}
+set_variable = {
+			PLA_army_defence = -0.3
+}
+set_variable = {
+			PLA_max_planning = -0.15
+}
+set_variable = {
+			PLA_planning_speed = -0.15
+}
+set_variable = {
+			PLA_training_time = 0
+}
+set_variable = {
+			PLA_experience_gain_army = -0.15
+}
+set_variable = {
+			PLA_experience_gain_army_unit = -0.15
+}
+set_variable = {
+			PLA_army_morale = -0.25
+}
+set_variable = {
+			PLA_army_core_defence = 0.10
+}
+set_variable = {
+			PLA_army_artillery_attack = 0.1
+}
+set_variable = {
+			PLA_initiative = 0
+}
+set_variable = {
+			PLA_supply_consumption = 0.05
+}
+set_variable = {
+			PLA_army_armor_attack = 0
+}
+set_variable = {
+			PLA_army_armor_defence = 0
+}
+set_variable = {
+			PRC_factory_of_the_world_1 = 0.1
+}
+set_variable = {
+			PRC_factory_of_the_world_2 = 0.15
+}
+set_variable = {
+			PRC_factory_of_the_world_3 = 0.05
+}
+set_country_flag = COUNTRY_HAS_SECONDARY_LEADER
+
+
+
+diplomatic_relation = {
+	country = KOR
+	relation = guarantee
+}
+set_autonomy = {
+	target = HKG
+	autonomy_state = autonomy_special_administrative_region
+}
+set_autonomy = {
+	target = MCU
+	autonomy_state = autonomy_special_administrative_region
+}
+
+add_opinion_modifier = { target = RAJ modifier = HISTORIC_india_china_prc_opinion }
+
+# Naval Variants #
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_naval_oob = "PRC_2000_naval_mtg"
+
+	# Attack Submarines #
+	create_equipment_variant = {
+		name = "Type 035 Class"
+		type = attack_submarine_hull_1
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = sub_electrical_systems_1
+			fixed_ship_engine_slot = sub_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_1
+			custom_ship_torpedo_slot = ship_torpedo_sub_2
+			custom_slot_1 = ship_torpedo_sub_2
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 035A Class"
+		type = attack_submarine_hull_1
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = sub_electrical_systems_1
+			fixed_ship_engine_slot = sub_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_1
+			custom_ship_torpedo_slot = ship_torpedo_sub_2
+			custom_slot_1 = ship_torpedo_sub_2
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 035B Class"
+		type = attack_submarine_hull_1
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = sub_electrical_systems_1
+			fixed_ship_engine_slot = sub_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_1
+			custom_ship_torpedo_slot = ship_torpedo_sub_2
+			custom_slot_1 = ship_torpedo_sub_2
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 039 Class"
+		type = attack_submarine_hull_3
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = sub_electrical_systems_1
+			fixed_ship_engine_slot = sub_engine_diesel_2
+			fixed_ship_sonar_slot = sub_sonar_3
+			custom_ship_torpedo_slot = ship_torpedo_sub_2
+			custom_slot_1 = ship_torpedo_sub_1
+			custom_slot_2 = empty
+		}
+		obsolete = no
+	}
+	create_equipment_variant = {
+		name = "Type 039G Class"
+		type = attack_submarine_hull_3
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = sub_electrical_systems_1
+			fixed_ship_engine_slot = sub_engine_diesel_2
+			fixed_ship_sonar_slot = sub_sonar_3
+			custom_ship_torpedo_slot = ship_torpedo_sub_2
+			custom_slot_1 = ship_torpedo_sub_1
+			custom_slot_2 = empty
+		}
+		obsolete = no
+	}
+	create_equipment_variant = {
+		name = "Type 091 Class"
+		type = attack_submarine_hull_1
+		name_group = PRC_SSN_NUMERICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = sub_electrical_systems_1
+			fixed_ship_engine_slot = sub_engine_nuclear_1
+			fixed_ship_sonar_slot = sub_sonar_1
+			custom_ship_torpedo_slot = ship_torpedo_sub_2
+			custom_slot_1 = ship_torpedo_sub_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 093 Class"
+		type = attack_submarine_hull_3
+		name_group = PRC_SSN_NUMERICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = sub_electrical_systems_1
+			fixed_ship_engine_slot = sub_engine_nuclear_2
+			fixed_ship_sonar_slot = sub_sonar_3
+			custom_ship_torpedo_slot = ship_torpedo_sub_2
+			custom_slot_1 = ship_torpedo_sub_1
+			custom_slot_2 = cruise_missile_3
+		}
+		obsolete = no
+	}
+
+	# Ballistic Missile Submarines #
+	create_equipment_variant = {
+		name = "Type 092 Class"
+		type = ballistic_submarine_hull_2
+		name_group = PRC_SSN_NUMERICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = sub_electrical_systems_1
+			fixed_ship_engine_slot = sub_engine_nuclear_1
+			fixed_ship_sonar_slot = sub_sonar_1
+			custom_ship_torpedo_slot = ship_torpedo_sub_2
+			custom_slot_1 = ship_torpedo_sub_1
+			custom_sub_ballistic_missile_slot_1 = ballistic_missile_2
+			custom_sub_ballistic_missile_slot_2 = ballistic_missile_2
+			custom_sub_ballistic_missile_slot_3 = ballistic_missile_2
+			custom_sub_ballistic_missile_slot_4 = empty
+			custom_sub_ballistic_missile_slot_5 = empty
+		}
+		obsolete = no
+	}
+
+	# Frigates #
+	create_equipment_variant = {
+		name = "Type 053H Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_1
+			fixed_ship_engine_slot = small_surface_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_1
+			fixed_ship_radar_slot = ship_radar_1
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = empty
+			custom_ship_cannon_slot = naval_gun_1
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = cruise_missile_1
+			custom_slot_3 = empty
+			custom_slot_4 = depth_charges_1
+			custom_ship_rear_cannon_slot = naval_gun_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053HT Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_2
+			fixed_ship_engine_slot = small_surface_engine_diesel_2
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = empty
+			custom_ship_cannon_slot = naval_gun_1
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = cruise_missile_2
+			custom_slot_3 = cruise_missile_2
+			custom_slot_4 = aswrl_1
+			custom_ship_rear_cannon_slot = naval_gun_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053HTH Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_2
+			fixed_ship_engine_slot = small_surface_engine_diesel_2
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = naval_helicopter_1
+			custom_ship_cannon_slot = naval_gun_1
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = cruise_missile_2
+			custom_slot_3 = cruise_missile_2
+			custom_slot_4 = aswrl_1
+			custom_ship_rear_cannon_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H1 Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_2
+			fixed_ship_engine_slot = small_surface_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = empty
+			custom_ship_cannon_slot = naval_gun_1
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = cruise_missile_1
+			custom_slot_3 = empty
+			custom_slot_4 = depth_charges_1
+			custom_ship_rear_cannon_slot = naval_gun_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H1Q Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_1
+			fixed_ship_engine_slot = small_surface_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = naval_helicopter_1
+			custom_ship_cannon_slot = naval_gun_1
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = ship_torpedo_surface_1
+			custom_slot_3 = cruise_missile_1
+			custom_slot_4 = aswrl_1
+			custom_ship_rear_cannon_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H2 Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_2
+			fixed_ship_engine_slot = small_surface_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = empty
+			custom_ship_cannon_slot = naval_gun_2
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = cruise_missile_2
+			custom_slot_3 = cruise_missile_2
+			custom_slot_4 = depth_charges_1
+			custom_ship_rear_cannon_slot = naval_gun_2
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H1G Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_2
+			fixed_ship_engine_slot = small_surface_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = empty
+			custom_ship_cannon_slot = naval_gun_2
+			custom_slot_1 = aswrl_2
+			custom_slot_2 = cruise_missile_1
+			custom_slot_3 = empty
+			custom_slot_4 = depth_charges_1
+			custom_ship_rear_cannon_slot = naval_gun_2
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H2G Class"
+		type = destroyer_hull_3
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_3
+			fixed_ship_engine_slot = small_surface_engine_diesel_2
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_defensive_slot_1 = sam_missile_2
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = naval_helicopter_2
+			custom_ship_cannon_slot = naval_gun_2
+			custom_slot_1 = aswrl_2
+			custom_slot_2 = cruise_missile_2
+			custom_slot_3 = empty
+			custom_slot_4 = aswrl_2
+			custom_ship_rear_cannon_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H3 Class"
+		type = destroyer_hull_3
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_3
+			fixed_ship_engine_slot = small_surface_engine_diesel_2
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_defensive_slot_1 = sam_missile_2
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = naval_helicopter_2
+			custom_ship_cannon_slot = naval_gun_2
+			custom_slot_1 = aswrl_2
+			custom_slot_2 = cruise_missile_3
+			custom_slot_3 = cruise_missile_3
+			custom_slot_4 = aswrl_2
+			custom_ship_rear_cannon_slot = empty
+		}
+		obsolete = no
+	}
+
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Type 051 Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_1
+			fixed_ship_engine_slot = small_surface_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_1
+			fixed_ship_radar_slot = ship_radar_1
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = empty
+			custom_ship_cannon_slot = naval_gun_1
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = cruise_missile_1
+			custom_slot_3 = empty
+			custom_slot_4 = mine_layer_1
+			custom_ship_rear_cannon_slot = naval_gun_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 051G Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_2
+			fixed_ship_engine_slot = small_surface_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = empty
+			custom_ship_cannon_slot = naval_gun_1
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = cruise_missile_1
+			custom_slot_3 = empty
+			custom_slot_4 = mine_layer_1
+			custom_ship_rear_cannon_slot = naval_gun_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 051GT Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_2
+			fixed_ship_engine_slot = small_surface_engine_diesel_1
+			fixed_ship_sonar_slot = sub_sonar_2
+			fixed_ship_radar_slot = ship_radar_2
+			fixed_ship_defensive_slot_1 = anti_air_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = empty
+			custom_ship_cannon_slot = naval_gun_1
+			custom_slot_1 = aswrl_1
+			custom_slot_2 = ship_torpedo_surface_1
+			custom_slot_3 = cruise_missile_2
+			custom_slot_4 = mine_layer_1
+			custom_ship_rear_cannon_slot = naval_gun_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 052 Class"
+		type = destroyer_hull_3
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_3
+			fixed_ship_engine_slot = small_surface_engine_diesel_2
+			fixed_ship_sonar_slot = sub_sonar_3
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_defensive_slot_1 = sam_missile_1
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = naval_helicopter_1
+			custom_ship_cannon_slot = naval_gun_2
+			custom_slot_1 = cruise_missile_2
+			custom_slot_2 = ship_torpedo_surface_1
+			custom_slot_3 = cruise_missile_2
+			custom_slot_4 = aswrl_1
+			custom_ship_rear_cannon_slot = empty
+		}
+		obsolete = no
+	}
+	create_equipment_variant = {
+		name = "Type 051B Class"
+		type = destroyer_hull_3
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		modules = {
+			fixed_ship_systems_slot = surface_electrical_systems_4
+			fixed_ship_engine_slot = small_surface_engine_diesel_2
+			fixed_ship_sonar_slot = sub_sonar_3
+			fixed_ship_radar_slot = ship_radar_3
+			fixed_ship_defensive_slot_1 = sam_missile_2
+			fixed_ship_defensive_slot_2 = anti_air_1
+			fixed_ship_aviation_slot = naval_helicopter_2
+			custom_ship_cannon_slot = naval_gun_2
+			custom_slot_1 = cruise_missile_2
+			custom_slot_2 = ship_torpedo_surface_1
+			custom_slot_3 = cruise_missile_2
+			custom_slot_4 = empty
+			custom_ship_rear_cannon_slot = empty
+		}
+		obsolete = no
+	}
+
+	else = {
+
+	set_naval_oob = "PRC_2000_naval"
+
+	# Attack Submarines #
+	create_equipment_variant = {
+		name = "Type 035 Class"
+		type = attack_submarine_hull_1
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		upgrades = {
+			sub_sensor_upgrade = 1
+			sub_engine_upgrade = 0
+			sub_stealth_upgrade = 0
+			sub_torpedo_upgrade = 3
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 035A Class"
+		type = attack_submarine_hull_1
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		upgrades = {
+			sub_sensor_upgrade = 1
+			sub_engine_upgrade = 0
+			sub_stealth_upgrade = 0
+			sub_torpedo_upgrade = 3
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 035B Class"
+		type = attack_submarine_hull_1
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		upgrades = {
+			sub_sensor_upgrade = 1
+			sub_engine_upgrade = 0
+			sub_stealth_upgrade = 0
+			sub_torpedo_upgrade = 3
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 039 Class"
+		type = attack_submarine_hull_3
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		upgrades = {
+			sub_sensor_upgrade = 3
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 0
+			sub_torpedo_upgrade = 2
+		}
+		obsolete = no
+	}
+	create_equipment_variant = {
+		name = "Type 039G Class"
+		type = attack_submarine_hull_3
+		name_group = PRC_SS_NUMERICAL
+		parent_version = 0
+		upgrades = {
+			sub_sensor_upgrade = 3
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 0
+			sub_torpedo_upgrade = 2
+		}
+		obsolete = no
+	}
+	create_equipment_variant = {
+		name = "Type 091 Class"
+		type = attack_submarine_hull_1
+		name_group = PRC_SSN_NUMERICAL
+		parent_version = 0
+		upgrades = {
+			sub_sensor_upgrade = 1
+			sub_engine_upgrade = 0
+			sub_stealth_upgrade = 0
+			sub_torpedo_upgrade = 2
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 093 Class"
+		type = attack_submarine_hull_3
+		name_group = PRC_SSN_NUMERICAL
+		parent_version = 0
+		upgrades = {
+			sub_sensor_upgrade = 3
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 0
+			sub_torpedo_upgrade = 3
+		}
+		obsolete = no
+	}
+
+	# Ballistic Missile Submarines #
+	create_equipment_variant = {
+		name = "Type 092 Class"
+		type = ballistic_submarine_hull_2
+		name_group = PRC_SSN_NUMERICAL
+		parent_version = 0
+		upgrades = {
+			sub_sensor_upgrade = 1
+			sub_engine_upgrade = 0
+			sub_stealth_upgrade = 0
+			sub_torpedo_upgrade = 2
+		}
+		obsolete = no
+	}
+
+	# Frigates #
+	create_equipment_variant = {
+		name = "Type 053H Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 2
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 1
+			ship_upgrade_engine = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053HT Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 3
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 2
+			ship_upgrade_engine = 1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053HTH Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 3
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 2
+			ship_upgrade_engine = 1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H1 Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 2
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 2
+			ship_upgrade_engine = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H1Q Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 2
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 1
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 2
+			ship_upgrade_engine = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H2 Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 3
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 2
+			ship_upgrade_engine = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H1G Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 2
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 2
+			ship_upgrade_engine = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H2G Class"
+		type = destroyer_hull_3
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 2
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 2
+			ship_upgrade_sensors = 3
+			ship_upgrade_engine = 1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 053H3 Class"
+		type = destroyer_hull_3
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 3
+			ship_upgrade_submarine_attack = 2
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 2
+			ship_upgrade_sensors = 3
+			ship_upgrade_engine = 1
+		}
+		obsolete = no
+	}
+
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Type 051 Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 2
+			ship_upgrade_submarine_attack = 1
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 1
+			ship_upgrade_engine = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 051G Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 2
+			ship_upgrade_submarine_attack = 1
+			ship_upgrade_torpedo = 0
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 2
+			ship_upgrade_engine = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 051GT Class"
+		type = destroyer_hull_1
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 2
+			ship_upgrade_submarine_attack = 1
+			ship_upgrade_torpedo = 1
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 2
+			ship_upgrade_engine = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Type 052 Class"
+		type = destroyer_hull_3
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 3
+			ship_upgrade_submarine_attack = 1
+			ship_upgrade_torpedo = 1
+			ship_upgrade_anti_air = 1
+			ship_upgrade_sensors = 3
+			ship_upgrade_engine = 1
+		}
+		obsolete = no
+	}
+	create_equipment_variant = {
+		name = "Type 051B Class"
+		type = destroyer_hull_3
+		name_group = PRC_NAVAL_NAME_CITIES
+		parent_version = 0
+		upgrades = {
+			ship_upgrade_surface_attack = 3
+			ship_upgrade_submarine_attack = 0
+			ship_upgrade_torpedo = 1
+			ship_upgrade_anti_air = 2
+			ship_upgrade_sensors = 3
+			ship_upgrade_engine = 1
+		}
+		obsolete = no
+	}
+
+	}
+}

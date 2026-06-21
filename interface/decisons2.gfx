@@ -1,0 +1,14 @@
+spriteTypes = {	
+	spriteType = {
+		name = "decision_CPC"
+		texturefile = "gfx/interface/decisions/decision_CPC.png"
+	}
+	spriteType = {
+		name = "decision_PRC_SC"
+		texturefile = "gfx/interface/decisions/decision_PRC_SC.png"
+	}
+	spriteType = {
+		name = "decisions_PRC_WDR"
+		texturefile = "gfx/interface/decisions/decision_development_of_western_regions.png"
+	}
+}

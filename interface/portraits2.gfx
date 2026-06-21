@@ -1,0 +1,17 @@
+spriteTypes = {	
+	spriteType = {
+		name = GFX_portrait_Zhu_Rongji
+		texturefile = "gfx\leaders\PRC\Zhu_Rongji.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = GFX_portrait_Wen_Jiabao
+		texturefile = "gfx\leaders\PRC\Wen_Jiabao.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = GFX_portrait_Zeng_Qinghong
+		texturefile = "gfx\leaders\PRC\Zeng_Qinghong.png"
+		legacy_lazy_load = no
+	}
+}

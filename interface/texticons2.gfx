@@ -1,0 +1,17 @@
+spriteTypes = {
+       spriteType = {
+		name = "GFX_PRC_Wave_of_layoffs"
+		texturefile = "gfx/texticons/embeds/PRC_Wave_of_layoffs.png"
+		legacy_lazy_load = no
+	}
+       spriteType = {
+		name = "GFX_PRC_Chinese_path"
+		texturefile = "gfx/texticons/embeds/PRC_Chinese_path.png"
+		legacy_lazy_load = no
+	}
+	   spriteType = {
+		name = "GFX_PRC_PLA"
+		texturefile = "gfx/texticons/embeds/PRC_PLA.png"
+		legacy_lazy_load = no
+	}
+}

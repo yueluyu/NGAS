@@ -1,0 +1,12 @@
+PRC_zhengquan = {
+	scripted_gui = cpc_paixi_douzheng
+	icon = decision_CPC
+         allowed = {
+			original_tag = PRC
+		 }
+		 priority = 1000
+		 visible = {
+			original_tag = PRC
+		 }
+		 visible_when_empty = yes
+}

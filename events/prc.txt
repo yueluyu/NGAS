@@ -1,0 +1,515 @@
+add_namespace = prc
+
+#Cooperation#
+country_event = {
+	id = prc.1
+	title = prc.1.t
+	desc = prc.1.d
+	picture = GFX_report_event_SAF_mandela
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = prc.1.a	
+		news_event = { id = old_times_news.48 hours = 6 }
+			add_opinion_modifier = {
+			target = PRC
+			modifier = SOV_pugo_cooperation_opinion
+			}
+
+			PRC = {
+			add_opinion_modifier = {
+			target = SOV
+			modifier = SOV_pugo_cooperation_opinion
+			}
+	            }	
+	}
+
+	#option = {
+	#	name = prc.1.b		
+	#}
+}
+
+
+#jintao time#
+#country_event = {
+	#id = prc.3
+	#title = prc.3.t
+	#desc = prc.3.d
+	#picture = GFX_report_event_SAF_mandela
+	
+	#trigger = {
+		#original_tag = PRC
+	#}
+	
+	#fire_only_once = yes
+	#is_triggered_only = yes
+	
+	#option = {
+		##news_event = { id = old_times_news.180 hours = 6 }
+		#retire_country_leader = yes		
+		#promote_character = PRC_hu_jintao
+		#add_ideas =  PRC_security_at_all_cost
+        #swap_ideas = {
+			#add_idea = PRC_theory_1
+			#remove_idea = PRC_theory
+		#}
+	#}
+	#option = {
+		#name = prc.3.b	
+		#news_event = { id = old_times_news.218 hours = 6 }
+		#retire_country_leader = yes		
+		#promote_character = PRC_Chen_Liangyu
+		#add_ideas =  PRC_security_at_all_cost
+        #swap_ideas = {
+			#add_idea = PRC_theory_1
+			#remove_idea = PRC_theory
+		#}
+	#}
+
+#}
+###People's Volunteer Army
+country_event = {
+	id = prc.4
+	title = prc.4.t
+	desc = prc.4.d
+	picture = GFX_report_event_SAF_mandela
+	
+	trigger = {
+		original_tag = PRC
+	}
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = prc.4.a	
+		 PRC = {
+		create_faction = faction_shanghai_pact
+		PRC = { add_to_faction = KOR }
+	add_war_support = 0.2
+
+	PRC = {
+			declare_war_on = {
+				target = CHI
+				type = civil_war
+				}
+			}
+		add_ideas = PRC_navy_blockade 
+	}
+	hidden_effect = {
+		country_event = {
+			id = prc.11 days = 9
+		}
+	}
+	news_event = { id = old_times_news.166 hours = 2 }   
+    news_event = { id = old_times_news.183 days = 10 }
+	}
+
+}
+###Invasion of Taiwan
+country_event = {
+	id = prc.5
+	title = prc.5.t
+	desc = prc.5.d
+	picture = GFX_report_event_SAF_mandela
+	
+	trigger = {
+		original_tag = PRC
+	}
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = prc.5.a	
+		add_ideas = PRC_taiwan_invasion
+		news_event = {
+			id = old_times_news.207
+		}
+		rd_volunteers_add_override_start = yes
+		set_temp_variable = { temp = PLA }
+		rd_volunteers_add_override = yes
+		hidden_effect = {
+			CHI = { 
+				add_ideas = CHI_mainland_blockade
+				
+				USA = {
+					USA_setup_ws_taiwan = yes
+					#country_event = { id = ws_usa_taiwan_invasion.1 days = 61 }
+				}
+				
+				add_ideas = CHI_pla_invasion
+				972 = { set_demilitarized_zone = yes }
+				leave_faction = yes
+
+			}
+			PLA = { 
+				
+				transfer_state = 972
+				
+				declare_war_on = {
+					target = CHI
+					type = annex_everything
+				}
+				
+				division_template = {
+					name = "Bubing Shi"
+					division_names_group = GENERIC_INF_01
+
+					regiments = {
+						infantry_unit = { x = 0 y = 0 }
+						infantry_unit = { x = 0 y = 1 }
+						infantry_unit = { x = 0 y = 2 }
+						infantry_unit = { x = 0 y = 3 }
+						infantry_unit = { x = 1 y = 0 }
+						infantry_unit = { x = 1 y = 1 }
+						infantry_unit = { x = 1 y = 2 }
+						infantry_unit = { x = 1 y = 3 }
+						infantry_unit = { x = 1 y = 4 }
+						towed_artillery_unit = { x = 2 y = 0 }
+						towed_artillery_unit = { x = 2 y = 1 }
+						towed_artillery_unit = { x = 2 y = 2 }
+						towed_artillery_unit = { x = 2 y = 3 }
+					}
+					support = {
+						towed_artillery_support_unit = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						maintenance_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						engineer = { x = 0 y = 4 }
+					}
+					priority = 1
+				}
+				
+				division_template = {	# Marine Division #
+					name = "Haiyang"
+					division_names_group = GENERIC_MRN_01
+
+					regiments = {
+						infantry_fighting_vehicle_armor = { x = 0 y = 0 }
+						heavy_infantry_unit = { x = 1 y = 0 }
+						marine_unit = { x = 2 y = 0 }
+						marine_unit = { x = 2 y = 1 }
+						marine_unit = { x = 2 y = 2 }
+						marine_unit = { x = 2 y = 3 }
+						marine_unit = { x = 2 y = 4 }
+						towed_artillery_unit = { x = 3 y = 0 }
+						towed_artillery_unit = { x = 3 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon_drone_company = { x = 0 y = 1 }
+					}
+					priority = 2
+				}
+				
+				972 = {
+					create_unit = {
+						division = "name = \"Bubing Shi\" division_template = \"Bubing Shi\" start_experience_factor = 0.75"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Haiyang\" division_template = \"Bubing Shi\" start_experience_factor = 0.75"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Bubing Shi\" division_template = \"Bubing Shi\" start_experience_factor = 0.75"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Haiyang\" division_template = \"Bubing Shi\" start_experience_factor = 0.75"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				add_ideas = PRC_support_from_mainland
+			}
+		}
+	}
+
+}
+
+###Annex HK
+country_event = {
+	id = prc.6
+	title = prc.6.t
+	desc = prc.6.d
+	picture = GFX_report_event_SAF_mandela
+	
+	trigger = {
+		original_tag = PRC
+	}
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = prc.6.a	
+		annex_country = {
+    target = HKG
+    transfer_troops = yes
+    }
+	annex_country = {
+    target = MCU
+    transfer_troops = yes
+    }
+	news_event = {
+		id = old_times_news.206
+	}
+	}
+
+}
+
+###uyghur uprising
+country_event = {
+	id = prc.7
+	title = prc.7.t
+	desc = prc.7.d
+	picture = GFX_report_event_SAF_mandela
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prc.7.a	
+		news_event = {id = old_times_news.250}
+		ETR = {
+			transfer_state = 619
+			transfer_state = 287
+			transfer_state = 1000
+			transfer_state = 928
+			transfer_state = 760
+			load_oob = "ETR_uprising"
+			declare_war_on = {
+				target = PRC
+				type = annex_everything
+			}
+		}
+	}
+
+}
+
+###30 day campaign fails
+country_event = {
+	id = prc.8
+	title = prc.8.t
+	desc = prc.8.d
+	picture = GFX_report_event_SAF_mandela
+	
+	is_triggered_only = yes
+	
+	option = { #PLA coup
+		name = prc.8.a	
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = PRC_Chi_Hao_Tian
+			promote_leader = yes
+			country_leader = {
+				ideology = maoism
+				traits = {}
+				expire = "2050.3.1.1"
+				id = -1
+			}
+		}
+		set_politics = {
+			ruling_party = communism
+		}	
+		set_popularities = {
+			communism = 55
+			reformed_communism = 45
+		}
+		set_party_name = {
+			ideology = communism
+			name = PLA_reformed_communism_party
+			long_name = PLA_reformed_communism_party
+		}		
+		country_event = {id = prc.9 days = 200}
+		news_event = {id = old_times_news.251}
+	}
+
+	option = { #Security coup
+		name = prc.8.b	
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = PRC_zhou_yongkang
+			promote_leader = yes
+			country_leader = {
+				ideology = pseudo_communism
+				traits = {}
+				expire = "2050.3.1.1"
+				id = -1
+			}
+		}
+		set_politics = {
+			ruling_party = paternal_autocracy
+		}	
+		set_popularities = {
+			paternal_autocracy = 55
+			reformed_communism = 35
+			communism = 10
+		}
+		set_party_name = {
+			ideology = paternal_autocracy
+			name = PRC_security_party
+			long_name = PRC_security_party_long
+		}
+		news_event = {id = old_times_news.252}
+	}
+
+}
+
+###third invasion of korea, not to be confused with the second korean war (Great Oriental War) that happens before this
+country_event = {
+	id = prc.9
+	title = prc.9.t
+	desc = prc.9.d
+	picture = GFX_report_event_SAF_mandela
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prc.9.a	
+		if = { #this prevents Soviet Puppeted PRC from invading UN NK
+			limit = {PRC = {is_subject = yes}}
+		}
+		else = {
+			declare_war_on = {
+				target = KOR
+				type = annex_everything
+			}
+			news_event = {id = old_times_news.266}
+			hidden_effect = {
+				USA = {
+					country_event = { id = ws_usa_great_asian_war.6 days = 1 }
+				}
+			}
+		}
+	}
+}
+###30 day campaign win
+country_event = {
+	id = prc.10
+	title = prc.10.t
+	desc = prc.10.d
+	picture = GFX_report_event_SAF_mandela
+	
+	is_triggered_only = yes
+	
+	option = { #status quo
+		name = prc.10.a	
+		
+		ai_chance = {
+			base = 30
+		}			
+	}
+
+	option = { #cheng leader - wu bangguo becomes leader
+		name = prc.10.b	
+		trigger = {
+			has_country_leader = {
+				character = PRC_Chen_Liangyu
+				ruling_only = yes
+			}		
+		}
+		retire_country_leader = yes
+		promote_character = PRC_Wu_Bangguo
+		news_event = {id = old_times_news.255}
+		ai_chance = {
+			base = 25
+
+		}		
+	}
+	
+	option = { #hu leader - wen jiaobao becomes leader
+		name = prc.10.c
+		trigger = {
+			has_country_leader = {
+				character = PRC_hu_jintao
+				ruling_only = yes
+			}		
+		}
+		retire_country_leader = yes
+		promote_character = PRC_wen_jiabao 
+		news_event = {id = old_times_news.256}
+		ai_chance = {
+			base = 25
+
+		}			
+	}	
+	
+	option = { #hu leader - Zeng Qinghong becomes leader
+		name = prc.10.de
+		trigger = {
+			has_country_leader = {
+				character = PRC_hu_jintao
+				ruling_only = yes
+			}		
+		}
+		retire_country_leader = yes
+		promote_character = PRC_zeng_qinghong 
+		news_event = {id = old_times_news.257}
+		ai_chance = {
+			base = 25
+
+		}			
+	}	
+
+}
+
+#PLA Poor Performance#
+country_event = {
+	id = prc.11
+	title = prc.11.t
+	desc = prc.11.d
+	picture = GFX_report_event_SAF_mandela
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = prc.11.a	
+		add_timed_idea = {
+			idea = PRC_army_lacking days = 100
+		}
+    }
+}
+
+#PLA Opportunity in Iran#
+country_event = {
+	id = prc.12
+	title = prc.12.t
+	desc = prc.12.d
+	picture = GFX_event_iran_guerilla_groups
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = prc.12.a
+		news_event = irq_news.10
+		every_other_country = {
+			limit = {
+				original_tag = PER
+				OR = { has_cosmetic_tag = PER_iraq_puppet_civ_gov has_cosmetic_tag = IRS_fedai }
+			}
+			PRC = {
+				rd_volunteers_add_override_start = yes
+				set_temp_variable = { temp = PREV }
+				rd_volunteers_add_override = yes
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = PREV
+					value = 300
+				}
+				add_ai_strategy = {
+					type = send_lend_lease_desire
+					id = PREV
+					value = 300
+				}
+			}
+		}
+    }
+}

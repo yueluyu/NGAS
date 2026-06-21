@@ -1,0 +1,116 @@
+guiTypes = {
+  containerWindowType = {
+	name = five_year_plan
+	position = { x = -2 y = 0 }
+	size = {
+		width = 550 height = 500
+	}
+iconType = {
+		name = "nineth_five_year_plan"
+		spriteType = "GFX_ninth_five_year_plan"
+		position = {
+			x = -5 y = 0
+		}
+	}
+iconType = {
+		name = "tenth_five_year_plan"
+		spriteType = "GFX_tenth_five_year_plan"
+		position = {
+			x = -5 y = 0
+		}
+	}
+instantTextBoxType = {
+			name ="five_year_plan_text"
+			position = { x = 2 y = 215 }
+			font = "hoi_20bs"
+			text = "five_year_plan_text"
+			format = left
+			maxHeight = 24
+			maxWidth = 490
+		}
+buttonType = {
+	    name = "ke_jiao_xing_guo"
+		position = { x = 0 y = 440 }
+		quadTextureSprite = GFX_jjlt_click
+		buttonFont = "hoi_16mbs"
+		buttontext = "kjxg_zhanlue"
+		clicksound = click_default
+
+    }
+iconType = {
+		name = "ke_jiao_xing_guo_picture"
+		spriteType = "GFX_ke_jiao_xingguo"
+		position = {
+			x = -5 y = 10
+		}
+	}
+instantTextBoxType = {
+			name ="ke_jiao_xing_guo_text"
+			position = { x = 2 y = 250 }
+			font = "hoi_20bs"
+			text = "ke_jiao_xing_guo_text"
+			format = left
+			maxHeight = 24
+			maxWidth = 490
+		}
+buttonType = {
+	    name = "nong_cun_wenti"
+		position = { x = 170 y = 440 }
+		quadTextureSprite = GFX_jjlt_click
+		buttonFont = "hoi_16mbs"
+		buttontext = "nong_cun_wenti_1"
+		clicksound = click_default
+
+    }
+iconType = {
+		name = "nongcun_wenti_picture"
+		spriteType = "GFX_nongcun_wenti"
+		position = {
+			x = -5 y = 10
+		}
+	}
+instantTextBoxType = {
+			name ="nongcun_wenti_text"
+			position = { x = 2 y = 250 }
+			font = "hoi_20bs"
+			text = "nong_cun_wenti_text"
+			format = left
+			maxHeight = 24
+			maxWidth = 490
+		}
+
+buttonType = {
+	    name = "qu_yu_fa_zhan"
+		position = { x = 340 y = 440 }
+		quadTextureSprite = GFX_jjlt_click
+		buttonFont = "hoi_16mbs"
+		buttontext = "qu_yu_fa_zhan_1"
+		clicksound = click_default
+
+    }
+iconType = {
+		name = "qu_yu_fazhan_picture"
+		spriteType = "GFX_qu_yu_fazhan"
+		position = {
+			x = -5 y = 10
+		}
+	}
+instantTextBoxType = {
+			name ="qu_yu_fa_zhan_text"
+			position = { x = 2 y = 250 }
+			font = "hoi_20bs"
+			text = "qu_yu_fa_zhan_text"
+			format = left
+			maxHeight = 24
+			maxWidth = 490
+		}
+buttonType = {
+			name ="fp_x_button"
+			spriteType = "GFX_x_button_gui_piece"
+			position = { x=450 y=-5 } 
+            clicksound = click_default
+		}
+
+  }
+
+}

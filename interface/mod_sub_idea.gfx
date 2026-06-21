@@ -1,0 +1,38 @@
+spriteTypes = {
+       spriteType = {
+		name = "GFX_idea_PRC_sars"
+		texturefile = "gfx/interface/ideas/SARS.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_Wave_of_layoffs"
+		texturefile = "gfx/interface/ideas/Wave_of_layoffs.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_ninth_five_year_Plan"
+		texturefile = "gfx/interface/ideas/ninth_five_year_Plan.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_Complex_social_security_situation"
+		texturefile = "gfx/interface/ideas/Complex_social_security_situation.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_Military_involvement_in_business"
+		texturefile = "gfx/interface/ideas/Military_involvement_in_business.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_three_represents_theory"
+		texturefile = "gfx/interface/ideas/three_represents_theory.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_tenth_five_year_Plan"
+		texturefile = "gfx/interface/ideas/tenth_five_year_Plan.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_Chinese_path"
+		texturefile = "gfx/interface/ideas/Chinese_path.png"
+	}
+	spriteType = {
+		name = "GFX_idea_PRC_Modernization_of_the_military_1"
+		texturefile = "gfx/interface/ideas/Modernization_of_the_military_1.png"
+	}
+}

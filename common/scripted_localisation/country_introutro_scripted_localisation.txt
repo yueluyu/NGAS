@@ -1,0 +1,321 @@
+defined_text = {
+	name = GetCountryIntroPhoto
+	text = {
+		trigger = {
+			NOT = { has_country_flag = unique_country_intro_flag }
+		}
+		localization_key = GFX_country_intro
+	}
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { country_intro_photo = token:GFX_country_intro_[TAG] } }
+				TAG = "[ROOT.GetTag]"
+			}
+		}
+		localization_key = "[?country_intro_photo.GetTokenKey]"
+	}
+}
+defined_text = {
+	name = RD_COUNTRY_TITLE
+	text = {
+		trigger = {
+			NOT = { has_country_flag = unique_country_intro_flag }
+		}
+		localization_key = rd_no_country_title
+	}
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { country_intro_title = token:rd_country_title_[TAG] } }
+				TAG = "[ROOT.GetTag]"
+			}
+		}
+		localization_key = "[?country_intro_title.GetTokenLocalizedKey]"
+	}
+}
+defined_text = {
+	name = RD_COUNTRY_DESC
+	text = {
+		trigger = {
+			NOT = { has_country_flag = unique_country_intro_flag }
+		}
+		localization_key = rd_no_country_desc
+	}
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { country_intro_desc = token:rd_country_desc_[TAG] } }
+				TAG = "[ROOT.GetTag]"
+			}
+		}
+		localization_key = "[?country_intro_desc.GetTokenLocalizedKey]"
+	}
+}
+defined_text = {
+	name = RD_COUNTRY_REPLY
+	text = {
+		trigger = {
+			NOT = { has_country_flag = unique_country_intro_flag }
+		}
+		localization_key = rd_no_country_reply
+	}
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { country_intro_reply = token:rd_country_reply_[TAG] } }
+				TAG = "[ROOT.GetTag]"
+			}
+		}
+		localization_key = "[?country_intro_reply.GetTokenLocalizedKey]"
+	}
+}
+defined_text = {
+	name = RD_COUNTRY_REPLY_TOOLTIP
+	text = {
+		trigger = { tag = IRQ }
+		localization_key = IRQ_intro_tooptip
+	}
+	text = {
+		localization_key = nothing
+	}
+}
+defined_text = {
+	name = RD_PATH_ENTRY
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { country_intro_path = token:[INTRO] } }
+				INTRO = "[?path_val.GetTokenKey]"
+			}
+		}
+		localization_key = "[?country_intro_path.GetTokenLocalizedKey]"
+	}
+}
+defined_text = {
+	name = RD_PATH_DESC
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { country_intro_path = token:[INTRO]_desc } }
+				INTRO = "[?rd_selected_path.GetTokenKey]"
+			}
+		}
+		localization_key = "[?country_intro_path.GetTokenLocalizedKey]"
+	}
+}
+defined_text = {
+	name = RD_PATH_GUIDE
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { country_intro_path = token:[INTRO]_guide } }
+				INTRO = "[?rd_selected_path.GetTokenKey]"
+			}
+		}
+		localization_key = "[?country_intro_path.GetTokenLocalizedKey]"
+	}
+}
+
+defined_text = {
+	name = GetCountryOutroPhoto
+	text = {
+		trigger = {
+			meta_trigger = {
+				text = { set_temp_variable = { country_outro_photo = token:GFX_country_outro_[TAG] } }
+				TAG = "[ROOT.GetTag]"
+			}
+		}
+		localization_key = "[?country_outro_photo.GetTokenKey]"
+	}
+}
+
+defined_text = {
+	name = GetLeaderPOI
+	text = {
+		trigger = {
+			tag = PRC
+			has_idea = Zhu_is_zongli
+		}
+		localization_key = "PRC_POI_ZHU"
+	}
+	text = {
+		trigger = {
+			tag = PRC
+			has_idea = Zeng_is_zongli
+		}
+		localization_key = "PRC_POI_ZENG"
+	}
+	text = {
+		trigger = {
+			tag = PRC
+			has_idea = Wen_is_zongli
+		}
+		localization_key = "PRC_POI_WEN"
+	}
+	text = {
+		trigger = {
+			has_idea = elizabeth_is_queen
+		}
+		localization_key = "ENG_POI_ELIZABETH"
+	}
+	
+	text = {
+		trigger = {
+			tag = PER
+			has_idea = khatami_is_president
+			NOT = { PER_mohammad_khatami = { has_character_flag = ayvay_ayvay_be_mammad_khatami } }
+		}
+		localization_key = "PER_POI_KHATAMI"
+	}
+	text = {
+		trigger = {
+			tag = PER
+			has_idea = khatami_is_president
+			PER_mohammad_khatami = { has_character_flag = ayvay_ayvay_be_mammad_khatami }
+		}
+		localization_key = "PER_POI_KHATAMI_AGED"
+	}
+	text = {
+		trigger = {
+			tag = PER
+			has_idea = ahmadinejad_is_president
+		}
+		localization_key = "PER_POI_AHMADINEJAD"
+	}
+	text = {
+		trigger = {
+			tag = PER
+			has_idea = rafsanjani_is_president
+		}
+		localization_key = "PER_POI_RAFSANJANI"
+	}
+	text = {
+		trigger = {
+			tag = PER
+			has_idea = khoeiniha_is_president
+		}
+		localization_key = "PER_POI_KHOEINIHA"
+	}
+	text = {
+		trigger = {
+			tag = PER
+			has_idea = musavi_is_president
+		}
+		localization_key = "PER_POI_MUSAVI"
+	}
+	text = {
+		trigger = {
+			tag = PER
+			has_idea = mohtashami_is_president
+		}
+		localization_key = "PER_POI_MOHTASHAMI"
+	}
+	
+	text = {
+		trigger = {
+			tag = NOR
+			has_idea = harald_is_king
+		}
+		localization_key = "NOR_POI_HARALD"
+	}
+	text = {
+		trigger = {
+			tag = SWE
+			has_idea = gustav_is_king
+		}
+		localization_key = "SWE_POI_GUSTAV"
+	}
+	text = {
+		trigger = {
+			tag = DEN
+			has_idea = margrethe_is_queen
+		}
+		localization_key = "DEN_POI_MARGRETHE"
+	}
+	text = {
+		trigger = {
+			tag = HOL
+			has_idea = beatrix_is_queen
+		}
+		localization_key = "HOL_POI_BEATRIX"
+	}
+	text = {
+		trigger = {
+			tag = BEL
+			has_idea = albert_is_king
+		}
+		localization_key = "BEL_POI_ALBERT"
+	}
+	text = {
+		trigger = {
+			tag = LUX
+			has_idea = henri_is_king
+		}
+		localization_key = "LUX_POI_HENRI"
+	}
+	text = {
+		trigger = {
+			tag = SPR
+			has_idea = juan_is_king
+		}
+		localization_key = "SPR_POI_JUAN"
+	}
+	text = {
+		trigger = {
+			tag = SIA
+			has_idea = rama_is_king
+		}
+		localization_key = "SIA_POI_RAMA"
+	}
+	text = {
+		trigger = {
+			tag = MAL
+			has_idea = abdul_is_king
+		}
+		localization_key = "MAL_POI_ABDUL"
+	}
+	text = {
+		trigger = {
+			tag = MAL
+			has_idea = malcouncil_is_king
+		}
+		localization_key = "MAL_POI_COUNCIL"
+	}
+	text = {
+		trigger = {
+			tag = JAP
+			has_idea = akihito_is_emperor
+		}
+		localization_key = "JAP_POI_AKIHITO"
+	}
+	text = {
+		trigger = {
+			tag = KOR
+			has_idea = big_kimsmoke_is_president
+		}
+		localization_key = "KOR_POI_KIM_SMOKE"
+	}
+	text = {
+		trigger = {
+			original_tag = CZE
+			has_idea = husak_is_eternal_president
+		}
+		localization_key = "CZE_POI_HUSAK_SMOKE"
+	}
+	text = {
+		trigger = {
+			original_tag = TUC
+			has_idea = dogan_is_premier
+		}
+		localization_key = "TUC_POI_ORHAN_DOGAN"
+	}	
+}
+
+defined_text = { # Made for very specific uses
+	name = GetPOICallSign
+	
+	text = { trigger = { has_country_flag = POI_call_prime_minister }	localization_key = "POI_CALLED_PRIME_MINISTER" }
+	text = { trigger = { has_country_flag = POI_call_general_sec } localization_key = "POI_CALLED_GENERAL_SECRETARY" }
+	text = { localization_key = "POI_CALLED_PRESIDENT" } # <-- Has to be last line
+}

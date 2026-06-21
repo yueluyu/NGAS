@@ -1,0 +1,933 @@
+focus_tree = {
+	id = aaa_PRC_Focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = PRC
+		}
+	}
+	focus = {
+		id = PRC_after_the_reform
+		icon = GFX_focus_PRC_after_the_reform
+		cost = 1
+		x = 10
+		y = 0
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = { }
+	}
+	focus = {
+		id = PRC_the_ninth_five_year_Plan
+		icon = GFX_focus_PRC_the_ninth_five_year_Plan
+		cost = 3
+		x = 10
+		y = 1
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_after_the_reform }
+		completion_reward = { }
+	}
+	focus = {
+		id = PRC_Continue_reforming_state_owned_enterprises
+		icon = GFX_focus_PRC_Continue_reforming_state_owned_enterprises
+		cost = 4
+		x = 8
+		y = 2
+		mutually_exclusive = { focus = PRC_Reform_drives_development }
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_the_ninth_five_year_Plan }
+		completion_reward = { 
+			add_ideas = State_owned_enterprise_reform 
+		}
+	}
+	focus = {
+		id = PRC_Expand_domestic_demand
+		icon = GFX_focus_PRC_Expand_domestic_demand
+		cost = 4
+		x = 7
+		y = 3
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Continue_reforming_state_owned_enterprises}
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		 }
+	}
+	focus = {
+		id = PRC_Reemployment_after_being_laid_off
+		icon = GFX_focus_PRC_Reemployment_after_being_laid_off
+		cost = 4
+		x = 9
+		y = 3
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Continue_reforming_state_owned_enterprises}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = State_owned_enterprise_reform
+				add_idea = State_owned_enterprise_reform_2
+			}
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = PRC_Defend_national_economy
+		icon = GFX_focus_PRC_Defend_national_economy
+		cost = 5
+		x = 8
+		y = 4
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Reemployment_after_being_laid_off}
+		prerequisite = { focus = PRC_Expand_domestic_demand}
+		completion_reward = { 
+            add_ideas = internal_circulation
+		}
+	}
+	focus = {
+		id = PRC_Reform_drives_development
+		icon = GFX_focus_PRC_Reform_drives_development
+		cost = 3
+		x = 12
+		y = 2
+		mutually_exclusive = { focus =  PRC_Continue_reforming_state_owned_enterprises}
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_the_ninth_five_year_Plan }
+		completion_reward = { 
+			add_to_variable = { PRC_factory_of_the_world_1 = 0.03  }
+			add_to_variable = { PRC_factory_of_the_world_2 = 0.05  }
+			add_to_variable = { PRC_factory_of_the_world_3 = 0.01  }
+			custom_effect_tooltip = wai_zi_effect_2
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = PRC_Attract_foreign_investment
+		icon = GFX_focus_PRC_Expand_domestic_demand
+		cost = 4
+		x = 11
+		y = 3
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Reform_drives_development}
+		completion_reward = { 
+			add_to_variable = { PRC_factory_of_the_world_1 = 0.03  }
+			add_to_variable = { PRC_factory_of_the_world_2 = 0.05  }
+			add_to_variable = { PRC_factory_of_the_world_3 = 0.01  }
+			custom_effect_tooltip = wai_zi_effect_2
+		}
+	}
+	focus = {
+		id = PRC_Let_loose
+		icon = GFX_focus_PRC_Let_loose
+		cost = 4
+		x = 13
+		y = 3
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Reform_drives_development}
+		completion_reward = { 
+			add_to_variable = { PRC_factory_of_the_world_1 = 0.03  }
+			add_to_variable = { PRC_factory_of_the_world_2 = 0.05  }
+			add_to_variable = { PRC_factory_of_the_world_3 = 0.01  }
+			custom_effect_tooltip = wai_zi_effect_2
+		 }
+	}
+	focus = {
+		id = PRC_Development_is_the_hard_truth
+		icon = GFX_focus_PRC_Development_is_the_hard_truth
+		cost = 4
+		x = 12
+		y = 4
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Attract_foreign_investment}
+		prerequisite = { focus = PRC_Let_loose}
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		 }
+	}
+	focus = {
+		id = PRC_westren_development
+		icon = GFX_focus_PRC_westren_development
+		cost = 4
+		x = 15
+		y = 2
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_the_ninth_five_year_Plan }
+		completion_reward = { 
+			set_country_flag = PRC_WDR
+			add_ideas = Development_of_western_regions
+			hidden_effect = {
+				every_state = {
+					limit = {
+                         OR = {
+						  state = 617
+						  state = 618
+						  state = 619
+						  state = 760
+						  state = 287
+						  state = 759
+						  state = 1000
+						  state = 928
+						  state = 757
+						  state = 758
+						  state = 322
+						  state = 601
+						  state = 756
+                          state = 616
+						  state = 755
+						  state = 604
+						  state = 754
+						  state = 283
+						  state = 746
+						  state = 621
+						  state = 611
+						  state = 612
+						  state = 622
+						  state = 751
+						  state = 752
+						  state = 753
+						  state = 605
+						  state = 748
+						  state = 603
+						  state = 325
+						  state = 747
+						  state = 599
+						  state = 594
+					    }
+					}
+				    add_dynamic_modifier = {
+					   modifier = PRC_westren_development_state
+				    }
+				}
+			}
+		}
+	}
+	focus = {
+		id = PRC_West_to_East_Power_Transmission_Project
+		icon = GFX_focus_PRC_West_to_East_Power_Transmission_Project
+		cost = 5
+		x = 15
+		y = 3
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_westren_development }
+		completion_reward = { 
+			set_country_flag = PRC_WTET
+			unlock_decision_tooltip = PRC_WTET_middle
+			unlock_decision_tooltip = PRC_WTET_north
+			unlock_decision_tooltip = PRC_WTET_south
+		}
+	}
+	focus = {
+		id = PRC_Strengthen_regional_cooperation
+		icon = GFX_focus_PRC_Strengthen_regional_cooperation
+		cost = 5
+		x = 15
+		y = 4
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_West_to_East_Power_Transmission_Project }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = PRC_Focus_on_rural_areas
+		icon = GFX_focus_PRC_Focus_on_rural_areas
+		cost = 3
+		x = 5
+		y = 2
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_the_ninth_five_year_Plan }
+		completion_reward = {
+			add_political_power = 20 
+			add_ideas = Rural_reform_1
+		}
+	}
+	focus = {
+		id = PRC_Lighten_the_burden_on_farmers
+		icon = GFX_focus_PRC_Lighten_the_burden_on_farmers
+		cost = 4
+		x = 5
+		y = 3
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Focus_on_rural_areas }
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = Rural_reform_1
+				add_idea = Rural_reform_2
+			}
+		}
+	}
+	focus = {
+		id = PRC_Rural_tax_fee_reform
+		icon = GFX_focus_PRC_Rural_tax_fee_reform
+		cost = 5
+		x = 5
+		y = 4
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Lighten_the_burden_on_farmers }
+		completion_reward = { 
+			add_political_power = 5
+			swap_ideas = {
+				remove_idea = Rural_reform_2
+				add_idea = Rural_reform_3
+			}
+		}
+	}
+	focus = {
+		id = PRC_prepare_the_tenth_five_year_Plan
+		icon = GFX_focus_PRC_prepare_the_tenth_five_year_Plan
+		cost = 3
+		x = 10
+		y = 5
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { 
+			focus = PRC_Defend_national_economy
+			focus = PRC_Development_is_the_hard_truth
+		}
+		prerequisite = { focus = PRC_Rural_tax_fee_reform }
+		prerequisite = { focus = PRC_Strengthen_regional_cooperation }
+		completion_reward = { 
+			add_ideas = tenth_five_years_plan
+		}
+	}
+	focus = { #三个代表
+		id = PRC_sange_daibiao
+		icon = GFX_focus_PRC_three_represents_theory
+		cost = 4
+		x = 22
+		y = 1
+		available = {
+			has_country_flag = jiang_has_this
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		prerequisite = { focus = PRC_after_the_reform }
+		completion_reward = { 
+		  add_ideas = san_ge_daibiao
+	   }
+	}
+	focus = { #发展生产力
+		id = PRC_fazhan_xianjinshengchan
+		icon = GFX_focus_PRC_Foundation_of_governance
+		cost = 3
+		x = 22
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			
+		}
+		prerequisite = { focus = PRC_sange_daibiao }
+		completion_reward = { 
+			set_country_flag = prc_jingji_is_ok
+		}
+	}
+	focus = { #批准企业家
+		id = PRC_pizhun_qiyejia_rudang
+		icon = GFX_focus_PRC_Entrepreneurs_Joining_the_Party
+		cost = 4
+		x = 21
+		y = 3
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_fazhan_xianjinshengchan }
+		completion_reward = { 
+			add_ideas = Capitalists_Joining_the_Party
+		}
+	}
+	focus = { #引进技术
+		id = PRC_yinjin_jishu
+		icon = GFX_focus_PRC_introduction_of_technology
+		cost = 4
+		x = 23
+		y = 3
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			has_completed_focus = PRC_Expand_trade
+		}
+		prerequisite = { focus = PRC_fazhan_xianjinshengchan }
+		completion_reward = { 
+			add_ideas = Introduce_advanced_technology
+		}
+	}
+	focus = {#与时俱进
+		id = PRC_yushi_jujin
+		icon = GFX_focus_PRC_Change_with_times
+		cost = 4
+		x = 22
+		y = 4
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_pizhun_qiyejia_rudang }
+		prerequisite = { focus = PRC_yinjin_jishu }
+		completion_reward = {
+		    if = {
+				limit = {
+					has_idea = san_ge_daibiao
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao
+					add_idea = san_ge_daibiao_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = san_ge_daibiao_1
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao_1
+					add_idea = san_ge_daibiao_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = san_ge_daibiao_2
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao_2
+					add_idea = san_ge_daibiao_3
+				}
+			}
+			
+    }
+}
+	focus = { #发展先进文化
+		id = PRC_fazhan_xianjin_wenhua
+		icon = GFX_focus_PRC_foundation_of_the_party
+		cost = 3
+		x = 18
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			
+		}
+		prerequisite = { focus = PRC_sange_daibiao }
+		completion_reward = { }
+	}
+	focus = { #坚持党的指导
+		id = PRC_jianchi_zhidao
+		icon = GFX_focus_PRC_Uphold_the_Party_leadership
+		cost = 4
+		x = 17
+		y = 3
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_fazhan_xianjin_wenhua }
+		completion_reward = { 
+			add_political_power = 25
+		}
+	}
+	focus = { #思想理论建设
+		id = PRC_sixiang_lilun
+		icon = GFX_focus_PRC_Ideological_and_theoretical_development
+		cost = 4
+		x = 19
+		y = 3
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_fazhan_xianjin_wenhua }
+		completion_reward = { 
+			add_stability = 0.01
+			add_popularity = {
+				ideology = reformed_communism
+				popularity = 0.02
+			}
+		}
+	}
+	focus = { #党的先进
+		id = PRC_dang_de_xianjin
+		icon = GFX_focus_PRC_Party_advancement
+		cost = 4
+		x = 18
+		y = 4
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_sixiang_lilun }
+		prerequisite = { focus = PRC_jianchi_zhidao}
+		completion_reward = { 
+			if = {
+				limit = {
+					has_idea = san_ge_daibiao
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao
+					add_idea = san_ge_daibiao_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = san_ge_daibiao_1
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao_1
+					add_idea = san_ge_daibiao_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = san_ge_daibiao_2
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao_2
+					add_idea = san_ge_daibiao_3
+				}
+			}
+		}
+	}
+    focus = { #代表人民的利益
+		id = PRC_daibiao_renmin_liyi
+		icon = GFX_focus_PRC_Source_of_Power
+		cost = 3
+		x = 26
+		y = 2
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			
+		}
+		prerequisite = { focus = PRC_sange_daibiao }
+		completion_reward = {
+			
+		 }
+	}
+	focus = { #提出小康
+		id = PRC_xiaokang_shehui
+		icon = GFX_focus_PRC_Overall_well_off
+		cost = 4
+		x = 25
+		y = 3
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_daibiao_renmin_liyi }
+		completion_reward = { }
+	}
+	focus = { #推进共同富裕
+		id = PRC_tuijin_fuyu
+		icon = GFX_focus_PRC_Promoting_common_prosperity
+		cost = 4
+		x = 27
+		y = 3
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_daibiao_renmin_liyi }
+		completion_reward = { }
+	}
+	focus = { #贯彻两个一百年
+		id = PRC_guanche_200_years
+		icon = GFX_focus_PRC_two_centenary_goals
+		cost = 4
+		x = 26
+		y = 4
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_xiaokang_shehui }
+		prerequisite = { focus = PRC_tuijin_fuyu }
+		completion_reward = { 
+			if = {
+				limit = {
+					has_idea = san_ge_daibiao
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao
+					add_idea = san_ge_daibiao_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = san_ge_daibiao_1
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao_1
+					add_idea = san_ge_daibiao_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = san_ge_daibiao_2
+				}
+				swap_ideas = {
+					remove_idea = san_ge_daibiao_2
+					add_idea = san_ge_daibiao_3
+				}
+			}
+		}
+	}
+	focus = { #新蓝图
+		id = PRC_xin_lantu
+		icon = GFX_focus_PRC_New_Blueprint
+		cost = 5
+		x = 22
+		y = 5
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_guanche_200_years }
+		prerequisite = { focus = PRC_yushi_jujin }
+		prerequisite = { focus = PRC_dang_de_xianjin }
+		completion_reward = { }
+	}
+    focus = { 
+		id = PRC_Go_to_the_world
+		icon = GFX_focus_PRC_Go_to_the_world
+		cost = 4
+		x = -2
+		y = 1
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		prerequisite = { focus = PRC_after_the_reform }
+		completion_reward = { 
+		  
+	   }
+	}
+    focus = { 
+		id = PRC_preparing_to_join_wto
+		icon = GFX_focus_PRC_preparing_to_join_wto
+		cost = 4
+		x = -2
+		y = 2
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Go_to_the_world }
+		completion_reward = { 
+		  custom_effect_tooltip = PRC_join_wto_tt
+	   }
+	}
+    focus = { 
+		id = PRC_Count_down
+		icon = GFX_focus_PRC_Count_down
+		cost = 6
+		x = -2
+		y = 3
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_preparing_to_join_wto }
+		completion_reward = { 
+		  custom_effect_tooltip = we_will_join_wto
+			hidden_effect = {
+			country_event = {
+				id = prc_zz.10
+				days = 58
+			}
+		}
+	   }
+	}
+    focus = { 
+		id = PRC_Expand_trade
+		icon = GFX_focus_PRC_Expand_trade
+		cost = 3
+		x = -2
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Count_down }
+		completion_reward = { 
+		  set_country_flag = wai_zi_1
+		  custom_effect_tooltip = PRC_Expand_trade_tt
+	   }
+	}
+	focus = { 
+		id = PRC_Crossing_the_Pacific
+		icon = GFX_focus_PRC_Crossing_the_Pacific
+		cost = 4
+		x = 1
+		y = 2
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Go_to_the_world }
+		completion_reward = { 
+		  
+	   }
+	}
+	focus = { 
+		id = PRC_Stick_to_principles
+		icon = GFX_focus_PRC_Stick_to_principles
+		cost = 3
+		x = 0
+		y = 3
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Crossing_the_Pacific }
+		completion_reward = { 
+		  
+	   }
+	}
+	focus = { 
+		id = PRC_Support_the_war_on_terror
+		icon = GFX_focus_PRC_Support_the_war_on_terror
+		cost = 4
+		x = 2
+		y = 3
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Crossing_the_Pacific }
+		completion_reward = { 
+		  
+	   }
+	}
+	focus = { 
+		id = PRC_Gotten_better
+		icon = GFX_focus_PRC_Support_the_war_on_terror
+		cost = 3
+		x = 1
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Stick_to_principles }
+		prerequisite = { focus = PRC_Support_the_war_on_terror }
+		completion_reward = { 
+		  
+	   }
+	}
+    focus = { 
+		id = PRC_China_Japan_Strategic_Dialogue
+		icon = GFX_focus_PRC_China_Japan_Strategic_Dialogue
+		cost = 4
+		x = -5
+		y = 2
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Go_to_the_world }
+		completion_reward = { 
+		  
+	   }
+	}
+    focus = { 
+		id = PRC_Welcome_Japanese_culture
+		icon = GFX_focus_PRC_Welcome_Japanese_culture
+		cost = 4
+		x = -4
+		y = 3
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_China_Japan_Strategic_Dialogue }
+		completion_reward = { 
+		  
+	   }
+	}
+    focus = { 
+		id = PRC_China_Japan_trade
+		icon = GFX_focus_PRC_China_Japan_trade
+		cost = 4
+		x = -6
+		y = 3
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_China_Japan_Strategic_Dialogue }
+		completion_reward = { 
+		  
+	   }
+	}
+    focus = { 
+		id = PRC_China_Japan_South_Korea_free_trade_zone
+		icon = GFX_focus_PRC_The_idea_of_a_China_Japan_South_Korea_free_trade_zone
+		cost = 5
+		x = -5
+		y = 4
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Welcome_Japanese_culture}
+		prerequisite = { focus = PRC_China_Japan_trade}
+		completion_reward = { 
+		  
+	   }
+	}
+	focus = { 
+		id = PRC_Seize_the_opportunity
+		icon = GFX_focus_PRC_Seize_the_opportunity
+		cost = 3
+		x = -2
+		y = 5
+		available = {
+
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Gotten_better }
+		prerequisite = { focus = PRC_Expand_trade }
+		prerequisite = { focus = PRC_China_Japan_South_Korea_free_trade_zone }
+		completion_reward = { 
+		  
+	   }
+	}
+	focus = { 
+		id = PRC_the_16th_national_congress
+		icon = GFX_focus_PRC_the_16th_national_congress
+		cost = 0
+		x = 10
+		y = 6
+		available = {
+            custom_trigger_tooltip = {
+				tooltip = event_unlock
+				always = no
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = PRC_Seize_the_opportunity }
+		prerequisite = { focus = PRC_prepare_the_tenth_five_year_Plan}
+		prerequisite = { focus = PRC_xin_lantu }
+		completion_reward = { 
+		  custom_effect_tooltip = PRC_the_16th_national_congress_tt
+	   }
+	}
+}

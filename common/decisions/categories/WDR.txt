@@ -1,0 +1,12 @@
+PRC_WDR = {
+	icon = 1
+	picture = decisions_PRC_WDR
+         allowed = {
+			original_tag = PRC
+		 }
+		 priority = 99
+		 visible = {
+			has_country_flag = PRC_WDR
+		 }
+		 visible_when_empty = yes
+}

@@ -1,0 +1,162 @@
+PRC_wai_zi = {
+	Cooperate_with_USA_foreign_investment = {
+		priority = 100
+		available = {
+			NOT = {
+				has_country_flag = lingyixiang_waizi
+			}
+		}
+		visible = {
+			has_country_flag = wai_zi_1
+		 }
+		fire_only_once = yes
+		days_remove = 60
+		cost = 100
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = lingyixiang_waizi
+		}
+		remove_effect = {
+			clr_country_flag = lingyixiang_waizi
+			add_to_variable = { PRC_factory_of_the_world_1 = 0.02  }
+			add_to_variable = { PRC_factory_of_the_world_2 = 0.04  }
+			add_to_variable = { PRC_factory_of_the_world_3 = 0.01  }
+			custom_effect_tooltip = wai_zi_effect
+			if = {
+				limit = {
+					has_idea = xia_gang_chao_2
+				}
+				modify_timed_idea = {
+					idea = xia_gang_chao_2
+					days = -90
+				}
+			}
+			     add_to_variable = {
+				wai_zi_var = 1
+			}
+            wai_zi_clamper = yes
+		}
+	}
+	Cooperate_with_JAP_foreign_investment = {
+		priority = 100
+		available = {
+			NOT = {
+				has_country_flag = lingyixiang_waizi
+			}
+		}
+		visible = {
+			has_country_flag = wai_zi_1
+		 }
+		fire_only_once = yes
+		days_remove = 60
+		cost = 100
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = lingyixiang_waizi
+		}
+		remove_effect = {
+		    add_to_variable = { PRC_factory_of_the_world_1 = 0.02  }
+			add_to_variable = { PRC_factory_of_the_world_2 = 0.04  }
+			add_to_variable = { PRC_factory_of_the_world_3 = 0.01  }
+			custom_effect_tooltip = wai_zi_effect
+			clr_country_flag = lingyixiang_waizi
+			if = {
+				limit = {
+					has_idea = xia_gang_chao_2
+				}
+				modify_timed_idea = {
+					idea = xia_gang_chao_2
+					days = -90
+				}
+			}
+			     add_to_variable = {
+				wai_zi_var = 1
+			}
+            wai_zi_clamper = yes
+		}
+	}
+	Cooperate_with_GER_foreign_investment = {
+		priority = 100
+		available = {
+			NOT = {
+				has_country_flag = lingyixiang_waizi
+			}
+		}
+		visible = {
+			has_country_flag = wai_zi_1
+		 }
+		fire_only_once = yes
+		days_remove = 60
+		cost = 100
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = lingyixiang_waizi
+		}
+		remove_effect = {
+		    add_to_variable = { PRC_factory_of_the_world_1 = 0.02  }
+			add_to_variable = { PRC_factory_of_the_world_2 = 0.04  }
+			add_to_variable = { PRC_factory_of_the_world_3 = 0.01  }
+			custom_effect_tooltip = wai_zi_effect
+			clr_country_flag = lingyixiang_waizi
+			if = {
+				limit = {
+					has_idea = xia_gang_chao_2
+				}
+				modify_timed_idea = {
+					idea = xia_gang_chao_2
+					days = -90
+				}
+			}
+			     add_to_variable = {
+				wai_zi_var = 1
+			}
+            wai_zi_clamper = yes
+		}
+	}
+	Cooperate_with_KOR_foreign_investment = {
+		priority = 100
+		available = {
+			NOT = {
+				has_country_flag = lingyixiang_waizi
+			}
+		}
+		visible = {
+			has_country_flag = wai_zi_1
+		 }
+		fire_only_once = yes
+		days_remove = 60
+		cost = 100
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+		complete_effect = {
+			set_country_flag = lingyixiang_waizi
+		}
+		remove_effect = {
+		    add_to_variable = { PRC_factory_of_the_world_1 = 0.02  }
+			add_to_variable = { PRC_factory_of_the_world_2 = 0.04  }
+			add_to_variable = { PRC_factory_of_the_world_3 = 0.01  }
+			custom_effect_tooltip = wai_zi_effect
+			clr_country_flag = lingyixiang_waizi
+			if = {
+				limit = {
+					has_idea = xia_gang_chao_2
+				}
+				modify_timed_idea = {
+					idea = xia_gang_chao_2
+					days = -90
+				}
+			}
+			     add_to_variable = {
+				wai_zi_var = 1
+			}
+            wai_zi_clamper = yes
+		}
+	}
+}

@@ -1,0 +1,93 @@
+spriteTypes = {	
+        SpriteType = {
+		name = "GFX_report_event_hk_jzm"
+		texturefile = "gfx/event_pictures/hk_jiang.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_sixteenth_prc"
+		texturefile = "gfx/event_pictures/prc_sixth_1.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_sixteenth_end_prc"
+		texturefile = "gfx/event_pictures/prc_sixteen_2.png"
+	}
+	    SpriteType = {
+		name = "GFX_report_event_sixteenth_first_prc"
+		texturefile = "gfx/event_pictures/hu_and_jiang.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_teenth_prc"
+		texturefile = "gfx/event_pictures/prc_tenth.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_teenth_end_prc"
+		texturefile = "gfx/event_pictures/prc_tenth_2.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_prc_li_jian_2000"
+		texturefile = "gfx/event_pictures/prc_li_jian_2000.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_jiang_1"
+		texturefile = "gfx/event_pictures/jiang_ze_min2.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_CPC_eighty_years"
+		texturefile = "gfx/event_pictures/cpc_80years.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_jiang_2"
+		texturefile = "gfx/event_pictures/jiang_2.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_hu_1"
+		texturefile = "gfx/event_pictures/hu_1.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_report_event_hu_2"
+		texturefile = "gfx/event_pictures/hu_2.png"
+	       
+	}
+
+	spriteType = {
+		name = "GFX_report_event_letter_to_zhu"
+		texturefile = "gfx/event_pictures/prc_countryside_90s.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_16th_3rd_hu"
+		texturefile = "gfx/event_pictures/16th_3rd_hu.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_16th_3rd_wu"
+		texturefile = "gfx/event_pictures/16th_3rd_wu.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_Third_Plenary_Session_of_the_16th_Central_Committee"
+		texturefile = "gfx/event_pictures/Third_Plenary_Session_of_the_16th_Central_Committee.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_PRC_join_wto"
+		texturefile = "gfx/event_pictures/PRC_join_wto.png"
+	}
+	
+	    SpriteType = {
+		name = "GFX_news_prc_lijian"
+		texturefile = "gfx/event_pictures/news_li_jian_2000.png"
+	       
+	}
+	    SpriteType = {
+		name = "GFX_news_prc_teenth"
+		texturefile = "gfx/event_pictures/news_prc_tenth.png"
+	       
+	}
+}

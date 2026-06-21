@@ -1,0 +1,411 @@
+focus_tree = {
+	id = aaa_PRC_Focus_2
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = PRC
+		}
+	}
+	default = no
+	shared_focus = PRC_Investigating_sars
+	focus = {
+		id = PRC_The_fourth_core
+		x = 11
+		y = -1
+		cost = 3
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = event_unlock
+				always = no
+			}
+		}
+		completion_reward = {
+			add_political_power = 10
+			custom_effect_tooltip = PRC_The_fourth_core_tt
+		}
+	}
+	focus = {
+		id = PRC_new_centry_project
+		x = 3
+		y = 0
+		cost = 3
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_The_fourth_core
+		}
+		completion_reward = {
+			set_country_flag = PRC_FMP
+		}
+	}
+	focus = {
+		id = PRC_South_to_North_Water_Transfer_Project
+		x = 3
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_new_centry_project
+		}
+		completion_reward = {
+			set_country_flag = PRC_SWTP
+			unlock_decision_tooltip = PRC_SWTP_middle
+			unlock_decision_tooltip = PRC_SWTP_east
+			unlock_decision_tooltip = PRC_SWTP_west
+		}
+	}
+	focus = {
+		id = PRC_Qinghai_Tibet_Railway
+		x = 1
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_new_centry_project
+		}
+		completion_reward = {
+			set_country_flag = PRC_QTR
+		}
+	}
+	focus = {
+		id = PRC_weat_gas_to_east
+		x = 5
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_new_centry_project
+		}
+		completion_reward = {
+			set_country_flag = PRC_WGTE
+		}
+	}
+	focus = {
+		id = PRC_Scientific_Outlook_on_Development
+		x = 10
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 50
+		}
+		available = {
+			custom_trigger_tooltip = {
+			    tooltip = This_concept_has_already_been_proposed_by_hu
+			    has_country_flag = hu_concept_Scientific_Outlook_on_Development
+			}
+		}
+		mutually_exclusive = {
+			focus = PRC_Continue_old_route
+		}
+		prerequisite = {
+			focus = PRC_The_fourth_core
+		}
+		completion_reward = {
+		    custom_effect_tooltip = hjt_paixi_add_10
+             add_to_variable = {hjt_paixi = 10}
+             add_to_variable = {jzm_paixi = -10}
+		    CPC_zhengquan_clamper = yes
+		    CPC_zhengquan_effect = yes
+			add_power_balance_value = {
+                id = PRC_power_balance
+                value = -0.10
+                tooltip_side = PRC_tuan_clique_side
+            }
+		}
+	}
+	focus = {
+		id = PRC_Continue_old_route
+		x = 12
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 50
+		}
+		available = {
+			custom_trigger_tooltip = {
+			    tooltip = This_concept_has_already_been_proposed_by_hu
+			    has_country_flag = hu_concept_Scientific_Outlook_on_Development
+			}
+		}
+		mutually_exclusive = {
+			focus = PRC_Scientific_Outlook_on_Development
+		}
+		prerequisite = {
+			focus = PRC_The_fourth_core
+		}
+		completion_reward = {
+			custom_effect_tooltip = jzm_paixi_add_10
+             add_to_variable = {jzm_paixi = 10}
+             add_to_variable = {hjt_paixi = -10}
+		    CPC_zhengquan_clamper = yes
+		    CPC_zhengquan_effect = yes
+			add_power_balance_value = {
+               id = PRC_power_balance
+               value = 0.10
+               tooltip_side = PRC_Shanghai_clique_side
+            }
+		}
+	}
+	focus = {
+		id = PRC_curtain_rises
+		x = 11
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_Scientific_Outlook_on_Development
+			focus = PRC_Continue_old_route
+		}
+		completion_reward = {
+		}
+    }
+	focus = {
+		id = PRC_come_to_the_Forefront
+		x = 10
+		y = 2
+		cost = 0
+		mutually_exclusive = {
+			focus = PRC_lingering_power_remains
+		}
+		prerequisite = {
+			focus = PRC_curtain_rises
+		}
+	}
+	focus = {
+		id = PRC_lingering_power_remains
+		x = 12
+		y = 2
+		cost = 0
+		mutually_exclusive = {
+			focus = PRC_come_to_the_Forefront
+		}
+		prerequisite = {
+			focus = PRC_curtain_rises
+		}
+	}
+	focus = {
+		id = PRC_now_PLA
+		x = 19
+		y = 0
+		cost = 3
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_The_fourth_core
+		}
+		completion_reward = {
+			army_experience = 10
+		}
+	}
+	focus = {
+		id = PRC_no_time_to_lose
+		x = 19
+		y = 1
+		cost = 2
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_now_PLA
+		}
+		completion_reward = {
+			set_country_flag = PRC_military_reform
+			custom_effect_tooltip = no_time_to_lose_tt
+			set_variable = {
+				PRC_military_reform_var = 0
+			}
+			set_variable = {
+				PRC_military_anti_corruption_var = 0
+			}
+			PRC_military_reform_clamper = yes
+			PRC_military_anti_corruption_clamper = yes
+		}
+	}
+	focus = {
+		id = PRC_PLA
+		x = 19
+		y = 2
+		cost = 2
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_no_time_to_lose
+		}
+		completion_reward = {
+			custom_effect_tooltip = ideas_PLA
+			custom_effect_tooltip = PRC_PLA_tt
+			add_to_variable = {PLA_army_attack = 0.025}
+			add_to_variable = {PLA_army_defence = 0.025}
+		}
+	}
+	focus = {
+		id = PRC_Downsize_the_army
+		x = 18
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 50
+		}
+		mutually_exclusive = { focus = PRC_Torrent_of_Steel }
+		prerequisite = {
+			focus = PRC_PLA
+		}
+		completion_reward = {
+			custom_effect_tooltip = ideas_PLA
+			custom_effect_tooltip = PRC_Downsize_the_army_tt
+			add_to_variable  = {PLA_training_time = 0.15}
+			add_to_variable  = {PLA_max_planning = 0.05}
+			add_to_variable = {PLA_planning_speed = 0.1}
+		}
+	}
+	focus = {
+		id =  PRC_Digital_transformation
+		x = 18
+		y = 4
+		cost = 7
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_Downsize_the_army
+		}
+		completion_reward = {
+			custom_effect_tooltip = ideas_PLA
+			custom_effect_tooltip = PRC_Digital_transformation_tt
+			add_to_variable = {PLA_planning_speed = 0.05}
+			add_to_variable  = {PLA_max_planning = 0.1}
+			add_to_variable = {PLA_army_attack = 0.05}
+			add_to_variable = {PLA_army_defence = 0.05}
+			unlock_decision_tooltip = PRC_Promote_the_development_of_informatization
+		}
+	}
+	focus = {
+		id = PRC_Torrent_of_Steel
+		x = 20
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 50
+		}
+		mutually_exclusive = { focus = PRC_Downsize_the_army }
+		prerequisite = {
+			focus = PRC_PLA
+		}
+		completion_reward = {
+			custom_effect_tooltip = ideas_PLA
+			custom_effect_tooltip = PRC_Torrent_of_Steel_tt
+			add_to_variable = {PLA_planning_speed = 0.025}
+			add_to_variable  = {PLA_training_time = -0.15}
+		}
+	}
+	focus = {
+		id = PRC_Promote_mechanization
+		x = 20
+		y = 4
+		cost = 7
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_Torrent_of_Steel
+		}
+		completion_reward = {
+			custom_effect_tooltip = ideas_PLA
+			custom_effect_tooltip = PRC_Promote_mechanization_tt
+			add_to_variable = {
+				PLA_army_armor_attack = 0.1
+			}
+			add_to_variable = {
+				PLA_army_armor_defence = 0.1
+			}
+			unlock_decision_tooltip = PRC_Promote_mechanized_reorganization
+		}
+	}
+	focus = {
+		id = PRC_Embracing_modern_warfare
+		x = 19
+		y = 5
+		cost = 7
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_Promote_mechanization
+			focus = PRC_Digital_transformation
+		}
+		completion_reward = {
+			custom_effect_tooltip = ideas_PLA
+			custom_effect_tooltip = PRC_Embracing_modern_warfare_tt
+			add_to_variable = {
+				PLA_army_attack = 0.1
+			}
+			add_to_variable = {
+				PLA_army_defence = 0.1
+			}
+		}
+	}
+	focus = {
+		id = PRC_Things_are_not_like_they_used_to_be
+		x = 19
+		y = 6
+		cost = 6
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = PRC_military_reform_10
+				check_variable = {
+					var = PRC_military_reform_var
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = PRC_military_anti_corruption_5
+				check_variable = {
+					var = PRC_military_anti_corruption_var
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = {
+			focus = PRC_Embracing_modern_warfare
+		}
+		completion_reward = {
+			hidden_effect = {
+				remove_dynamic_modifier = {
+					modifier = PRC_Modernization_of_the_military_2
+				}
+				add_dynamic_modifier = {
+					modifier = PRC_Modernization_of_the_military_3
+				}
+			}
+			custom_effect_tooltip = PRC_Things_are_not_like_they_used_to_be_tt
+			add_to_variable = {
+				PLA_army_attack = 0.05
+			}
+			add_to_variable = {
+				PLA_army_defence = 0.05
+			}
+			add_to_variable = {PLA_army_org = 0.025}
+			add_to_variable = {PLA_army_morale = 0.025}
+		}
+	}
+}

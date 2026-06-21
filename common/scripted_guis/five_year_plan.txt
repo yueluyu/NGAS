@@ -1,0 +1,75 @@
+scripted_gui = {
+	five_years_plan = {
+	context_type = decision_category
+	window_name = five_year_plan
+	triggers = {
+		nineth_five_year_plan_visible = {
+			has_idea = nineth_five_years_plan
+			NOT = {
+				has_country_flag = other_ting
+			}
+		}
+		ke_jiao_xing_guo_visible = {
+			has_idea = nineth_five_years_plan
+		}
+		ke_jiao_xing_guo_text_visible = {
+			has_idea = nineth_five_years_plan
+			has_country_flag = ke_jiao_xing_guo
+			has_country_flag = other_ting
+		}
+		ke_jiao_xing_guo_picture_visible = {
+			has_country_flag = ke_jiao_xing_guo
+			has_country_flag = other_ting
+		}
+		five_year_plan_text_visible = {
+			NOT = {
+				has_country_flag = other_ting
+			}
+		}
+		nongcun_wenti_text_visible = {
+			has_country_flag = nongcun_wenti
+			has_country_flag = other_ting
+		}
+		nongcun_wenti_picture_visible = {
+			has_country_flag = nongcun_wenti
+			has_country_flag = other_ting
+		}
+		qu_yu_fa_zhan_text_visible = {
+			has_country_flag = qu_yu_fa_zhan
+			has_country_flag = other_ting
+		}
+		qu_yu_fazhan_picture_visible = {
+			has_country_flag = qu_yu_fa_zhan
+			has_country_flag = other_ting
+		}
+	}
+	triggers = {
+		tenth_five_year_plan_visible = {
+			has_idea = tenth_five_years_plan
+			NOT = {
+				has_country_flag = other_ting
+			}
+		}
+	}
+	triggers = {
+		fp_x_button_visible = {
+			has_country_flag = other_ting
+		}
+	}
+	effects = {
+		ke_jiao_xing_guo_click = {
+			ke_jiao_xing_guo_effect = yes
+		}
+		nong_cun_wenti_click = {
+			nong_cun_wenti_effect = yes
+		}
+		qu_yu_fa_zhan_click = {
+			qu_yu_fa_zhan_effect = yes
+		}
+		fp_x_button_click = {
+			fp_x_button_effect = yes
+		}
+	}
+	}
+	
+}

@@ -1,0 +1,556 @@
+PRC_pla  = {
+	Eliminate_military_involvement_in_business = {
+		available = {                          
+			has_idea = army_jing_shang
+			has_country_flag = PRC_military_reform
+			NOT = {
+				has_country_flag = other_military_anti_corruption_doing
+			}
+		}
+		allowed = {
+			has_idea = army_jing_shang
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 100
+		cost = 70
+		modifier = {
+			experience_gain_army_factor = -0.5
+		}
+		complete_effect = {
+			set_country_flag = other_military_anti_corruption_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_anti_corruption_doing
+			remove_ideas = army_jing_shang
+			add_to_variable = {PLA_army_org = 0.05}
+			add_to_variable = {PLA_army_morale = 0.05}
+			custom_effect_tooltip = Eliminate_military_involvement_in_business_tt
+			add_to_variable = {
+				PRC_military_anti_corruption_var = 1
+			}
+		}
+	}
+	PRC_Continue_disarming = {
+		available = {
+			has_country_flag = PRC_military_reform
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 90
+		cost = 50
+		modifier = {
+			experience_gain_army_factor = -0.2
+		}
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_army_attack = 0.05}
+			add_to_variable = {PLA_army_org = 0.035}
+			add_to_variable = {PLA_experience_gain_army = 0.05}
+			add_to_variable = {PLA_experience_gain_army_unit = 0.05}
+			custom_effect_tooltip = PRC_Continue_disarming_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Optimize_troop_composition = {
+		available = {
+			has_country_flag = PRC_military_reform
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 90
+		cost = 50
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_training_time = 0.05}
+			add_to_variable = {PLA_army_attack = 0.025}
+			add_to_variable = {PLA_army_defence = 0.05}
+			custom_effect_tooltip = PRC_Optimize_troop_composition_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Streamline_the_command_system = {
+		available = {
+			has_country_flag = PRC_military_reform
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 90
+		cost = 50
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_army_org = 0.05}
+			add_to_variable = {PLA_army_morale = 0.05}
+			custom_effect_tooltip = PRC_Streamline_the_command_system_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Promote_the_development_of_informatization = {
+		available = {
+			has_country_flag = PRC_military_reform
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+			hidden_trigger = {
+				has_completed_focus = PRC_Digital_transformation
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform
+			has_completed_focus = PRC_Digital_transformation
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 90
+		custom_cost_trigger = {
+			has_army_experience > 25
+		}
+		custom_cost_text = MR_cost_xp_25
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+			army_experience = -25
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_planning_speed = 0.075}
+			add_to_variable = {PLA_max_planning = 0.075}
+			add_to_variable = {PLA_initiative = 0.025}
+			custom_effect_tooltip = PRC_Promote_the_development_of_informatization_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Promote_mechanized_reorganization = {
+		available = {
+			has_country_flag = PRC_military_reform
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+			hidden_trigger = {
+				has_completed_focus = PRC_Promote_mechanization
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform
+			has_completed_focus = PRC_Promote_mechanization
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 60
+		custom_cost_trigger = {
+			has_army_experience > 25
+		}
+		custom_cost_text = MR_cost_xp_25
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+			army_experience = -25
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_army_armor_attack = 0.05}
+			add_to_variable = {PLA_army_armor_defence = 0.05}
+			custom_effect_tooltip = PRC_Promote_mechanized_reorganization_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Take_the_second_step = {
+		available = {
+			has_completed_focus = PRC_Embracing_modern_warfare
+			custom_trigger_tooltip = {
+				tooltip = PRC_military_reform_4
+				check_variable = {
+					var = PRC_military_reform_var
+					value = 4
+					compare = greater_than_or_equals
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = PRC_military_anti_corruption_1
+				check_variable = {
+					var = PRC_military_anti_corruption_var
+					value = 1
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = PRC_military_reform_the_second_step
+			hidden_effect = {
+				remove_dynamic_modifier = {
+					modifier = PRC_Modernization_of_the_military_1
+				}
+				add_dynamic_modifier = {
+					modifier = PRC_Modernization_of_the_military_2
+				}
+			}
+			custom_effect_tooltip = PRC_Take_the_second_step_tt
+		}
+	}
+	PRC_Issuing_Regulations_on_Work_of_Military_Party_Committees = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_anti_corruption_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 120
+		complete_effect = {
+			set_country_flag = other_military_anti_corruption_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_anti_corruption_doing
+			add_to_variable = {PLA_army_org = 0.075}
+			add_to_variable = {PLA_army_morale = 0.025}
+			custom_effect_tooltip = PRC_Issuing_Regulations_on_Work_of_Military_Party_Committees_tt
+			add_to_variable = {
+				PRC_military_anti_corruption_var = 1
+			}
+		}
+	}
+	PRC_Unified_Military_Internal_Oversight_System = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_anti_corruption_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 70
+		complete_effect = {
+			set_country_flag = other_military_anti_corruption_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_anti_corruption_doing
+			add_to_variable = {PLA_army_org = 0.065}
+			add_to_variable = {PLA_army_morale = 0.035}
+			custom_effect_tooltip = PRC_Unified_Military_Internal_Oversight_System_tt
+			add_to_variable = {
+				PRC_military_anti_corruption_var = 1
+			}
+		}
+	}
+	PRC_Special_Supplement_on_Military_Disciplinary_Actions = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_anti_corruption_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 90
+		cost = 100
+		complete_effect = {
+			set_country_flag = other_military_anti_corruption_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_anti_corruption_doing
+			add_to_variable = {PLA_army_org = 0.075}
+			add_to_variable = {PLA_army_morale = 0.05}
+			custom_effect_tooltip = PRC_Special_Supplement_on_Military_Disciplinary_Actions_tt
+			add_to_variable = {
+				PRC_military_anti_corruption_var = 1
+			}
+		}
+	}
+	PRC_Five_rules = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_anti_corruption_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 75
+		cost = 40
+		complete_effect = {
+			set_country_flag = other_military_anti_corruption_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_anti_corruption_doing
+			add_to_variable = {PLA_army_org = 0.05}
+			add_to_variable = {PLA_army_morale = 0.025}
+			custom_effect_tooltip = PRC_Five_rules_tt
+			add_to_variable = {
+				PRC_military_anti_corruption_var = 1
+			}
+		}
+	}
+	PRC_Cross_theater_exercise = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		days_remove = 60
+        complete_effect = {
+			set_country_flag = other_military_reform_doing
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_experience_gain_army = 0.05}
+			add_to_variable = {PLA_experience_gain_army_unit = 0.05}
+			custom_effect_tooltip = PRC_Cross_theater_exercise_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Synthetic_Chemical_Reform = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		custom_cost_trigger = {
+			has_army_experience > 75
+		}
+		custom_cost_text = MR_cost_xp_75
+		days_remove = 160
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+			army_experience = -75
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_army_org = 0.075}
+			add_to_variable = {PLA_army_morale = 0.075}
+			add_to_variable = {PLA_army_attack = 0.1}
+			add_to_variable = {PLA_army_defence = 0.1}
+			add_to_variable = {PLA_planning_speed = 0.025}
+			add_to_variable = {PLA_max_planning = 0.025}
+			add_to_variable = {PLA_initiative = 0.05}
+			custom_effect_tooltip = PRC_Synthetic_Chemical_Reform_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Expand_the_rapid_response_force = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = MR_cost_xp_10
+		days_remove = 90
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+			army_experience = -10
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_army_speed = 0.1}
+			add_to_variable = {PLA_planning_speed = 0.025}
+			custom_effect_tooltip = PRC_Expand_the_rapid_response_force_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Joint_Logistics_Reform = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = MR_cost_xp_10
+		days_remove = 90
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+			army_experience = -10
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_supply_consumption = -0.1}
+			add_to_variable = {PLA_planning_speed = 0.025}
+			custom_effect_tooltip = PRC_Joint_Logistics_Reform_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Adjust_the_school_system = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 30
+		days_remove = 60
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+			army_experience = -10
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_army_org = 0.05}
+			add_to_variable = {PLA_army_morale = 0.05}
+			add_to_variable = {PLA_experience_gain_army = 0.03}
+			add_to_variable = {PLA_experience_gain_army_unit = 0.03}
+			custom_effect_tooltip = PRC_Adjust_the_school_system_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+	PRC_Professionalization_of_the_military = {
+		available = {
+			has_country_flag = PRC_military_reform_the_second_step
+			NOT = {
+				has_country_flag = other_military_reform_doing
+			}
+		}
+		visible = {
+			has_country_flag = PRC_military_reform_the_second_step
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		cost = 30
+		days_remove = 40
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = other_military_reform_doing
+			army_experience = -10
+		}
+		remove_effect = {
+			clr_country_flag = other_military_reform_doing
+			add_to_variable = {PLA_army_org = 0.025}
+			add_to_variable = {PLA_army_morale = 0.025}
+			add_to_variable = {PLA_experience_gain_army = 0.02}
+			add_to_variable = {PLA_experience_gain_army_unit = 0.02}
+			custom_effect_tooltip = PRC_Professionalization_of_the_military_tt
+			add_to_variable = {
+				PRC_military_reform_var = 1
+			}
+		}
+	}
+}

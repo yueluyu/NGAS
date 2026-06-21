@@ -1,0 +1,106 @@
+CPC_zhengquan_clamper = {
+        clamp_variable = {
+		var  = jzm_paixi
+		min = 0
+        max = 100
+	    }
+		clamp_variable = {
+        var  = hjt_paixi
+		min = 0
+        max = 100
+		}
+		clamp_variable = {
+        var = jzm_paixi_increase
+		min = -4
+        max = 4
+		}
+		clamp_variable = {
+        var = hjt_paixi_increase
+		min = -4
+        max = 4
+		}
+}
+wai_zi_clamper = {
+       clamp_variable = {
+		var = wai_zi_var
+		max = 4
+		min = 0
+	   }
+}
+PRC_military_reform_clamper = {
+        clamp_variable = {
+		var = PRC_military_reform_var
+		max = 20
+		min = 0
+	   }
+}
+PRC_military_anti_corruption_clamper = {
+        clamp_variable = {
+		var = PRC_military_anti_corruption_var
+		max = 20
+		min = 0
+	   }
+}
+ke_jiao_xing_guo_effect = {
+            set_country_flag = other_ting
+			set_country_flag = ke_jiao_xing_guo
+			clr_country_flag = nongcun_wenti
+			clr_country_flag = qu_yu_fa_zhan
+	
+}
+nong_cun_wenti_effect = {
+            set_country_flag = other_ting
+			set_country_flag = nongcun_wenti
+			clr_country_flag = ke_jiao_xing_guo
+			clr_country_flag = qu_yu_fa_zhan
+	
+}
+qu_yu_fa_zhan_effect = {
+            set_country_flag = other_ting
+			set_country_flag = qu_yu_fa_zhan
+			clr_country_flag = nongcun_wenti
+			clr_country_flag = ke_jiao_xing_guo
+	
+}
+fp_x_button_effect = {
+            clr_country_flag = ke_jiao_xing_guo
+			clr_country_flag = nongcun_wenti
+			clr_country_flag = qu_yu_fa_zhan
+			clr_country_flag = other_ting
+	
+}
+CPC_zhengquan_effect = {
+	#政治点
+	set_temp_variable = { temp_var_pp = hjt_paixi }
+	subtract_from_temp_variable = { temp_var_pp = 0 }
+	multiply_temp_variable = { temp_var_pp = 0.15 }
+	round_temp_variable = temp_var_pp
+	divide_temp_variable = { temp_var_pp = 100 }
+	set_variable = { tuan_pai_pp_gain = temp_var_pp }
+	
+	#顾问花费
+	set_temp_variable = { temp_var_ac = hjt_paixi }
+	subtract_from_temp_variable = { temp_var_ac = 0 }
+	multiply_temp_variable = { temp_var_ac = -0.15 }
+	round_temp_variable = temp_var_ac
+	divide_temp_variable = { temp_var_ac = 100 }
+	set_variable = { tuan_pai_advisor_cost = temp_var_ac }
+
+	#建造速度
+	set_temp_variable = { temp_var_ps = jzm_paixi }
+	subtract_from_temp_variable = { temp_var_ps = 0 }
+	multiply_temp_variable = { temp_var_ps = 0.15 }
+	round_temp_variable = temp_var_ps
+	divide_temp_variable = { temp_var_ps = 100 }
+	set_variable = { jiang_pai_production_speed = temp_var_ps }
+
+	#稳定度
+	set_temp_variable = { temp_var_sta = jzm_paixi }
+	subtract_from_temp_variable = { temp_var_sta = 0 }
+	multiply_temp_variable = { temp_var_sta = 0.15 }
+	round_temp_variable = temp_var_sta
+	divide_temp_variable = { temp_var_sta = 100 }
+	set_variable = { jiang_pai_stability = temp_var_sta }
+
+}
+

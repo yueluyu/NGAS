@@ -1,0 +1,146 @@
+defined_text = {
+	name = jzm_paixi_loc
+	
+	text = {
+		trigger = {
+			check_variable = {jzm_paixi < 21}
+		}
+		localization_key = jzm_zhichi_very_low
+	}
+	text = {
+		trigger = {
+			check_variable = {jzm_paixi > 20}
+			check_variable = {jzm_paixi < 41}
+		}
+		localization_key = jzm_zhichi_low
+	}
+	text = {
+		trigger = {
+			check_variable = {jzm_paixi > 40}
+			check_variable = {jzm_paixi < 61}
+		}
+		localization_key = jzm_zhichi_medium
+	}
+	text = {
+		trigger = {
+			check_variable = {jzm_paixi > 60}
+			check_variable = {jzm_paixi < 81}
+		}
+		localization_key = jzm_zhichi_high
+	}
+	text = {
+		trigger = {
+			check_variable = {jzm_paixi > 80}
+		}
+		localization_key = jzm_zhichi_very_high
+	}	
+}
+defined_text = {
+	name = hjt_paixi_loc
+	
+	text = {
+		trigger = {
+			check_variable = {hjt_paixi < 21}
+		}
+		localization_key = hjt_zhichi_very_low
+	}
+	text = {
+		trigger = {
+			check_variable = {hjt_paixi > 20}
+			check_variable = {hjt_paixi < 41}
+		}
+		localization_key = hjt_zhichi_low
+	}
+	text = {
+		trigger = {
+			check_variable = {hjt_paixi > 40}
+			check_variable = {hjt_paixi < 61}
+		}
+		localization_key = hjt_zhichi_medium
+	}
+	text = {
+		trigger = {
+			check_variable = {hjt_paixi > 60}
+			check_variable = {jzm_paixi < 81}
+		}
+		localization_key = hjt_zhichi_high
+	}
+	text = {
+		trigger = {
+			check_variable = {hjt_paixi > 80}
+		}
+		localization_key = hjt_zhichi_very_high
+	}
+}
+defined_text = {
+	name = gong_qing_tuan_loc_1
+
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = PRC_16th_begin_prc
+			}
+		}
+		localization_key = gong_qing_tuan_1
+	}
+	
+	text = {
+		trigger = {
+		has_country_flag = PRC_16th_begin_prc
+		}
+		localization_key = gong_qing_tuan_2
+	}
+}
+defined_text = {
+	name = shb_loc_1
+
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = PRC_16th_begin_prc
+			}
+		}
+		localization_key = shb_1
+	}
+	
+	text = {
+		trigger = {
+		has_country_flag = PRC_16th_begin_prc
+		}
+		localization_key = shb_2
+	}
+}
+defined_text = {
+	name = five_year_plan
+
+	text = {
+		trigger = {
+			has_idea = nineth_five_years_plan
+		}
+		localization_key = nineth_five_years_plan_1
+	}
+
+	text = {
+		trigger = {
+			has_idea = tenth_five_years_plan
+		}
+		localization_key = tenth_five_years_plan_1
+	}
+}
+defined_text = {
+	name = fy_plan
+
+	text = {
+		trigger = {
+			has_idea = nineth_five_years_plan
+		}
+		localization_key = nineth_five_years_plan_2
+	}
+
+	text = {
+		trigger = {
+			has_idea = tenth_five_years_plan
+		}
+		localization_key = tenth_five_years_plan_2
+	}
+}
