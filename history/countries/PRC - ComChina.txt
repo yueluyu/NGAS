@@ -151,8 +151,8 @@ set_research_slots = 4
 
 set_convoys = 600
 
-set_stability = 0.54
-set_war_support = 0.45
+set_stability = 0.48
+set_war_support = 0.4
 
 if = {
 	limit = { has_dlc = "La Resistance" }
@@ -306,13 +306,13 @@ set_variable = {
 			PLA_army_armor_defence = 0
 }
 set_variable = {
-			PRC_factory_of_the_world_1 = 0.1
+			PRC_factory_of_the_world_1 = 0.05
 }
 set_variable = {
-			PRC_factory_of_the_world_2 = 0.15
+			PRC_factory_of_the_world_2 = 0.1
 }
 set_variable = {
-			PRC_factory_of_the_world_3 = 0.05
+			PRC_factory_of_the_world_3 = 0.03
 }
 set_country_flag = COUNTRY_HAS_SECONDARY_LEADER
 

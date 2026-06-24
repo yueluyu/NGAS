@@ -21,7 +21,7 @@ on_actions = {
 		}
 		country_event = {
 		 id = prc_hk.1
-		 days = 752
+		 days = 300
 		}
 		country_event = {
 		 id = prc_sars.1

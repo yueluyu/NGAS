@@ -126,6 +126,8 @@ PRC_new_centry_project:0 "新世纪四大工程"
 PRC_South_to_North_Water_Transfer_Project:0 "南水北调工程"
 PRC_South_to_North_Water_Transfer_Project_tt:0 "解锁南水北调工程中线、东线、西线建造决议"
 PRC_Qinghai_Tibet_Railway:0 "青藏铁路"
+PRC_weat_gas_to_east: "西气东输工程"
+
 
 #军队
  PRC_now_PLA:0 "人民解放军的现状"
@@ -138,6 +140,10 @@ PRC_Qinghai_Tibet_Railway:0 "青藏铁路"
  PRC_Promote_mechanization:0 "机械化建设"
  PRC_Embracing_modern_warfare:0 "拥抱现代战争"
  PRC_Things_are_not_like_they_used_to_be:0 "今非昔比"
+ PRC_Hone_oneself:0 "打铁还需自身硬"
+ PRC_Sharpening_the_great_nation_sword:0 "磨大国利剑"
+ PRC_Follow_the_Party_lead:0 "听党指挥"
+ PRC_Can_win_battles:0 "能打胜仗"
  ideas_PLA:0 "§Y艰难的军队现代化§!追加效果："
  PRC_PLA_tt:0 "陆军师进攻：§G+2.50%§!\n陆军师防御：§G+2.50%§!"
  PRC_Downsize_the_army_tt:0 "训练时间：§Y+15.00%§!\n计划速度：§G+10.00%§!\n计划加成上限系数：§G+5.00%§!"
@@ -147,8 +153,15 @@ PRC_Qinghai_Tibet_Railway:0 "青藏铁路"
  PRC_Promote_mechanization_tt:0 "装甲师进攻：§G+10.00%§!\n装甲师防御：§G+10.00%§!"
  PRC_Things_are_not_like_they_used_to_be_tt:0 "以§Y$PRC_Modernization_of_the_military_3$§!取代§Y$PRC_Modernization_of_the_military_2$§!\n效果变化\n陆军师进攻：§G+5.00%§!\n陆军师防御：§G+5.00%§!\n陆军组织度：§G+2.50%§!\n陆军组织度恢复速率：§G+2.50%§!"     
  
-PRC_military_reform_10:0 "至少已经进行10项军改工作\n当前：[?PRC_military_reform_var]项"
+ PRC_military_reform_10:0 "至少已经进行10项军改工作\n当前：[?PRC_military_reform_var]项"
  PRC_military_anti_corruption_5:0 "至少已经进行5项反腐工作\n当前：[?PRC_military_anti_corruption_var]项"
+
+ PRC_Long_Eagle_Breaks_Through_the_Sky:0 "鹰击长空"
+ PRC_National_air_defense:0 "国土防空"
+ PRC_Both_offens_defense:0 "攻防兼备"
+ PRC_Continuing_the_development_of_third_generation_aircraft:0 "延续三代机开发"
+ PRC_Integration_of_open_space:0 "空地一体化"
+
 
  
  PRC_POI_ZHU:0 "朱镕基§W$SL_New_Dashed_Line$§!§1中华人民共和国国务院总理。§!\n\n\n\n\n\n\n\n£GFX_portrait_Zhu_Rongji \n\n\n\n\n\n\n§RAAA棺材板批发商朱总§!"

@@ -31,5 +31,11 @@ ideas = {
 			allowed = { always = yes }
 			modifier = {}
 		}
+		rd_path_hu = {}
+		rd_path_hu_desc = {}
+		rd_path_hu_guide = {}
+		rd_path_wu = {}
+		rd_path_wu_desc = {}
+		rd_path_wu_guide = {}
 	}
 }

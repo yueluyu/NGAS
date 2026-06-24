@@ -1,0 +1,111 @@
+on_actions = {
+	
+	
+	on_startup =  {
+
+		effect = {	
+			if = {
+				limit = { # Every game rule allows it, then show it.
+					has_game_rule = {
+						rule = mod_intro_visibility
+						option = MOD_INTRO_VISIBILITY_OPTION_SHOW
+					}
+				}
+				every_country = {	# Every player country will get the intro.
+					limit = { is_ai = no }
+					set_country_flag = reddusk_welcome_gui_flag
+				}
+			}
+			
+			### INTRO LIST
+			SOV = {
+				add_to_array = { global.unique_intro = THIS.id }
+				add_to_array = { THIS.rd_path = token:rd_path_pugo }
+				add_to_array = { THIS.rd_path = token:rd_path_putin }
+				add_to_array = { THIS.rd_path = token:rd_path_ryzhkov }
+				add_to_array = { THIS.rd_path = token:rd_path_yazov }
+			}
+			USA = { add_to_array = { global.unique_intro = THIS.id } }
+			ENG = { 
+				add_to_array = { global.unique_intro = THIS.id } 
+				add_to_array = { THIS.rd_path = token:rd_path_blair }
+				add_to_array = { THIS.rd_path = token:rd_path_livingstone }
+				add_to_array = { THIS.rd_path = token:rd_path_tory_libdem }
+				add_to_array = { THIS.rd_path = token:rd_path_jeremy_corbyn }
+				add_to_array = { THIS.rd_path = token:rd_path_george_galloway }
+				add_to_array = { THIS.rd_path = token:rd_path_john_redwood }
+			}
+			YUG = {
+				add_to_array = { global.unique_intro = THIS.id }
+				add_to_array = { THIS.rd_path = token:rd_path_milosevic }
+				add_to_array = { THIS.rd_path = token:rd_path_seselj }
+				add_to_array = { THIS.rd_path = token:rd_path_stambolic }
+			}
+			IRQ = { add_to_array = { global.unique_intro = THIS.id } }
+			VIN = {
+				add_to_array = { global.unique_intro = THIS.id }
+				add_to_array = { THIS.rd_path = token:rd_path_triet }
+				add_to_array = { THIS.rd_path = token:rd_path_trong }
+				add_to_array = { THIS.rd_path = token:rd_path_dung }
+			}
+			SAF = {
+				add_to_array = { global.unique_intro = THIS.id }
+			}
+			PRC = {
+				add_to_array = { global.unique_intro = THIS.id }
+				add_to_array = { THIS.rd_path = token:rd_path_hu }
+				add_to_array = { THIS.rd_path = token:rd_path_wu }
+			}
+			CZE = {
+				add_to_array = { global.unique_intro = THIS.id }
+				add_to_array = { THIS.rd_path = token:rd_path_milos_jakes }
+				add_to_array = { THIS.rd_path = token:rd_path_vasil_bilak }
+				add_to_array = { THIS.rd_path = token:rd_path_jiri_dolejs }
+			}
+			
+			for_each_scope_loop = {
+				# For every country in the array, tell the game 
+				# that those countries must not have the generic intro.
+				array = global.unique_intro
+				
+				set_country_flag = unique_country_intro_flag
+			}
+			
+			every_possible_country = {
+				set_variable = { rd_welcome_gui_tab = 1 } # Makes the 'country intro' tab the starting one.
+				
+				if = {
+					limit = { 
+						OR = {
+							AND = {	# If a country has only 1 path
+								check_variable = { THIS.rd_path^0 > 0 }
+								check_variable = { THIS.rd_path^1 = 0 }
+							}
+							AND = {	# or has 2 paths
+								check_variable = { THIS.rd_path^1 > 0 }
+								check_variable = { THIS.rd_path^2 = 0 }
+							}
+							AND = { # or has 3 paths
+								check_variable = { THIS.rd_path^2 > 0 }
+								check_variable = { THIS.rd_path^3 = 0 }
+							}
+						}
+					}
+					# Then nothing
+				}
+				else = { # If all the above is false, then the country either has no paths, or has 4 or more paths.
+					add_to_array = { THIS.rd_path = token:rd_path_empty }	# We add an empty path for these countries.
+				}
+				
+				if = {
+					limit = { check_variable = { THIS.rd_path^0 = token:rd_path_empty } }	# If a country has only an empty path,
+					
+					set_variable = { THIS.rd_selected_path = token:rd_path_empty }			# then select that path.
+				}
+				else = {
+					set_variable = { THIS.rd_selected_path = THIS.rd_path^0 }				# Else, select the first path on the list.
+				}
+			}
+		}
+	}
+}

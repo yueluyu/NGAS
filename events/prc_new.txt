@@ -388,6 +388,7 @@ country_event = {
 	    complete_national_focus = {
 	     focus = PRC_block_message 
 	    }
+		mark_focus_tree_layout_dirty = yes
 	    hidden_effect = {
 	        country_event = {
 				id = prc_sars.4
@@ -402,8 +403,9 @@ country_event = {
 	    }
 	    custom_effect_tooltip = sars_baofa_2
 	    complete_national_focus = {
-	     focus = PRC_Investigating_sars 
+	     focus = PRC_public_message
 	    }
+		mark_focus_tree_layout_dirty = yes
 	    hidden_effect = {
 	        country_event = {
 				id = prc_sars.3

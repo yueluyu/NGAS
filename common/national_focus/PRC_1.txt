@@ -388,7 +388,7 @@ focus_tree = {
 	focus = { #三个代表
 		id = PRC_sange_daibiao
 		icon = GFX_focus_PRC_three_represents_theory
-		cost = 4
+		cost = 3
 		x = 22
 		y = 1
 		available = {
@@ -400,6 +400,7 @@ focus_tree = {
 		prerequisite = { focus = PRC_after_the_reform }
 		completion_reward = { 
 		  add_ideas = san_ge_daibiao
+		  add_political_power = 30
 	   }
 	}
 	focus = { #发展生产力
@@ -417,6 +418,7 @@ focus_tree = {
 		prerequisite = { focus = PRC_sange_daibiao }
 		completion_reward = { 
 			set_country_flag = prc_jingji_is_ok
+			add_political_power = 35
 		}
 	}
 	focus = { #批准企业家
@@ -431,6 +433,7 @@ focus_tree = {
 		prerequisite = { focus = PRC_fazhan_xianjinshengchan }
 		completion_reward = { 
 			add_ideas = Capitalists_Joining_the_Party
+			add_political_power = 50
 		}
 	}
 	focus = { #引进技术
@@ -489,7 +492,7 @@ focus_tree = {
 					add_idea = san_ge_daibiao_3
 				}
 			}
-			
+	    add_political_power = 25
     }
 }
 	focus = { #发展先进文化
@@ -505,7 +508,9 @@ focus_tree = {
 			
 		}
 		prerequisite = { focus = PRC_sange_daibiao }
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 50
+		}
 	}
 	focus = { #坚持党的指导
 		id = PRC_jianchi_zhidao
@@ -594,7 +599,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = PRC_sange_daibiao }
 		completion_reward = {
-			
+			add_political_power = 45
 		 }
 	}
 	focus = { #提出小康
@@ -607,7 +612,9 @@ focus_tree = {
 			factor = 100
 		}
 		prerequisite = { focus = PRC_daibiao_renmin_liyi }
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 50
+		}
 	}
 	focus = { #推进共同富裕
 		id = PRC_tuijin_fuyu
@@ -619,7 +626,9 @@ focus_tree = {
 			factor = 100
 		}
 		prerequisite = { focus = PRC_daibiao_renmin_liyi }
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 50
+		}
 	}
 	focus = { #贯彻两个一百年
 		id = PRC_guanche_200_years
@@ -674,7 +683,9 @@ focus_tree = {
 		prerequisite = { focus = PRC_guanche_200_years }
 		prerequisite = { focus = PRC_yushi_jujin }
 		prerequisite = { focus = PRC_dang_de_xianjin }
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = 100
+		}
 	}
     focus = { 
 		id = PRC_Go_to_the_world

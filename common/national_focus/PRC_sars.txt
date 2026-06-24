@@ -2,7 +2,7 @@ shared_focus = {
 	id = PRC_Investigating_sars
 	icon = GFX_focus_PRC_Investigating_sars
 
-	x = 28
+	x = 33
 	y = -1
 	allow_branch = { 
 		has_country_flag = PRC_sars_come
@@ -28,7 +28,7 @@ shared_focus = {
 	id = PRC_block_message
 	icon = GFX_focus_PRC_block_message
 
-	x = 27
+	x = 32
 	y = 0
 	available = {
 			custom_trigger_tooltip = {
@@ -52,7 +52,7 @@ shared_focus = {
 	id = PRC_public_message
 	icon = GFX_focus_PRC_Investigating_sars
 
-	x = 29
+	x = 34
 	y = 0
 	available = {
 			custom_trigger_tooltip = {
@@ -76,7 +76,7 @@ shared_focus = {
 	id = PRC_Report_to_WHO
 	icon = GFX_focus_PRC_Report_to_WHO
 
-	x = 28
+	x = 33
 	y = 1
 	available = {
 			custom_trigger_tooltip = {
@@ -109,7 +109,7 @@ shared_focus = {
 	id = PRC_Seek_solutions
 	icon = GFX_focus_PRC_Seek_solutions
 
-	x = 28
+	x = 33
 	y = 2
 	available = {
 			custom_trigger_tooltip = {
@@ -134,7 +134,7 @@ shared_focus = {
 	id = PRC_Crack_down_on_false_information
 	icon = GFX_focus_PRC_Crack_down_on_false_information
 
-	x = 29
+	x = 34
 	y = 3
 	available = {
 			custom_trigger_tooltip = {
@@ -152,7 +152,7 @@ shared_focus = {
 	cost = 2
 
 	completion_reward = {
-	     if = {
+	    if = {
 				limit = {
 					has_idea = PRC_public_panic_1
 				}
@@ -165,17 +165,7 @@ shared_focus = {
 				limit = {
 					has_idea = PRC_public_panic_2
 				}
-				swap_ideas = {
-					remove_idea = PRC_public_panic_2
-					add_idea = PRC_public_panic_3
-				}
-				hidden_effect = {
-				 remove_ideas = PRC_public_panic_3
-				 add_timed_idea = {
-		       	   idea = PRC_public_panic_3
-			       days = 180
-		         }
-			}
+				remove_ideas = PRC_public_panic_2
 		}
 	}
 }
@@ -183,7 +173,7 @@ shared_focus = {
 	id = PRC_Calmp_public
 	icon = GFX_focus_PRC_Calmp_public
 
-	x = 27
+	x = 32
 	y = 3
 	available = {
 			custom_trigger_tooltip = {
@@ -214,25 +204,15 @@ shared_focus = {
 				limit = {
 					has_idea = PRC_public_panic_2
 				}
-				swap_ideas = {
-					remove_idea = PRC_public_panic_2
-					add_idea = PRC_public_panic_3
-				}
-				hidden_effect = {
-				 remove_ideas = PRC_public_panic_3
-				 add_timed_idea = {
-		       	   idea = PRC_public_panic_3
-			       days = 180
-		          }
-			}
-		}
-	}
-}
+				remove_ideas = PRC_public_panic_2
+		    }
+	    }
+    }
 shared_focus = {
 	id = PRC_Waiting_calm_down
 	icon = GFX_focus_PRC_Waiting_calm_down
 
-	x = 28
+	x = 33
 	y = 4
 	available = {
 			custom_trigger_tooltip = {
@@ -266,18 +246,8 @@ shared_focus = {
 				limit = {
 					has_idea = PRC_public_panic_2
 				}
-				swap_ideas = {
-					remove_idea = PRC_public_panic_2
-					add_idea = PRC_public_panic_3
-				}
-				hidden_effect = {
-				 remove_ideas = PRC_public_panic_3
-				 add_timed_idea = {
-		       	   idea = PRC_public_panic_3
-			       days = 180
-		          }
-			}
-		}
+				remove_ideas = PRC_public_panic_2
+		    }
 	}
 }
 

@@ -1,5 +1,9 @@
 PRC_factory_of_the_world = {
-	enable = { always = yes }
+	enable = { 
+     NOT = {
+        has_war = yes
+    } 
+}
 	icon = GFX_idea_PRC_world_fac_icon
     industrial_capacity_factory = PRC_factory_of_the_world_1
     consumer_goods_factor = PRC_factory_of_the_world_2
